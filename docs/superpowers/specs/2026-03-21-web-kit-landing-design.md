@@ -153,7 +153,8 @@ Après la génération :
   ```
   npx @abraham/web-kit
   ```
-- **Texte explicatif :** "Installe les skills dans Claude Code. Ouvre un nouveau chat, dis-lui ce que tu veux, et il te pose les mêmes questions."
+- **Texte explicatif :** "Installe les skills dans Claude Code. Ouvre un nouveau chat et dis-lui ce que tu veux."
+- **Texte de réassurance :** "Une fois installé, Claude te posera les bonnes questions pour créer un site qui te ressemble."
 - **Bouton "Copier la commande"** — utilise `navigator.clipboard.writeText()`, avec un feedback visuel (le texte du bouton passe de "Copier" à "Copié !" pendant 2s). Fallback : sélection automatique du texte si Clipboard API non supportée.
 - Texte secondaire : "Fonctionne avec Claude Code. Prend 30 secondes."
 
