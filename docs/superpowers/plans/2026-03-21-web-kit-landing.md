@@ -10,6 +10,8 @@
 
 **Spec:** `docs/superpowers/specs/2026-03-21-web-kit-landing-design.md`
 
+**Note:** All components under `src/components/` are client components — they use hooks or browser APIs. Add `"use client"` directive at the top of every component file.
+
 ---
 
 ## File Structure
@@ -798,7 +800,7 @@ git commit -m "feat: 'before' templates for screenshot comparison"
 - [ ] **Step 1: Install Vitest**
 
 ```bash
-npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
+npm install -D vitest @vitejs/plugin-react @testing-library/react @testing-library/jest-dom jsdom
 ```
 
 Add to `package.json` scripts: `"test": "vitest"`
