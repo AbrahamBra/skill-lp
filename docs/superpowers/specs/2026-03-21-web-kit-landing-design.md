@@ -8,6 +8,17 @@ Landing page interactive qui convainc des non-techniques d'installer un pack de 
 
 **Vibe coders / non-techniques.** Des gens qui ont découvert Claude Code et veulent créer un site sans coder. Zéro jargon technique. Le message parle de résultat, pas de process.
 
+## Langue
+
+**Français.** Toute la landing page, le copy, les messages de la simulation terminal, et les instructions d'installation sont en français. La cible est francophone. Les noms de skills et la commande npm restent en anglais (ce sont des noms propres techniques).
+
+Messages terminal de la simulation :
+- `▸ Création du hero...`
+- `▸ Application du style...`
+- `▸ Construction de la navigation...`
+- `▸ Ajout des sections...`
+- `▸ Touches finales...`
+
 ## Stack technique
 
 - **Next.js** (App Router)
@@ -33,71 +44,120 @@ Une seule page, scroll vertical, 5 sections :
 
 ### Section 2 — Avant/Après (toggle)
 
-- **Toggle slider horizontal** — glisser de gauche à droite
+- **Image-comparison slider** (type "Twenty Twenty") — un diviseur vertical draggable qui révèle le "avant" et "après" superposés
 - **Gauche :** site généré par Claude Code sans skills (générique, Bootstrap-like, pas de personnalité)
 - **Droite :** même prompt avec les skills (typo soignée, effets, spacing, personnalité)
 - **Texte sous le toggle :** "Même prompt. Même IA. La différence c'est les skills."
-- **Plusieurs exemples switchables :** Portfolio, SaaS, Business local
-  - Boutons/tabs au-dessus du toggle pour changer d'exemple
+- **4 exemples switchables :** Portfolio, SaaS, Business local, Blog
+  - Boutons/tabs au-dessus du slider pour changer d'exemple
   - Chaque exemple a sa version "sans" et "avec" skills
+- **Les avant/après sont des screenshots statiques** (images optimisées WebP) des templates de la section 4. Pas de live rendering ici — ça doit charger instantanément
 - **Pas de photos stock ni vidéos de fond** — le contraste vient du design pur (typo, spacing, couleurs, effets grain/glassmorphism)
-- Si besoin d'images placeholder dans les mockups : Unsplash (gratuit)
+
+**Adaptation mobile :** Le slider fonctionne au touch. Sur viewport < 640px, le diviseur est horizontal (avant en haut, après en bas) au lieu de vertical.
 
 ### Section 3 — Questionnaire interactif (3 questions)
 
 Le coeur de la démo. Le visiteur répond et déclenche la "génération".
 
 **Question 1 — "C'est quoi ton projet ?"**
-- Choix visuels cliquables :
+- Choix visuels cliquables (cards) :
   - 🏪 Business local
   - 💼 Portfolio / Freelance
   - 🚀 SaaS / Startup
   - 📝 Blog / Contenu
 
 **Question 2 — "Quel vibe ?"**
-- Moodboards cliquables :
-  - Minimal
-  - Bold
-  - Dark
-  - Playful
+- Moodboards cliquables (mini-previews avec couleurs/typo représentatives) :
+  - Minimal — fond blanc, typo fine, beaucoup d'espace
+  - Bold — couleurs vives, typo grasse, contrastes forts
+  - Dark — fond sombre, accents lumineux, grain subtil
+  - Playful — couleurs pastel, coins arrondis, icônes
 
 **Question 3 — "Comment s'appelle ton projet ?"**
 - Input texte libre
+- Placeholder : "Ex: Studio Luna, Mon Cabinet, etc."
 - Bouton "Générer" pour lancer l'animation
+- **Si l'input est vide**, on utilise "Mon Projet" comme nom par défaut
 
-Chaque question apparaît séquentiellement (la suivante slide après réponse).
+Chaque question apparaît séquentiellement (la suivante slide après réponse). **Pas de retour arrière** — le flow est linéaire et rapide. Le visiteur peut recharger la page pour recommencer.
 
 ### Section 4 — Génération live
 
 L'animation spectacle, déclenchée après la 3e réponse.
 
-- **Split screen :**
-  - **Gauche :** terminal style Claude Code qui déroule des lignes avec délai progressif
-    - `▸ Generating hero section...`
-    - `▸ Applying design signature...`
-    - `▸ Building navigation...`
-    - `▸ Adding sections...`
-    - `▸ Final polish...`
-  - **Droite :** preview qui se construit progressivement (nav → hero → sections → footer)
-- **Le résultat est un vrai site HTML/CSS rendu dans un iframe** — pas une image
-- **Le site utilise les réponses du visiteur** (nom du projet, vibe choisie)
-- **Tout est côté client** — pré-calculé, pas d'appel API
-- **Système de templates :** 4 types de projet × 4 vibes = 16 combinaisons
-  - En pratique : un même template HTML par type de projet, avec des variables CSS qui changent selon le vibe (palette, border-radius, font-family, effets)
+**Layout desktop (>= 768px) — Split screen :**
+- **Gauche :** terminal style Claude Code qui déroule des lignes
+- **Droite :** iframe preview qui se construit progressivement
+
+**Layout mobile (< 768px) — Stacked :**
+- Terminal en haut (hauteur réduite, 4-5 lignes visibles)
+- Preview en dessous (prend la majorité de l'écran)
+
+**Séquence d'animation (durée totale : ~6 secondes) :**
+
+| Temps | Terminal | Preview |
+|-------|---------|---------|
+| 0.0s | `▸ Création du hero...` | Nav apparaît (fade-in) |
+| 1.2s | `▸ Application du style...` | Hero apparaît avec le nom du projet |
+| 2.4s | `▸ Construction de la navigation...` | Les couleurs/typo du vibe s'appliquent |
+| 3.6s | `▸ Ajout des sections...` | Sections de contenu apparaissent (stagger 200ms) |
+| 5.0s | `▸ Touches finales...` | Effets finaux (grain, glassmorphism, animations) |
+| 6.0s | `✓ Terminé !` | Site complet, transition vers section 5 |
+
+**Système de templates :**
+
+Chaque template est une chaîne HTML stockée dans un fichier TypeScript (`/lib/templates/`). Le rendu se fait via `srcdoc` sur l'iframe.
+
+```
+/lib/templates/
+  portfolio.ts    → export function render(name: string, vibe: Vibe): string
+  saas.ts         → export function render(name: string, vibe: Vibe): string
+  business.ts     → export function render(name: string, vibe: Vibe): string
+  blog.ts         → export function render(name: string, vibe: Vibe): string
+  vibes.ts        → export des CSS custom properties par vibe
+```
+
+**Chaque fonction `render()`** retourne un document HTML complet (avec `<style>` inline) contenant :
+- La nav avec le nom du projet
+- Un hero
+- 2-3 sections de contenu (adaptées au type de projet)
+- Un footer
+
+**L'animation progressive** fonctionne par classes CSS. Le HTML complet est chargé dans l'iframe dès le début, mais chaque bloc a `opacity: 0` par défaut. Un script dans l'iframe écoute des `postMessage` de la page parent pour reveal chaque bloc au bon timing.
+
+**Mapping des vibes (CSS custom properties dans `vibes.ts`) :**
+
+| Variable | Minimal | Bold | Dark | Playful |
+|----------|---------|------|------|---------|
+| `--bg` | `#fafafa` | `#ffffff` | `#0a0a0a` | `#fef9f0` |
+| `--text` | `#1a1a1a` | `#000000` | `#e0e0e0` | `#2d2d2d` |
+| `--accent` | `#555555` | `#e63946` | `#6366f1` | `#f472b6` |
+| `--font-heading` | `Inter` | `Outfit` | `Space Grotesk` | `Nunito` |
+| `--font-body` | `Inter` | `Inter` | `Inter` | `Quicksand` |
+| `--radius` | `2px` | `0px` | `8px` | `16px` |
+| `--grain` | `none` | `none` | `url(grain.svg)` | `none` |
+| `--glass` | `none` | `none` | `blur(12px)` | `blur(8px)` |
+
+Les fonts sont chargées depuis Google Fonts dans le `<style>` du template.
+
+**Dimensions iframe :** aspect-ratio 16/9, max-width 800px, scrollable verticalement.
 
 ### Section 5 — Reveal + CTA d'installation
 
 Après la génération :
 
-- Le site "généré" s'affiche en plus grand / plein écran
-- **Overlay qui slide :** "Maintenant fais-le pour de vrai."
+- Le site "généré" s'affiche en plus grand (l'iframe s'expand vers ~90vw)
+- **Overlay qui slide depuis le bas :** "Maintenant fais-le pour de vrai."
 - **Commande d'installation :**
   ```
   npx @abraham/web-kit
   ```
 - **Texte explicatif :** "Installe les skills dans Claude Code. Ouvre un nouveau chat, dis-lui ce que tu veux, et il te pose les mêmes questions."
-- **Bouton "Copier la commande"** bien visible
+- **Bouton "Copier la commande"** — utilise `navigator.clipboard.writeText()`, avec un feedback visuel (le texte du bouton passe de "Copier" à "Copié !" pendant 2s). Fallback : sélection automatique du texte si Clipboard API non supportée.
 - Texte secondaire : "Fonctionne avec Claude Code. Prend 30 secondes."
+
+**Note :** Le package npm `@abraham/web-kit` est un livrable séparé. Tant qu'il n'est pas publié sur npm, la commande affichée sera remplacée par des instructions manuelles (lien GitHub + commandes `git clone`).
 
 ## Pack de skills installé
 
@@ -132,8 +192,16 @@ Le package npm `@abraham/web-kit` :
 - **Zéro jargon** — pas de "composants", "framework", "responsive". Juste "ton site", "tes questions", "ton résultat"
 - **Le site est la démo** — chaque effet visible (grain, glassmorphism, typo, animations) prouve la qualité des skills
 - **Dark mode par défaut** — cohérent avec l'univers terminal / Claude Code
-- **Mobile-first** — les vibe coders sont souvent sur mobile pour découvrir
+- **Mobile-friendly** — le layout s'adapte (split → stack, slider vertical → horizontal), mais l'expérience optimale reste desktop. Les vibe coders auront besoin d'un desktop pour utiliser Claude Code de toute façon.
 - **Performance** — pas de vidéos lourdes, pas de dépendances externes, tout en CSS/HTML pur
+- **Accessibilité** — navigation clavier pour le questionnaire (tab + enter), aria-labels sur le slider et les boutons, texte alt sur les screenshots avant/après
+
+## SEO et partage social
+
+- **Title :** "Web Kit — Ton site pro en 3 questions"
+- **Meta description :** "Installe les skills Claude Code et génère un site professionnel en répondant à 3 questions. Sans coder."
+- **Open Graph image :** Screenshot du avant/après (Portfolio, vibe Dark) — 1200x630px
+- **Twitter card :** summary_large_image
 
 ## Avant/Après — Contenu des exemples
 
@@ -152,7 +220,7 @@ Le package npm `@abraham/web-kit` :
 
 ### SaaS (sans skills)
 - Template Bootstrap-like
-- Hero avec stock photo
+- Hero avec stock photo placeholder
 - Boutons bleus génériques
 - Pricing table basique
 
@@ -170,9 +238,21 @@ Le package npm `@abraham/web-kit` :
 
 ### Business local (avec skills)
 - Layout asymétrique élégant
-- Map intégrée proprement
+- Map placeholder intégrée proprement
 - Typographie lisible et chaleureuse
 - CTA clair et unique
+
+### Blog (sans skills)
+- Layout deux colonnes basique (sidebar + contenu)
+- Typo monochrome, pas de hiérarchie
+- Sidebar encombrée (archives, tags, recent posts)
+- Aucun rythme de lecture
+
+### Blog (avec skills)
+- Layout single-column focalisé sur la lecture
+- Typo avec serif pour le corps, sans-serif pour les titres
+- Spacing généreux, rythme vertical maîtrisé
+- Cards articles avec hover subtil
 
 ## Ce qui est hors scope
 
