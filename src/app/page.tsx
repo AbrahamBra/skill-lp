@@ -5,6 +5,8 @@ import { Hero } from "@/components/hero";
 import { BeforeAfter } from "@/components/before-after";
 import { Questionnaire } from "@/components/questionnaire";
 import { Generation } from "@/components/generation";
+import { SkillsPedagogy } from "@/components/skills-pedagogy";
+import { RevealCta } from "@/components/reveal-cta";
 import type { TemplateConfig } from "@/lib/templates/types";
 
 export default function Home() {
@@ -17,6 +19,8 @@ export default function Home() {
       <BeforeAfter />
       <Questionnaire onComplete={setConfig} />
       {config && <Generation config={config} onDone={() => setShowCta(true)} />}
+      {showCta && <SkillsPedagogy />}
+      <RevealCta isVisible={showCta} />
     </main>
   );
 }
