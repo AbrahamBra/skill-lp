@@ -19,9 +19,9 @@ Principe fondamental : Claude n'a pas de gout. Tout jugement esthetique passe pa
 - **Role** : boussole esthetique. Produit une direction visuelle validee par l'humain que les autres skills consomment ensuite.
 - **Output** : un fichier `design-direction.md` dans le projet
 
-## Les deux modes
+## Les trois modes
 
-### Mode A : Site existant
+### Mode A : Site existant (redesign complet)
 
 1. Ouvrir le site dans le navigateur, le parcourir (hero, sections, footer)
 2. Lister les elements visuels marquants **sans les juger** (fond video, palette, typo, animations, layout...)
@@ -41,7 +41,16 @@ Principe fondamental : Claude n'a pas de gout. Tout jugement esthetique passe pa
 5. Assembler une **direction visuelle** a partir des morceaux choisis
 6. L'utilisateur valide. Les skills custom prennent le relais comme socle technique.
 
-Dans les deux cas : **rien ne se code tant que la direction n'est pas validee.**
+### Mode C : Redesign partiel (une section)
+
+1. Identifier la section ciblee avec l'utilisateur
+2. Inventorier les elements visuels de cette section **et** du reste du site (pour la coherence)
+3. Presenter a l'utilisateur : "Qu'est-ce qui ne va pas dans cette section ? Qu'est-ce qu'on garde du reste du site ?"
+4. Chercher des references filtrees par type de composant (21st.dev pour un hero, Saaspo pour du pricing...)
+5. Montrer et iterer comme dans les autres modes
+6. Produire une direction scopee a la section, qui herite de la direction globale du site pour tout le reste
+
+Dans les trois cas : **rien ne se code tant que la direction n'est pas validee.**
 
 ## Sources de reference
 
@@ -60,16 +69,61 @@ Dans les deux cas : **rien ne se code tant que la direction n'est pas validee.**
 - Le skill utilise le navigateur pour aller chercher les exemples et les montrer a l'utilisateur
 - On ne copie jamais un site entier. On pioche des **elements** : "le hero de celui-ci", "la palette de celui-la", "le spacing de cet autre"
 
+### Strategie de recherche par source
+
+- **Landing.love** : filtrer par categorie industrie la plus proche du secteur du client
+- **Saaspo** : filtrer par type de section pertinent (hero, pricing, features...)
+- **21st.dev** : utiliser pour les composants individuels, pas pour les recherches sectorielles globales
+- **Navbar Gallery** : uniquement quand la navigation est un sujet specifique
+- **Component Gallery** : pour les patterns UI generiques (formulaires, cards, modales...)
+
+### Ownership des sources
+
+`design-eye` possede l'usage esthetique/directionnel des sources de reference. `expertise-web` conserve l'usage technique (patterns d'architecture de composants, API patterns). Quand on browse pour la direction visuelle, c'est `design-eye` qui mene. Quand on browse pour l'architecture d'un composant, c'est `expertise-web`.
+
+### Quand l'utilisateur n'a pas d'avis
+
+Si l'utilisateur repond "je ne sais pas" ou "tu decides" : ne jamais choisir a sa place. Reduire le choix. Montrer 2 exemples cote a cote et poser une question binaire : "Entre ces deux headers, lequel te parle plus ?" Continuer a reduire en A/B jusqu'a ce qu'une direction emerge.
+
 ## Output : design-direction.md
 
-Le skill produit un fichier `design-direction.md` dans le projet contenant :
+Le skill produit un fichier `design-direction.md` dans le projet. Template obligatoire :
 
-- Les elements a garder (mode site existant)
-- Les references choisies avec les elements retenus de chacune
-- La direction visuelle validee par l'utilisateur
-- Les contraintes explicites (ex: "ne pas toucher au fond video", "garder la palette monochrome")
+```markdown
+# Design Direction — [nom du projet]
 
-Ce document est passe aux autres skills comme contexte obligatoire.
+## Elements a garder
+- [element] : [pourquoi c'est important pour l'utilisateur]
+
+## References choisies
+- [URL] : [element specifique retenu] — [ce qu'on en prend]
+
+## Direction visuelle (validee)
+- Palette : ...
+- Typographie : ...
+- Layout : ...
+- Effets : ...
+- Ambiance : ...
+
+## Contraintes (ne pas toucher)
+- [contrainte explicite]
+
+## Validation
+- Date : [date]
+- Confirme par l'utilisateur : oui
+```
+
+Ce document est passe aux autres skills comme contexte obligatoire. Les downstream skills verifient la presence de la section `## Validation` avant de commencer.
+
+### Protocole de validation
+
+Le skill pose une question explicite de cloture : "Est-ce que cette direction est validee ? Je ne coderai rien tant que tu n'as pas confirme."
+- "Oui" / "OK" / "Go" = valide. La section `## Validation` est remplie.
+- Toute reponse ambigue = pas valide. On itere.
+
+### Mises a jour
+
+Si l'utilisateur demande des changements visuels apres validation, on re-parcourt les etapes reference + feedback pour la partie concernee. Le fichier est mis a jour avec une section `## Revision [date]`. On ne modifie jamais la direction sans repasser par la boucle.
 
 ## Interaction avec les autres skills
 
@@ -85,7 +139,15 @@ design-eye (calibration) -> design-signature (identite visuelle) -> expertise-we
 
 - **`expertise-web`** : applique ses standards techniques (ARIA, touch targets, perf...) sans toucher a l'esthetique validee. Le socle technique ne contredit jamais la direction visuelle.
 
-- **`frontend-design`** : construit les composants en respectant les references choisies dans la direction, pas ses propres defaults.
+- **`frontend-design`** (si present) : construit les composants en respectant les references choisies dans la direction, pas ses propres defaults.
+
+### Gate obligatoire dans les skills existants
+
+Les skills `design-signature` et `expertise-web` doivent etre modifies pour inclure ce gate au debut de leur execution :
+
+> "Avant de commencer, verifier si `design-direction.md` existe dans le projet. Si non, invoquer `design-eye` d'abord. Ne pas lancer le workflow 'New Project Discovery' de `design-signature` tant que `design-eye` n'a pas produit de direction."
+
+Ceci est une etape d'implementation obligatoire, pas une suggestion.
 
 ### Regle de conflit
 
