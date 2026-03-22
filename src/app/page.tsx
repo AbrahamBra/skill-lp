@@ -32,16 +32,15 @@ export default function Home() {
       {/* Hero */}
       <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28 text-center">
         <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[1.08] tracking-tight max-w-[20ch] mx-auto">
-          L'IA repete les memes patterns.
+          Tu as des méthodes qui marchent.
           <br />
           <span className="text-[var(--text-muted)]">
             Les skills encodent ton expertise.
           </span>
         </h1>
         <p className="mt-6 text-[var(--text-muted)] text-base max-w-[52ch] mx-auto leading-relaxed">
-          Des fichiers Markdown qui transforment Claude en expert de ton
-          metier. Chaque skill encode un savoir-faire precis. Exemple concret
-          ci-dessous.
+          Tu décris comment tu travailles. Les skills s'en souviennent. Claude
+          part de ça, pas de ses recettes. Exemple ci-dessous.
         </p>
         <div className="mt-10 flex justify-center gap-4 flex-wrap">
           <a
@@ -63,10 +62,10 @@ export default function Home() {
       <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-[60ch] mx-auto">
-            Sans skills, Claude applique ses recettes generiques. Pour le
-            web : serif + sans-serif, grain, glassmorphism. Pour le reste :
-            les memes structures, les memes formulations. Il ne sait pas ce
-            qui te rend different. Il bulldoze.
+            Claude a sa version de tout. Sa façon de structurer. Son esthétique.
+            Sa manière de formuler. Quand tu lui demandes quelque chose, il part
+            de ça, pas de toi. Il ne sait pas ce qui te distingue. Alors il
+            produit de la compétence générique.
           </p>
         </div>
       </section>
