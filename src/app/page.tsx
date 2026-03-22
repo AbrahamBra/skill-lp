@@ -229,6 +229,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Vision */}
+      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-xl mx-auto">
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-6">
+            A venir
+          </p>
+          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.15] tracking-tight">
+            Les SaaS vont vivre la meme transition.
+          </h2>
+          <div className="mt-6 space-y-4 text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
+            <p>
+              Notion, Linear, Salesforce — leur valeur, c'est pas l'interface.
+              C'est l'intelligence metier en dessous. Les agents n'ont pas besoin
+              du tableau Kanban. Ils veulent juste appeler ce qui gere les taches.
+            </p>
+            <p>
+              Ces boites vont devoir se deshabiller. Extraire toute leur logique
+              business, la rendre structuree, appelable directement. Detruire
+              leur propre UI pour survivre.
+            </p>
+            <p>
+              C'est le meme travail que tu fais en encodant ton expertise dans
+              des skills. Meme mecanique, moins grande echelle. Pour l'instant.
+            </p>
+          </div>
+          <p className="mt-8 text-xs text-[var(--text-muted)]">
+            On travaille a rendre les skills directement appelables par les agents.
+          </p>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-20 border-t border-[var(--border)]">
         <span className="text-xs text-[var(--text-muted)]">© 2026 Abraham</span>
