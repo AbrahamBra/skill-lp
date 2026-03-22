@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+const CALENDLY = "https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab";
+
 export const metadata: Metadata = {
   title: "Abraham Brakha — Closing · IA · LinkedIn B2B",
   description: "J'aide les startups, PMEs et solopreneurs à convertir plus avec des méthodes de closing et l'IA.",
@@ -14,7 +16,7 @@ export default function AgenceB2B() {
           Abraham Brakha
         </span>
         <a
-          href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+          href={CALENDLY}
           target="_blank"
           rel="noopener noreferrer"
           className="text-xs font-medium uppercase tracking-widest px-5 py-2.5 transition-opacity hover:opacity-75"
@@ -38,9 +40,10 @@ export default function AgenceB2B() {
           </p>
           <div className="mt-10 flex gap-4 flex-wrap items-center">
             <a
-              href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+              href={CALENDLY}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Prendre un appel"
               className="text-xs font-medium uppercase tracking-widest px-7 py-3.5 transition-opacity hover:opacity-75"
               style={{ background: "#141414", color: "#fafafa" }}
             >
