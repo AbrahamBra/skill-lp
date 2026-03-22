@@ -192,6 +192,18 @@ export default function Home() {
             </div>
             <div className="mt-4 text-[10px] text-[var(--text-muted)] leading-relaxed space-y-1">
               <p>
+                Necessite{" "}
+                <a
+                  href="https://claude.ai/download"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-[var(--text)] transition-colors"
+                >
+                  Claude Code
+                </a>
+                {" "}— la CLI d'Anthropic. Pas Claude.ai, pas Cursor.
+              </p>
+              <p>
                 Les skills s'installent dans{" "}
                 <code className="font-mono">~/.claude/skills/</code>.
                 Claude Code les charge automatiquement des ton prochain projet web.
