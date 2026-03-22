@@ -14,24 +14,16 @@ export default function Home() {
         </span>
         <div className="flex items-center gap-6">
           <a
-            href="/agence"
+            href="/methode"
             className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
-            Agence
+            Méthode
           </a>
           <a
             href="#get"
             className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
             Obtenir les skills
-          </a>
-          <a
-            href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs uppercase tracking-widest bg-white text-[#0a0a0a] px-4 py-2 hover:opacity-85 transition-opacity"
-          >
-            Réserver un appel
           </a>
         </div>
       </nav>
@@ -237,9 +229,12 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="mt-12 text-[10px] text-[var(--text-muted)]">
-            La page methode detaillera l'architecture complete →
-          </p>
+          <a
+            href="/methode"
+            className="mt-12 inline-block text-[10px] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+          >
+            Architecture complète → /methode
+          </a>
         </div>
       </section>
 
@@ -291,90 +286,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Encode ton expertise */}
-      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
-            Encode ton expertise.
-          </h2>
-          <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[52ch] mx-auto leading-relaxed">
-            Les sites web, c'est un exemple. Les skills encodent n'importe
-            quelle expertise. Tu veux creer les tiens ? On t'accompagne.
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-            {[
-              { role: "Recruteur tech", encoded: "Ses grilles d'evaluation + process de sourcing" },
-              { role: "Avocat fiscaliste", encoded: "Ses modeles de contrats + analyse de risques" },
-              { role: "Coach produit", encoded: "Son framework de diagnostic + prioritisation" },
-            ].map((ex) => (
-              <div
-                key={ex.role}
-                className="border border-[var(--border)] rounded-lg p-4 space-y-2"
-              >
-                <span className="text-xs font-medium uppercase tracking-widest text-white/80">
-                  {ex.role}
-                </span>
-                <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-                  {ex.encoded}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-14 pt-10 border-t border-[var(--border)]">
-            <p className="text-[var(--text-muted)] text-xs uppercase tracking-widest mb-8">
-              Tu aimerais encoder ton expertise ? Reserve un appel.
-            </p>
-            <a
-              href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-[#0a0a0a] px-8 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
-            >
-              Réserver un appel →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision */}
-      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-xl mx-auto">
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-6">
-            A venir
-          </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.15] tracking-tight">
-            Les SaaS vont vivre la meme transition.
-          </h2>
-          <div className="mt-6 space-y-4 text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
-            <p>
-              Notion, Linear, Salesforce. Leur valeur, c'est pas l'interface.
-              C'est l'intelligence metier en dessous. Les agents n'ont pas besoin
-              du tableau Kanban. Ils veulent juste appeler ce qui gere les taches.
-            </p>
-            <p>
-              Ces boites vont devoir se deshabiller. Extraire toute leur logique
-              business, la rendre structuree, appelable directement. Detruire
-              leur propre UI pour survivre.
-            </p>
-            <p>
-              C'est le meme travail que tu fais en encodant ton expertise dans
-              des skills. Meme mecanique, moins grande echelle. Pour l'instant.
-            </p>
-          </div>
-          <p className="mt-8 text-xs text-[var(--text-muted)]">
-            On travaille a rendre les skills directement appelables par les agents.
-          </p>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-20 border-t border-[var(--border)]">
         <span className="text-xs text-[var(--text-muted)]">© 2026 Abraham</span>
         <div className="flex gap-5 text-xs text-[var(--text-muted)]">
-          <a href="#" className="hover:text-[var(--text)] transition-colors">Mentions legales</a>
-          <a href="#" className="hover:text-[var(--text)] transition-colors">Confidentialite</a>
+          <a
+            href="/agence"
+            className="hover:text-[var(--text)] transition-colors"
+          >
+            Kit custom sur-mesure
+          </a>
+          <a href="#" className="hover:text-[var(--text)] transition-colors">Mentions légales</a>
+          <a href="#" className="hover:text-[var(--text)] transition-colors">Confidentialité</a>
         </div>
       </footer>
     </main>
