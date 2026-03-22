@@ -123,10 +123,10 @@ export function ChatDemo() {
   return (
     <section className="px-6 py-20 md:px-12 lg:px-20">
       <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight text-center">
-        Le skill en action.
+        Les skills en action.
       </h2>
-      <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[50ch] mx-auto">
-        Vraie conversation. Le visiteur donne son idee, le skill calibre sur des references, et le site se construit.
+      <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[55ch] mx-auto">
+        Vraie conversation. 8 skills guident le process : brain dump, calibration sur des references reelles, validation par l'humain, puis generation.
       </p>
 
       <div className="mt-10 mx-auto max-w-2xl border border-[var(--border)] rounded-xl overflow-hidden bg-[rgba(255,255,255,0.02)]">
