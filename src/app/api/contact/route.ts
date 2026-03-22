@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from: "Web Kit <onboarding@resend.dev>",
         to: "a.brakha@challengerslab.com",
-        replyTo: email,
+        reply_to: email,
         subject: isAgence ? `Agence — ${metier}` : `Nouveau lead: ${metier}`,
         text,
       });
