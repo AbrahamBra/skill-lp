@@ -240,7 +240,7 @@ export default function Home() {
           </h2>
           <div className="mt-6 space-y-4 text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
             <p>
-              Notion, Linear, Salesforce — leur valeur, c'est pas l'interface.
+              Notion, Linear, Salesforce. Leur valeur, c'est pas l'interface.
               C'est l'intelligence metier en dessous. Les agents n'ont pas besoin
               du tableau Kanban. Ils veulent juste appeler ce qui gere les taches.
             </p>
