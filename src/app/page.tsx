@@ -90,11 +90,11 @@ export default function Home() {
       {/* Architecture */}
       <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
         <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight text-center">
-          Chaque skill encode une expertise.
+          Un skill pour chaque partie du travail.
         </h2>
         <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[55ch] mx-auto leading-relaxed">
-          Chaque skill a sa propre logique, ses references, ses garde-fous.
-          Claude les charge dans l'ordre. Chacun fait sa partie.
+          Chaque skill a sa logique et ses garde-fous.
+          Claude les charge dans l'ordre, chacun fait sa partie.
         </p>
 
         <div className="mt-14 max-w-3xl mx-auto">
@@ -104,7 +104,7 @@ export default function Home() {
                 name: "design-eye v2",
                 role: "Direction visuelle",
                 detail:
-                  "Claude cherche des references qui correspondent a ta cible, te propose deux directions concretes, tu choisis. Pas de template — une direction sur-mesure validee par toi. Tous les autres skills respectent ce choix.",
+                  "Claude cherche des references qui correspondent a ta cible, te propose deux directions concretes, tu choisis. Pas de template. Une direction sur-mesure validee par toi, que tous les autres skills respectent.",
                 source: null,
               },
               {
@@ -112,20 +112,20 @@ export default function Home() {
                 role: "Execution sans les defauts IA",
                 detail:
                   "Claude a tendance a produire des sites qui se ressemblent tous. Ce skill lui apprend tes standards : ce qu'il peut faire, ce qu'il ne doit pas faire, comment rendre chaque detail intentionnel.",
-                source: null,
+                source: { label: "Anthropic (Apache 2.0)", url: null },
               },
               {
                 name: "design-signature",
                 role: "Identite visuelle",
                 detail:
-                  "Des effets visuels testes sur de vrais projets : quand les appliquer, quand ne pas les appliquer. Claude ne fait pas du beau generique — il fait du reconnaissable.",
+                  "Des effets visuels testes sur de vrais projets. Le skill sait quand les appliquer et quand ne pas les appliquer. Claude ne fait pas du beau generique. Il fait du reconnaissable.",
                 source: null,
               },
               {
                 name: "expertise-web",
                 role: "Memoire de projet",
                 detail:
-                  "Un repertoire de composants et de regles issus de vrais projets. Quand tu approuves quelque chose, Claude le garde — mais seulement s'il a verifie que c'est solide. Pas de raccourci mediatique. Plus tu travailles avec lui, plus il connait tes standards.",
+                  "Un repertoire de composants et de regles issus de vrais projets. Quand tu approuves quelque chose, Claude le garde. Mais seulement s'il a verifie que c'est solide. Pas une bonne idee du moment qui deviendrait une regle permanente. Plus tu travailles avec lui, plus il connait tes standards.",
                 source: null,
               },
               {
@@ -166,14 +166,20 @@ export default function Home() {
                       {skill.detail}
                     </p>
                     {skill.source && (
-                      <a
-                        href={skill.source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-2 inline-block text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-                      >
-                        ↗ {skill.source.label}
-                      </a>
+                      skill.source.url ? (
+                        <a
+                          href={skill.source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-2 inline-block text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+                        >
+                          ↗ {skill.source.label}
+                        </a>
+                      ) : (
+                        <span className="mt-2 inline-block text-[10px] font-mono text-[var(--text-muted)] opacity-60">
+                          {skill.source.label}
+                        </span>
+                      )
                     )}
                   </div>
                 </div>
@@ -183,7 +189,7 @@ export default function Home() {
         </div>
 
         <p className="mt-10 text-center text-xs text-[var(--text-muted)]">
-          Chaque skill est un fichier Markdown installe dans{" "}
+          Les skills sont des fichiers Markdown installes dans{" "}
           <code className="font-mono text-[var(--text)]">~/.claude/skills/</code>.
           Claude Code les charge automatiquement.
         </p>
@@ -199,7 +205,7 @@ export default function Home() {
             {[
               {
                 concept: "Lecture a la demande",
-                why: "Claude ne lit pas tout le skill d'un bloc a chaque conversation. Si tu lui demandes de toucher a la navigation, il consulte uniquement la partie navigation. Si tu demandes du SEO, il passe a cette section. La conversation reste precise — il ne melange pas tout.",
+                why: "Claude ne lit pas tout le skill d'un bloc a chaque conversation. Si tu lui demandes de travailler sur la navigation, il lit uniquement la partie navigation. Si tu demandes du SEO, il passe a cette section-la. La conversation reste precise, sans melanger les sujets.",
                 source: { label: "anthropics/skills", url: "https://github.com/anthropics/skills" },
               },
               {
@@ -209,7 +215,7 @@ export default function Home() {
               },
               {
                 concept: "Outils groupes par usage",
-                why: "Certains travaux necessitent toujours les memes outils en meme temps. Design et recherche de references vont ensemble. SEO et contenu vont ensemble. Ces combinaisons sont predefinies — Claude prend ce dont il a besoin sans que tu aies a lui expliquer.",
+                why: "Certains travaux necessitent toujours les memes outils. Design et recherche de references vont ensemble. SEO et contenu aussi. Ces combinaisons sont predefinies. Claude prend ce dont il a besoin sans que tu aies a lui expliquer chaque fois.",
                 source: { label: "alirezarezvani/claude-skills", url: "https://github.com/alirezarezvani/claude-skills" },
               },
             ].map((item) => (
