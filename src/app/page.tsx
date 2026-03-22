@@ -13,12 +13,20 @@ export default function Home() {
         <span className="font-[family-name:var(--font-serif)] text-lg">
           web·kit
         </span>
-        <a
-          href="#get"
-          className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-        >
-          Obtenir les skills
-        </a>
+        <div className="flex items-center gap-6">
+          <a
+            href="/agence"
+            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+          >
+            Agence
+          </a>
+          <a
+            href="#get"
+            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+          >
+            Obtenir les skills
+          </a>
+        </div>
       </nav>
 
       {/* Hero */}

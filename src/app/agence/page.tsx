@@ -40,7 +40,7 @@ export default function AgencePage() {
               {
                 n: "01",
                 title: "Base de connaissance",
-                text: "Tes données métiers encodées. Tes process, ton vocabulaire, tes cas types — pas une template générique.",
+                text: "Tes données métiers encodées. Tes process, ton vocabulaire, tes cas types. Pas une template générique.",
               },
               {
                 n: "02",
@@ -89,7 +89,7 @@ export default function AgencePage() {
                   <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
                 </div>
                 <p className="text-xs text-[var(--text-muted)]">
-                  Idéal pour un seul métier — closing, coaching, recrutement, fiscalité…
+                  Idéal pour un seul métier : closing, coaching, recrutement, fiscalité…
                 </p>
               </div>
 
@@ -101,8 +101,7 @@ export default function AgencePage() {
                   "Installation prête pour Claude",
                   "2 mois d'ajustements gratuits",
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-[var(--text-muted)]">
-                    <span className="text-[var(--text)] mt-px">—</span>
+                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
                     {item}
                   </li>
                 ))}
@@ -126,7 +125,7 @@ export default function AgencePage() {
                   <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
                 </div>
                 <p className="text-xs text-[var(--text-muted)]">
-                  Deux domaines reliés — closing&nbsp;+ prospection, coaching&nbsp;+ marketing, juridique&nbsp;+ conformité…
+                  Deux domaines reliés : closing&nbsp;+ prospection, coaching&nbsp;+ marketing, juridique&nbsp;+ conformité…
                 </p>
               </div>
 
@@ -138,8 +137,7 @@ export default function AgencePage() {
                   "Installation prête pour Claude",
                   "3 mois d'ajustements gratuits",
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 text-sm text-[var(--text-muted)]">
-                    <span className="text-[var(--text)] mt-px">—</span>
+                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
                     {item}
                   </li>
                 ))}
@@ -166,7 +164,7 @@ export default function AgencePage() {
               {
                 step: "02",
                 title: "On vide ton cerveau",
-                detail: "Tes process, tes données, tes cas réels. Tout ce qui fait ton expertise — pas la version LinkedIn.",
+                detail: "Tes process, tes données, tes cas réels. Tout ce qui fait ton expertise. Pas la version LinkedIn.",
               },
               {
                 step: "03",
