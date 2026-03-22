@@ -3,7 +3,6 @@
 import { ChatDemo } from "@/components/chat-demo";
 import { SiteResult } from "@/components/site-result";
 import { CopyButton } from "@/components/copy-button";
-import { ExpertiseForm } from "@/components/expertise-form";
 
 export default function Home() {
   return (
@@ -25,6 +24,14 @@ export default function Home() {
             className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
             Obtenir les skills
+          </a>
+          <a
+            href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs uppercase tracking-widest bg-white text-[#0a0a0a] px-4 py-2 hover:opacity-85 transition-opacity"
+          >
+            Réserver un appel
           </a>
         </div>
       </nav>
@@ -229,9 +236,16 @@ export default function Home() {
 
           <div className="mt-14 pt-10 border-t border-[var(--border)]">
             <p className="text-[var(--text-muted)] text-xs uppercase tracking-widest mb-8">
-              Tu aimerais encoder ton expertise ? Presente ton projet.
+              Tu aimerais encoder ton expertise ? Reserve un appel.
             </p>
-            <ExpertiseForm />
+            <a
+              href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-[#0a0a0a] px-8 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
+            >
+              Réserver un appel →
+            </a>
           </div>
         </div>
       </section>
