@@ -101,10 +101,10 @@ export default function Home() {
           <div className="flex flex-col gap-0">
             {[
               {
-                name: "design-eye",
+                name: "design-eye v2",
                 role: "Calibration esthetique",
                 detail:
-                  "Browse des sites de reference, recherche les tendances de ta cible, montre des exemples, itere avec toi. Produit une direction validee que tous les autres skills respectent.",
+                  "4 modules : recherche parallele sur 5 sources simultanees, Mode D (direction originale depuis mots-cles, zero browsing), memoire de tes gouts entre projets, formats de comparaison structures. Produit une direction validee que tous les autres skills respectent.",
               },
               {
                 name: "frontend-design",
@@ -173,23 +173,22 @@ export default function Home() {
       >
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
-            Installe le pack complet. Gratuit.
+            Installe les skills. Gratuit.
           </h2>
           <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[48ch] mx-auto leading-relaxed">
-            Les 8 skills. Design-eye, frontend-design, design-signature,
-            expertise-web, humanizer, copywriting, geo, motion-design. Tout
-            le systeme qu'on a utilise pour generer le site au-dessus.
+            Design-eye v2, design-signature, expertise-web. Le systeme
+            qu'on a utilise pour generer le site au-dessus.
           </p>
 
           <div className="mt-10 bg-[rgba(255,255,255,0.03)] border border-[var(--border)] rounded-lg p-6">
             <div className="text-xs text-[var(--text-muted)] mb-3">
-              Copie cette commande et colle-la dans ton terminal Claude Code :
+              Copie cette commande et colle-la dans ton terminal :
             </div>
             <code className="text-sm font-mono text-[var(--text)]" data-copy-target>
-              npx @abraham/web-kit
+              npx degit AbrahamBra/claude-has-bad-taste/skills ~/.claude/skills
             </code>
             <div className="mt-4">
-              <CopyButton text="npx @abraham/web-kit" />
+              <CopyButton text="npx degit AbrahamBra/claude-has-bad-taste/skills ~/.claude/skills" />
             </div>
             <div className="mt-4 text-[10px] text-[var(--text-muted)] leading-relaxed space-y-1">
               <p>
