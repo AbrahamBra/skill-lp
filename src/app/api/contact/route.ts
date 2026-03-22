@@ -8,14 +8,16 @@ const resend = process.env.RESEND_API_KEY
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const { metier, repetes, clone, email } = data;
+    const { metier, repetes, clone, email, source } = data;
+
+    const isAgence = source === "agence";
 
     const text = [
-      `Nouveau lead — Encode ton expertise`,
+      isAgence ? `Nouveau lead Agence` : `Nouveau lead — Encode ton expertise`,
       ``,
-      `Metier: ${metier}`,
-      `Ce qu'il repete: ${repetes}`,
-      `Clone ideal: ${clone}`,
+      `Metier / contexte: ${metier}`,
+      ...(repetes ? [`Ce qu'il repete: ${repetes}`] : []),
+      ...(clone ? [`Clone ideal: ${clone}`] : []),
       `Email: ${email}`,
       ``,
       `Date: ${new Date().toISOString()}`,
@@ -25,7 +27,8 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from: "Web Kit <onboarding@resend.dev>",
         to: "a.brakha@challengerslab.com",
-        subject: `Nouveau lead: ${metier}`,
+        replyTo: email,
+        subject: isAgence ? `Agence — ${metier}` : `Nouveau lead: ${metier}`,
         text,
       });
     } else {
