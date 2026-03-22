@@ -55,6 +55,62 @@ export default function AgenceB2B() {
           </div>
         </div>
       </section>
+
+      {/* Services */}
+      <section className="px-6 py-20 md:px-12 lg:px-20" style={{ borderTop: "1px solid #e8e8e8" }}>
+        <p className="text-xs uppercase tracking-widest mb-14" style={{ color: "#999" }}>
+          Ce que je fais
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: "#e8e8e8" }}>
+          {[
+            {
+              title: "Closing",
+              label: "01",
+              body: "Je travaille directement sur tes calls de vente. Script, objections, timing. Les deals qui traînaient signent.",
+            },
+            {
+              title: "Intégration IA",
+              label: "02",
+              body: "On intègre l'IA dans ton process commercial. Qualification, relances, suivi. Tu fais plus avec les mêmes ressources.",
+            },
+            {
+              title: "LinkedIn Setting",
+              label: "03",
+              body: "Configuration de ton profil et de tes séquences. Les bons prospects voient le bon message au bon moment.",
+            },
+          ].map((s) => (
+            <div key={s.label} className="p-8 lg:p-10" style={{ background: "#fafafa" }}>
+              <span className="text-xs font-mono" style={{ color: "#5b85aa" }}>{s.label}</span>
+              <h3 className="mt-4 text-xl font-semibold tracking-tight" style={{ color: "#141414" }}>
+                {s.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed" style={{ color: "#666" }}>
+                {s.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="px-6 py-16 md:px-12 lg:px-20" style={{ borderTop: "1px solid #e8e8e8" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-3xl">
+          {[
+            { value: "+47%", label: "taux de transformation moyen" },
+            { value: "3 sem.", label: "pour les premiers résultats" },
+            { value: "B2B", label: "startups · PMEs · solopreneurs" },
+          ].map((stat) => (
+            <div key={stat.value}>
+              <div className="text-3xl font-bold tracking-tight" style={{ color: "#141414" }}>
+                {stat.value}
+              </div>
+              <div className="mt-1 text-xs leading-relaxed" style={{ color: "#888" }}>
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
