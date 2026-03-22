@@ -105,36 +105,49 @@ export default function Home() {
                 role: "Calibration esthetique",
                 detail:
                   "4 modules : recherche parallele sur 5 sources en meme temps, Mode D (direction originale depuis mots-cles, zero browsing), memoire de tes gouts d'un projet a l'autre, formats de comparaison structures. Tous les autres skills partent de la direction qu'il produit.",
+                origin: "maison" as const,
               },
               {
                 name: "frontend-design",
                 role: "Execution anti-slop",
                 detail:
                   "Detecte les anti-patterns IA : gradient text, glassmorphism gratuit, cards identiques, Inter partout. 7 modules de reference : typo, couleur OKLCH, spacing, motion, interaction, responsive, UX writing.",
+                origin: "maison" as const,
               },
               {
                 name: "design-signature",
                 role: "Identite visuelle",
                 detail:
                   "Effets signature testes sur des vrais projets. Le skill sait quand appliquer un effet et quand ne PAS l'appliquer.",
+                origin: "maison" as const,
               },
               {
                 name: "expertise-web",
                 role: "Patterns techniques",
                 detail:
-                  "Composants battle-tested, architecture de contenu, maillage interne, SEO/GEO, perf. Chaque pattern vient d'un projet reel.",
+                  "Progressive disclosure : le skill charge uniquement le module utile au moment utile. Harvest Validation Gate : 3 criteres evalues avant d'immortaliser un pattern (proven, ARIA, mobile). Bundles nommes : raccourcis pre-packetes pour les workflows frequents. Chaque pattern vient d'un projet reel.",
+                origin: "maison" as const,
               },
               {
                 name: "humanizer",
                 role: "Textes naturels",
                 detail:
                   "Detecte et corrige 24 patterns d'ecriture IA. Le texte sonne humain, pas ChatGPT.",
+                origin: { label: "blader/humanizer", url: "https://github.com/blader/humanizer" },
+              },
+              {
+                name: "superpowers",
+                role: "Workflows Claude Code",
+                detail:
+                  "Brainstorming, plans, debug, verification, git worktrees. Un systeme de skills pour discipliner Claude Code sur des taches longues et complexes.",
+                origin: { label: "obra/superpowers", url: "https://github.com/obra/superpowers" },
               },
               {
                 name: "copywriting + geo",
                 role: "Copy qui convertit + visibilite",
                 detail:
                   "Copy marketing adapte a ta cible. SEO pour les moteurs classiques ET pour les IA (ChatGPT, Perplexity, Gemini).",
+                origin: "maison" as const,
               },
             ].map((skill, i) => (
               <div key={skill.name} className="relative">
@@ -152,6 +165,22 @@ export default function Home() {
                     <p className="mt-1 text-xs text-[var(--text-muted)] leading-relaxed">
                       {skill.detail}
                     </p>
+                    <div className="mt-2">
+                      {skill.origin === "maison" ? (
+                        <span className="text-[10px] font-mono text-[var(--text-muted)] opacity-50">
+                          fait maison
+                        </span>
+                      ) : (
+                        <a
+                          href={skill.origin.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+                        >
+                          ↗ {skill.origin.label}
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -164,6 +193,54 @@ export default function Home() {
           <code className="font-mono text-[var(--text)]">~/.claude/skills/</code>.
           Claude Code les charge automatiquement.
         </p>
+      </section>
+
+      {/* Pédagogie architecture */}
+      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-10">
+            Pourquoi cette architecture
+          </p>
+          <div className="space-y-10">
+            {[
+              {
+                concept: "Progressive disclosure",
+                why: "Charger 2 000 tokens de skill pour poser une question conversationnelle, c'est du gaspillage de context window. Le skill detecte le type de tache en entree et charge uniquement le module utile — composant UI, SEO, navigation — en ignorant le reste. Sur les projets longs, ca change tout.",
+                source: { label: "anthropics/skills", url: "https://github.com/anthropics/skills" },
+              },
+              {
+                concept: "Harvest Validation Gate",
+                why: "Un 'c'est bon' sur un composant sans ARIA ne devrait pas devenir un standard non-negligeable. Avant d'ecrire un pattern dans la base, 3 criteres : est-ce que ca a tourne sur un vrai projet ? ARIA complet ? Mobile-ready ? Si non — dossier experimental plutot que reference. La friction utile.",
+                source: { label: "shanraisshan/claude-code-best-practice", url: "https://github.com/shanraisshan/claude-code-best-practice" },
+              },
+              {
+                concept: "Bundles nommes",
+                why: "Memoriser quelle combinaison de modules charger pour quel workflow est une charge cognitive inutile. ui-harvest-loop, design-calibration, seo-full — des raccourcis qui nomment des habitudes qui existaient deja. Claude les connait, tu n'as plus a les specifier.",
+                source: { label: "alirezarezvani/claude-skills", url: "https://github.com/alirezarezvani/claude-skills" },
+              },
+            ].map((item) => (
+              <div key={item.concept} className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-3 md:gap-10">
+                <div className="pt-0.5">
+                  <code className="text-xs font-mono text-emerald-400">{item.concept}</code>
+                </div>
+                <div>
+                  <p className="text-sm text-[var(--text-muted)] leading-relaxed">{item.why}</p>
+                  <a
+                    href={item.source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-block text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+                  >
+                    ↗ {item.source.label}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-12 text-[10px] text-[var(--text-muted)]">
+            La page methode detaillera l'architecture complete →
+          </p>
+        </div>
       </section>
 
       {/* Lead Magnet */}
