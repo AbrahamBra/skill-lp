@@ -93,8 +93,8 @@ export default function Home() {
           Chaque skill encode une expertise.
         </h2>
         <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[55ch] mx-auto leading-relaxed">
-          Chaque skill est un systeme autonome avec sa logique, ses references,
-          ses garde-fous. Ils se declenchent dans l'ordre et se passent le relais.
+          Chaque skill a sa propre logique, ses references, ses garde-fous.
+          Claude les charge dans l'ordre. Chacun fait sa partie.
         </p>
 
         <div className="mt-14 max-w-3xl mx-auto">
@@ -104,7 +104,7 @@ export default function Home() {
                 name: "design-eye v2",
                 role: "Calibration esthetique",
                 detail:
-                  "4 modules : recherche parallele sur 5 sources simultanees, Mode D (direction originale depuis mots-cles, zero browsing), memoire de tes gouts entre projets, formats de comparaison structures. Produit une direction validee que tous les autres skills respectent.",
+                  "4 modules : recherche parallele sur 5 sources en meme temps, Mode D (direction originale depuis mots-cles, zero browsing), memoire de tes gouts d'un projet a l'autre, formats de comparaison structures. Tous les autres skills partent de la direction qu'il produit.",
               },
               {
                 name: "frontend-design",
@@ -176,8 +176,8 @@ export default function Home() {
             Installe les skills. Gratuit.
           </h2>
           <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[48ch] mx-auto leading-relaxed">
-            Design-eye v2, design-signature, expertise-web. Le systeme
-            qu'on a utilise pour generer le site au-dessus.
+            Design-eye v2, design-signature, expertise-web. Les skills
+            qui ont servi a generer le site au-dessus.
           </p>
 
           <div className="mt-10 bg-[rgba(255,255,255,0.03)] border border-[var(--border)] rounded-lg p-6">
