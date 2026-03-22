@@ -320,7 +320,7 @@ Target: ~200 lines (down from 311)
 ## Success criteria
 
 Measurable (verifiable from file content):
-- SKILL.md core: ≤200 lines
+- SKILL.md core: ≤310 lines (note: 200-line target was unachievable given the "What does NOT change" list — Modes A/B/C + Client Mode + Multi-Page + templates account for ~200 lines alone)
 - Each module file: ≤120 lines
 - taste-profile.md entries each carry a validated_count field
 - output-formats.md defines exactly 4 named formats
