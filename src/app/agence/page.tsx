@@ -1,3 +1,5 @@
+import { AgenceForm } from "@/components/agence-form";
+
 export default function AgencePage() {
   return (
     <main className="min-h-screen">
@@ -208,12 +210,7 @@ export default function AgencePage() {
             On regarde ensemble si le projet fait sens. Pas de pitch, pas de vente forcée.
           </p>
           <div className="mt-10">
-            <a
-              href="https://cal.com"
-              className="inline-block bg-white text-[#0a0a0a] px-10 py-4 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
-            >
-              Réserver mon appel gratuit
-            </a>
+            <AgenceForm />
           </div>
         </div>
       </section>
