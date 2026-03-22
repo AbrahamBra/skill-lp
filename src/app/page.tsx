@@ -102,52 +102,52 @@ export default function Home() {
             {[
               {
                 name: "design-eye v2",
-                role: "Calibration esthetique",
+                role: "Direction visuelle",
                 detail:
-                  "4 modules : recherche parallele sur 5 sources en meme temps, Mode D (direction originale depuis mots-cles, zero browsing), memoire de tes gouts d'un projet a l'autre, formats de comparaison structures. Tous les autres skills partent de la direction qu'il produit.",
-                origin: "maison" as const,
+                  "Claude cherche des references qui correspondent a ta cible, te propose deux directions concretes, tu choisis. Pas de template — une direction sur-mesure validee par toi. Tous les autres skills respectent ce choix.",
+                source: null,
               },
               {
                 name: "frontend-design",
-                role: "Execution anti-slop",
+                role: "Execution sans les defauts IA",
                 detail:
-                  "Detecte les anti-patterns IA : gradient text, glassmorphism gratuit, cards identiques, Inter partout. 7 modules de reference : typo, couleur OKLCH, spacing, motion, interaction, responsive, UX writing.",
-                origin: "maison" as const,
+                  "Claude a tendance a produire des sites qui se ressemblent tous. Ce skill lui apprend tes standards : ce qu'il peut faire, ce qu'il ne doit pas faire, comment rendre chaque detail intentionnel.",
+                source: null,
               },
               {
                 name: "design-signature",
                 role: "Identite visuelle",
                 detail:
-                  "Effets signature testes sur des vrais projets. Le skill sait quand appliquer un effet et quand ne PAS l'appliquer.",
-                origin: "maison" as const,
+                  "Des effets visuels testes sur de vrais projets : quand les appliquer, quand ne pas les appliquer. Claude ne fait pas du beau generique — il fait du reconnaissable.",
+                source: null,
               },
               {
                 name: "expertise-web",
-                role: "Patterns techniques",
+                role: "Memoire de projet",
                 detail:
-                  "Progressive disclosure : le skill charge uniquement le module utile au moment utile. Harvest Validation Gate : 3 criteres evalues avant d'immortaliser un pattern (proven, ARIA, mobile). Bundles nommes : raccourcis pre-packetes pour les workflows frequents. Chaque pattern vient d'un projet reel.",
-                origin: "maison" as const,
+                  "Un repertoire de composants et de regles issus de vrais projets. Quand tu approuves quelque chose, Claude le garde — mais seulement s'il a verifie que c'est solide. Pas de raccourci mediatique. Plus tu travailles avec lui, plus il connait tes standards.",
+                source: null,
               },
               {
                 name: "humanizer",
-                role: "Textes naturels",
+                role: "Texte qui sonne humain",
                 detail:
-                  "Detecte et corrige 24 patterns d'ecriture IA. Le texte sonne humain, pas ChatGPT.",
-                origin: { label: "blader/humanizer", url: "https://github.com/blader/humanizer" },
+                  "Repere les mots que Claude sur-utilise, les tournures trop lisses, les listes trop propres. Le resultat sonne comme toi, pas comme une IA.",
+                source: { label: "blader/humanizer", url: "https://github.com/blader/humanizer" },
               },
               {
                 name: "superpowers",
-                role: "Workflows Claude Code",
+                role: "Methode de travail",
                 detail:
-                  "Brainstorming, plans, debug, verification, git worktrees. Un systeme de skills pour discipliner Claude Code sur des taches longues et complexes.",
-                origin: { label: "obra/superpowers", url: "https://github.com/obra/superpowers" },
+                  "Un cadre pour que Claude reste discipline sur les projets longs. Brainstorming structure, plans etapes par etapes, verifications avant de livrer. Moins d'improvisation, plus de rigueur.",
+                source: { label: "obra/superpowers", url: "https://github.com/obra/superpowers" },
               },
               {
                 name: "copywriting + geo",
-                role: "Copy qui convertit + visibilite",
+                role: "Copy et visibilite",
                 detail:
-                  "Copy marketing adapte a ta cible. SEO pour les moteurs classiques ET pour les IA (ChatGPT, Perplexity, Gemini).",
-                origin: "maison" as const,
+                  "Copy marketing adapte a ta cible. Visibilite sur Google ET sur les IA qui repondent aux questions (ChatGPT, Perplexity, Gemini) — les deux sont differents, les deux sont couverts.",
+                source: { label: "zubair-trabzada/geo-seo-claude", url: "https://github.com/zubair-trabzada/geo-seo-claude" },
               },
             ].map((skill, i) => (
               <div key={skill.name} className="relative">
@@ -165,22 +165,16 @@ export default function Home() {
                     <p className="mt-1 text-xs text-[var(--text-muted)] leading-relaxed">
                       {skill.detail}
                     </p>
-                    <div className="mt-2">
-                      {skill.origin === "maison" ? (
-                        <span className="text-[10px] font-mono text-[var(--text-muted)] opacity-50">
-                          fait maison
-                        </span>
-                      ) : (
-                        <a
-                          href={skill.origin.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-                        >
-                          ↗ {skill.origin.label}
-                        </a>
-                      )}
-                    </div>
+                    {skill.source && (
+                      <a
+                        href={skill.source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-block text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+                      >
+                        ↗ {skill.source.label}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -204,18 +198,18 @@ export default function Home() {
           <div className="space-y-10">
             {[
               {
-                concept: "Progressive disclosure",
-                why: "Charger 2 000 tokens de skill pour poser une question conversationnelle, c'est du gaspillage de context window. Le skill detecte le type de tache en entree et charge uniquement le module utile — composant UI, SEO, navigation — en ignorant le reste. Sur les projets longs, ca change tout.",
+                concept: "Lecture a la demande",
+                why: "Claude ne lit pas tout le skill d'un bloc a chaque conversation. Si tu lui demandes de toucher a la navigation, il consulte uniquement la partie navigation. Si tu demandes du SEO, il passe a cette section. La conversation reste precise — il ne melange pas tout.",
                 source: { label: "anthropics/skills", url: "https://github.com/anthropics/skills" },
               },
               {
-                concept: "Harvest Validation Gate",
-                why: "Un 'c'est bon' sur un composant sans ARIA ne devrait pas devenir un standard non-negligeable. Avant d'ecrire un pattern dans la base, 3 criteres : est-ce que ca a tourne sur un vrai projet ? ARIA complet ? Mobile-ready ? Si non — dossier experimental plutot que reference. La friction utile.",
+                concept: "Filtre avant memorisation",
+                why: "Quand tu dis 'c'est bon', Claude ne le garde pas automatiquement dans ses regles. Il verifie d'abord : est-ce que ca a fonctionne sur un vrai projet ? Est-ce que ca marche sur mobile ? Si oui, ca devient une regle permanente. Si non, c'est mis de cote. Pas de mauvaise pratique gravee par erreur.",
                 source: { label: "shanraisshan/claude-code-best-practice", url: "https://github.com/shanraisshan/claude-code-best-practice" },
               },
               {
-                concept: "Bundles nommes",
-                why: "Memoriser quelle combinaison de modules charger pour quel workflow est une charge cognitive inutile. ui-harvest-loop, design-calibration, seo-full — des raccourcis qui nomment des habitudes qui existaient deja. Claude les connait, tu n'as plus a les specifier.",
+                concept: "Outils groupes par usage",
+                why: "Certains travaux necessitent toujours les memes outils en meme temps. Design et recherche de references vont ensemble. SEO et contenu vont ensemble. Ces combinaisons sont predefinies — Claude prend ce dont il a besoin sans que tu aies a lui expliquer.",
                 source: { label: "alirezarezvani/claude-skills", url: "https://github.com/alirezarezvani/claude-skills" },
               },
             ].map((item) => (
