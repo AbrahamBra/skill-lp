@@ -20,7 +20,10 @@ export default function AgenceB2B() {
         }
       `}</style>
       {/* Nav */}
-      <nav style={{ borderBottom: "1px solid #e8e8e8" }} className="flex items-center justify-between px-6 py-5 md:px-12 lg:px-20">
+      <nav
+        style={{ borderBottom: "1px solid #e8e8e8", background: "#fafafa" }}
+        className="sticky top-0 z-50 flex items-center justify-between px-6 py-5 md:px-12 lg:px-20"
+      >
         <span className="text-sm font-semibold tracking-tight" style={{ color: "#141414" }}>
           Abraham Brakha
         </span>
@@ -28,8 +31,8 @@ export default function AgenceB2B() {
           href={CALENDLY}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-medium uppercase tracking-widest px-5 py-2.5 transition-opacity hover:opacity-75"
-          style={{ background: "#141414", color: "#fafafa" }}
+          className="text-xs font-medium uppercase tracking-widest px-5 py-2.5 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+          style={{ background: "#141414", color: "#fafafa", boxShadow: "0 2px 8px rgba(20,20,20,0.18)" }}
         >
           Prendre un appel
         </a>
@@ -53,8 +56,8 @@ export default function AgenceB2B() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Prendre un appel"
-              className="text-xs font-medium uppercase tracking-widest px-7 py-3.5 transition-opacity hover:opacity-75"
-              style={{ background: "#141414", color: "#fafafa" }}
+              className="text-xs font-medium uppercase tracking-widest px-7 py-3.5 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+              style={{ background: "#141414", color: "#fafafa", boxShadow: "0 2px 8px rgba(20,20,20,0.18)" }}
             >
               Prendre un appel →
             </a>
@@ -88,7 +91,11 @@ export default function AgenceB2B() {
               body: "Configuration de ton profil et de tes séquences. Tes messages arrivent à des gens qui ont une raison d'y répondre.",
             },
           ].map((s) => (
-            <div key={s.label} className="p-8 lg:p-10" style={{ background: "#fafafa" }}>
+            <div key={s.label} className="p-8 lg:p-10 relative group" style={{ background: "#fafafa" }}>
+              <div
+                className="absolute left-0 top-0 bottom-0 w-[2px] origin-top transition-transform duration-300 scale-y-0 group-hover:scale-y-100"
+                style={{ background: "#5b85aa" }}
+              />
               <span className="text-xs font-mono" style={{ color: "#5b85aa" }}>{s.label}</span>
               <h3 className="mt-4 text-xl font-semibold tracking-tight" style={{ color: "#141414" }}>
                 {s.title}
@@ -164,8 +171,8 @@ export default function AgenceB2B() {
             href={CALENDLY}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-block text-xs font-medium uppercase tracking-widest px-8 py-4 transition-opacity hover:opacity-75"
-            style={{ background: "#141414", color: "#fafafa" }}
+            className="mt-10 inline-block text-xs font-medium uppercase tracking-widest px-8 py-4 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+            style={{ background: "#141414", color: "#fafafa", boxShadow: "0 2px 8px rgba(20,20,20,0.18)" }}
             aria-label="Réserver l'appel"
           >
             Réserver l'appel →
