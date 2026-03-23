@@ -1,8 +1,4 @@
-"use client";
-
-import { ChatDemo } from "@/components/chat-demo";
-import { SiteResult } from "@/components/site-result";
-import { CopyButton } from "@/components/copy-button";
+import { AgenceForm } from "@/components/agence-form";
 
 export default function Home() {
   return (
@@ -11,16 +7,10 @@ export default function Home() {
       <nav className="grid grid-cols-3 items-center px-6 py-5 md:px-12 lg:px-20 border-b border-[var(--border)]">
         <div className="flex items-center gap-6">
           <a
-            href="/tarifs"
+            href="/skill-site-web"
             className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
-            Tarifs
-          </a>
-          <a
-            href="/agence"
-            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-          >
-            Agence
+            Skill site web
           </a>
         </div>
         <div className="flex justify-center">
@@ -41,375 +31,194 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28 text-center">
-        <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[1.08] tracking-tight max-w-[20ch] mx-auto">
-          Tu as des méthodes qui marchent.
-          <br />
-          <span className="text-[var(--text-muted)]">
-            Les skills encodent ton expertise.
-          </span>
-        </h1>
-        <p className="mt-6 text-[var(--text-muted)] text-base max-w-[52ch] mx-auto leading-relaxed">
-          Tu décris comment tu travailles. Les skills s'en souviennent. Claude
-          part de ça, pas de ses recettes. Exemple ci-dessous.
-        </p>
-        <div className="mt-10 flex justify-center items-center gap-6 flex-wrap">
-          <a
-            href="#demo"
-            className="bg-white text-[#0a0a0a] px-7 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
-          >
-            Voir la demo
-          </a>
-          <a
-            href="#get"
-            className="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] hover:text-white transition-colors"
-          >
-            Installer les skills →
-          </a>
-        </div>
-
-        {/* Trust row */}
-        <div className="mt-14 flex flex-wrap justify-center items-center gap-10 text-[var(--text-muted)]">
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Claude Code</span>
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase flex items-center gap-1.5"><span className="text-[9px]">▲</span>Vercel</span>
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Next.js</span>
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Tailwind</span>
-        </div>
-      </section>
-
-      {/* Problem */}
-      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-[60ch] mx-auto">
-            Claude a sa version de tout. Sa façon de structurer. Son esthétique.
-            Sa manière de formuler. Quand tu lui demandes quelque chose, il part
-            de ça, pas de toi. Il ne sait pas ce qui te distingue. Alors il
-            produit de la compétence générique.
+      <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28">
+        <div className="max-w-4xl">
+          <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mb-6">
+            Accompagnement
+          </p>
+          <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[1.06] tracking-tight max-w-[22ch]">
+            On crée ton kit complet sur-mesure.
+          </h1>
+          <p className="mt-8 text-[var(--text-muted)] text-base max-w-[52ch] leading-relaxed">
+            Je construis une série de skills 100&nbsp;% custom à partir de ton expertise réelle.
           </p>
         </div>
       </section>
 
-      {/* Chat Demo — one scenario */}
-      <div id="demo" className="border-t border-[var(--border)]">
-        <ChatDemo />
-      </div>
-
-      {/* Site Result — iframe to /b2b */}
-      <div className="border-t border-[var(--border)]">
-        <SiteResult />
-      </div>
-
-      {/* Step 02 — Copy & humanizer */}
+      {/* What we build */}
       <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-xs font-mono text-emerald-400">✓</span>
-            <span className="text-xs uppercase tracking-widest text-emerald-400">Etape 02 validee</span>
-          </div>
-          <h3 className="font-[family-name:var(--font-serif)] text-xl tracking-tight">
-            Copy & humanizer.
-          </h3>
-          <p className="mt-3 text-[var(--text-muted)] text-sm max-w-[52ch] leading-relaxed">
-            Humanizer repere les tournures IA et les reecrit. Avant : formules generiques. Apres : phrases qui ressemblent a quelqu'un qui a vraiment fait le job.
-          </p>
-
-          <div className="mt-8 space-y-3">
+        <div className="max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border)]">
             {[
               {
-                label: "Hero",
-                before: "J'aide les startups à convertir plus avec des méthodes éprouvées, renforcées par l'IA.",
-                after: "Ce qui bloque les deals, on le règle avec les bons outils IA au bon endroit.",
+                n: "01",
+                title: "Base de connaissance",
+                text: "Tes données métiers encodées. Tes process, ton vocabulaire, tes cas types. Pas une template générique.",
               },
               {
-                label: "Service 02",
-                before: "Tu fais plus avec les mêmes ressources.",
-                after: "Tu traites plus de leads sans grossir l'équipe.",
+                n: "02",
+                title: "Segmentation",
+                text: "Par typologies de clients, cas d'usage, scénarios. Le système sait à qui il parle et comment répondre.",
               },
               {
-                label: "Vision",
-                before: "Pas pour remplacer la relation humaine — pour lui laisser plus de place.",
-                after: "L'IA s'occupe de la qualification. Toi, tu parles aux gens qui sont prêts à signer.",
+                n: "03",
+                title: "Meilleures skills du marché",
+                text: "Combiné aux skills les plus puissantes et à jour. Ton expertise + les meilleurs outils disponibles.",
               },
-            ].map((ex) => (
-              <div key={ex.label} className="grid grid-cols-[56px_1fr] gap-3 text-xs">
-                <span className="text-[var(--text-muted)] font-mono pt-2.5">{ex.label}</span>
-                <div className="space-y-1.5">
-                  <div className="px-3 py-2.5 rounded border border-[var(--border)] text-[var(--text-muted)] opacity-50 line-through leading-relaxed">
-                    {ex.before}
-                  </div>
-                  <div className="px-3 py-2.5 rounded border border-emerald-400/20 bg-emerald-400/[0.03] text-white leading-relaxed">
-                    {ex.after}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Site after humanizer */}
-          <div className="mt-10 max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-              </div>
-              <div className="flex-1 mx-4">
-                <div className="bg-[rgba(255,255,255,0.05)] rounded-md px-3 py-1 text-xs text-[var(--text-muted)] font-mono text-center">
-                  abrahambrakha.fr/b2b — étape 02
-                </div>
-              </div>
-            </div>
-            <iframe
-              src="/b2b-step2"
-              title="Site B2B après humanizer"
-              className="w-full h-[500px] bg-white"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Step 03 — Design-signature */}
-      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-5xl">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">✓</span>
-            <span className="text-xs font-mono text-[var(--text-muted)]">03</span>
-            <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Identite visuelle</span>
-            <span className="ml-auto text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">
-              etape 03 validee
-            </span>
-          </div>
-          <h3 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,2rem)] leading-[1.15] tracking-tight mb-3">
-            Le site prend son identite.
-          </h3>
-          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch] mb-10">
-            Design-signature entre en jeu. Nav sticky avec ombre au scroll, hover lift sur les cards, focus rings sur tous les CTAs. Chaque interaction est calibree sur la direction validee.
-          </p>
-
-          <div className="max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-              </div>
-              <span className="text-[10px] font-mono text-[var(--text-muted)] ml-2">
-                abrahambrakha.fr/b2b — etape 03
-              </span>
-            </div>
-            <iframe
-              src="/b2b"
-              title="Site B2B version finale — design-signature"
-              className="w-full border-0"
-              style={{ height: "600px" }}
-            />
-          </div>
-          <p className="mt-4 text-xs text-[var(--text-muted)]">
-            Nav sticky, hover states, interactions calibrees sur la direction validee. Genere avec design-eye + humanizer + design-signature.
-          </p>
-        </div>
-      </section>
-
-      {/* Architecture */}
-      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight text-center">
-          Un skill pour chaque partie du travail.
-        </h2>
-        <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[55ch] mx-auto leading-relaxed">
-          Chaque skill a sa logique et ses garde-fous.
-          Claude les charge dans l'ordre, chacun fait sa partie.
-        </p>
-
-        <div className="mt-14 max-w-3xl mx-auto">
-          <div className="flex flex-col gap-0">
-            {[
-              {
-                name: "design-eye v2",
-                role: "Direction visuelle",
-                detail:
-                  "Claude cherche des references qui correspondent a ta cible, te propose deux directions concretes, tu choisis. Pas de template. Une direction sur-mesure validee par toi, que tous les autres skills respectent.",
-                source: null,
-              },
-              {
-                name: "frontend-design",
-                role: "Execution sans les defauts IA",
-                detail:
-                  "Claude a tendance a produire des sites qui se ressemblent tous. Ce skill lui apprend tes standards : ce qu'il peut faire, ce qu'il ne doit pas faire, comment rendre chaque detail intentionnel.",
-                source: { label: "Anthropic (Apache 2.0)", url: null },
-              },
-              {
-                name: "design-signature",
-                role: "Identite visuelle",
-                detail:
-                  "Des effets visuels testes sur de vrais projets. Le skill sait quand les appliquer et quand ne pas les appliquer. Claude ne fait pas du beau generique. Il fait du reconnaissable.",
-                source: null,
-              },
-              {
-                name: "expertise-web",
-                role: "Memoire de projet",
-                detail:
-                  "Un repertoire de composants et de regles issus de vrais projets. Quand tu approuves quelque chose, Claude le garde. Mais seulement s'il a verifie que c'est solide. Pas une bonne idee du moment qui deviendrait une regle permanente. Plus tu travailles avec lui, plus il connait tes standards.",
-                source: null,
-              },
-              {
-                name: "humanizer",
-                role: "Texte qui sonne humain",
-                detail:
-                  "Repere les mots que Claude sur-utilise, les tournures trop lisses, les listes trop propres. Le resultat sonne comme toi, pas comme une IA.",
-                source: { label: "blader/humanizer", url: "https://github.com/blader/humanizer" },
-              },
-              {
-                name: "superpowers",
-                role: "Methode de travail",
-                detail:
-                  "Un cadre pour que Claude reste discipline sur les projets longs. Brainstorming structure, plans etapes par etapes, verifications avant de livrer. Moins d'improvisation, plus de rigueur.",
-                source: { label: "obra/superpowers", url: "https://github.com/obra/superpowers" },
-              },
-              {
-                name: "copywriting + geo",
-                role: "Copy et visibilite",
-                detail:
-                  "Copy marketing adapte a ta cible. Visibilite sur Google ET sur les IA qui repondent aux questions (ChatGPT, Perplexity, Gemini) — les deux sont differents, les deux sont couverts.",
-                source: { label: "zubair-trabzada/geo-seo-claude", url: "https://github.com/zubair-trabzada/geo-seo-claude" },
-              },
-            ].map((skill, i) => (
-              <div key={skill.name} className="relative">
-                {i > 0 && (
-                  <div className="absolute left-6 -top-3 w-px h-6 bg-[var(--border)]" />
-                )}
-                <div className="flex gap-5 py-5 px-6 border border-[var(--border)] rounded-lg bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.04)] transition-colors mt-3">
-                  <div className="flex-shrink-0 mt-0.5">
-                    <code className="text-xs font-mono text-emerald-400">
-                      {skill.name}
-                    </code>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium">{skill.role}</div>
-                    <p className="mt-1 text-xs text-[var(--text-muted)] leading-relaxed">
-                      {skill.detail}
-                    </p>
-                    {skill.source && (
-                      skill.source.url ? (
-                        <a
-                          href={skill.source.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-2 inline-block text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-                        >
-                          ↗ {skill.source.label}
-                        </a>
-                      ) : (
-                        <span className="mt-2 inline-block text-[10px] font-mono text-[var(--text-muted)] opacity-60">
-                          {skill.source.label}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <p className="mt-10 text-center text-xs text-[var(--text-muted)]">
-          Les skills sont des fichiers Markdown installes dans{" "}
-          <code className="font-mono text-[var(--text)]">~/.claude/skills/</code>.
-          Claude Code les charge automatiquement.
-        </p>
-      </section>
-
-      {/* Lead Magnet */}
-      <section
-        id="get"
-        className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]"
-      >
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
-            Installe les skills. Gratuit.
-          </h2>
-          <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[48ch] mx-auto leading-relaxed">
-            Design-eye v2, design-signature, expertise-web. Les skills
-            qui ont servi a generer le site au-dessus.
-          </p>
-
-          <div className="mt-10 bg-[rgba(255,255,255,0.03)] border border-[var(--border)] rounded-lg p-6">
-            <div className="text-xs text-[var(--text-muted)] mb-3">
-              Copie cette commande et colle-la dans ton terminal :
-            </div>
-            <code className="text-sm font-mono text-[var(--text)]" data-copy-target>
-              npx degit AbrahamBra/claude-has-bad-taste/skills ~/.claude/skills
-            </code>
-            <div className="mt-4">
-              <CopyButton text="npx degit AbrahamBra/claude-has-bad-taste/skills ~/.claude/skills" />
-            </div>
-            <div className="mt-4 text-[10px] text-[var(--text-muted)] leading-relaxed space-y-1">
-              <p>
-                Necessite{" "}
-                <a
-                  href="https://claude.ai/download"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-[var(--text)] transition-colors"
-                >
-                  Claude Code
-                </a>
-                {" "}— la CLI d'Anthropic. Pas Claude.ai, pas Cursor.
-              </p>
-              <p>
-                Les skills s'installent dans{" "}
-                <code className="font-mono">~/.claude/skills/</code>.
-                Claude Code les charge automatiquement des ton prochain projet web.
-              </p>
-              <p>Installation : 30 secondes. Le brain dump prend 5 minutes. La calibration references + direction prend 10-15 minutes. Le site se genere ensuite.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Encode ton expertise */}
-      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
-            Encode ton expertise.
-          </h2>
-          <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[52ch] mx-auto leading-relaxed">
-            Les sites web, c'est un exemple. Les skills encodent n'importe
-            quelle expertise. Tu veux creer les tiens ? On t'accompagne.
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-            {[
-              { role: "Recruteur tech", encoded: "Ses grilles d'evaluation + process de sourcing" },
-              { role: "Avocat fiscaliste", encoded: "Ses modeles de contrats + analyse de risques" },
-              { role: "Coach produit", encoded: "Son framework de diagnostic + prioritisation" },
-            ].map((ex) => (
-              <div
-                key={ex.role}
-                className="border border-[var(--border)] rounded-lg p-4 space-y-2"
-              >
-                <span className="text-xs font-medium uppercase tracking-widest text-white/80">
-                  {ex.role}
+            ].map((item) => (
+              <div key={item.n} className="bg-[var(--bg)] px-6 py-8 space-y-4">
+                <span className="text-xs font-mono text-[var(--text-muted)]">
+                  {item.n}
                 </span>
+                <h3 className="text-sm font-medium">{item.title}</h3>
                 <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-                  {ex.encoded}
+                  {item.text}
                 </p>
               </div>
             ))}
           </div>
+          <p className="mt-8 text-[var(--text-muted)] text-sm max-w-[58ch] leading-relaxed">
+            Résultat&nbsp;: un vrai système intelligent qui te ressemble à 100&nbsp;%, pas un simple remix.
+          </p>
+        </div>
+      </section>
 
-          <div className="mt-14 pt-10 border-t border-[var(--border)]">
-            <p className="text-[var(--text-muted)] text-xs uppercase tracking-widest mb-8">
-              Tu aimerais encoder ton expertise ? Reserve un appel.
-            </p>
-            <a
-              href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-white text-[#0a0a0a] px-8 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
-            >
-              Réserver un appel →
-            </a>
+      {/* Offers */}
+      <section id="tarifs" className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+            {/* Offer 1 */}
+            <div className="border border-[var(--border)] p-8 space-y-8">
+              <div className="space-y-3">
+                <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,1.9rem)] leading-tight tracking-tight">
+                  Kit Complet Custom
+                </h2>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-[2.4rem] font-light tracking-tight">2 490&nbsp;€</span>
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
+                </div>
+                <p className="text-xs text-[var(--text-muted)]">
+                  Idéal pour un seul métier : closing, coaching, recrutement, fiscalité…
+                </p>
+              </div>
+
+              <ul className="space-y-3">
+                {[
+                  "15 à 25 skills interconnectées",
+                  "Base de connaissance sur tes données + segmentation",
+                  "Intégration des meilleures skills du marché",
+                  "Installation prête pour Claude",
+                  "2 mois d'ajustements gratuits",
+                ].map((item) => (
+                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Offer 2 — featured */}
+            <div className="border border-white/20 p-8 space-y-8 relative">
+              <div className="absolute top-0 right-0 px-3 py-1.5 bg-white">
+                <span className="text-[10px] font-medium uppercase tracking-widest text-[#0a0a0a]">
+                  Le plus choisi
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,1.9rem)] leading-tight tracking-tight">
+                  Kit&nbsp;+ 2 expertises
+                </h2>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-[2.4rem] font-light tracking-tight">4 290&nbsp;€</span>
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
+                </div>
+                <p className="text-xs text-[var(--text-muted)]">
+                  Deux domaines reliés : closing&nbsp;+ prospection, coaching&nbsp;+ marketing, juridique&nbsp;+ conformité…
+                </p>
+              </div>
+
+              <ul className="space-y-3">
+                {[
+                  "Tout le processus custom ×2",
+                  "Base de connaissance + segmentation sur les deux domaines",
+                  "Skills interconnectées entre les deux expertises",
+                  "Installation prête pour Claude",
+                  "3 mois d'ajustements gratuits",
+                ].map((item) => (
+                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-4xl">
+          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight mb-14">
+            Comment ça marche&nbsp;?
+          </h2>
+
+          <div className="max-w-xl flex flex-col gap-0">
+            {[
+              {
+                step: "01",
+                title: "Appel découverte gratuit",
+                detail: "15-20 min. On cadre ton projet, tes besoins, ton contexte.",
+              },
+              {
+                step: "02",
+                title: "On vide ton cerveau",
+                detail: "Tes process, tes données, tes cas réels. Tout ce qui fait ton expertise. Pas la version LinkedIn.",
+              },
+              {
+                step: "03",
+                title: "Je construis le kit",
+                detail: "4 à 6 semaines. Chaque skill est testé sur des cas réels avant livraison.",
+              },
+              {
+                step: "04",
+                title: "Tu repars avec un système",
+                detail: "Installé, configuré, qui tourne tout seul. Pas besoin de comprendre comment ça marche en dessous.",
+              },
+            ].map((item, i) => (
+              <div key={item.step} className="relative">
+                {i > 0 && (
+                  <div className="absolute left-[1.3rem] -top-3 w-px h-6 bg-[var(--border)]" />
+                )}
+                <div className="flex gap-6 py-5 px-5 border border-[var(--border)] bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.04)] transition-colors mt-3">
+                  <span className="text-xs font-mono text-[var(--text-muted)] flex-shrink-0 mt-0.5 w-5">
+                    {item.step}
+                  </span>
+                  <div className="space-y-1">
+                    <div className="text-sm font-medium">{item.title}</div>
+                    <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                      {item.detail}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA + Form */}
+      <section className="px-6 py-24 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-4xl">
+          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4vw,3.5rem)] leading-[1.08] tracking-tight max-w-[18ch]">
+            Réserve ton appel gratuit de 15-20 min.
+          </h2>
+          <p className="mt-5 text-[var(--text-muted)] text-sm max-w-[46ch] leading-relaxed">
+            On regarde ensemble si le projet fait sens. Pas de pitch, pas de vente forcée.
+          </p>
+          <div className="mt-10">
+            <AgenceForm />
           </div>
         </div>
       </section>
@@ -418,8 +227,8 @@ export default function Home() {
       <footer className="flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-20 border-t border-[var(--border)]">
         <span className="text-xs text-[var(--text-muted)]">© 2026 Abraham</span>
         <div className="flex gap-5 text-xs text-[var(--text-muted)]">
-          <a href="#" className="hover:text-[var(--text)] transition-colors">Mentions legales</a>
-          <a href="#" className="hover:text-[var(--text)] transition-colors">Confidentialite</a>
+          <a href="#" className="hover:text-[var(--text)] transition-colors">Mentions légales</a>
+          <a href="#" className="hover:text-[var(--text)] transition-colors">Confidentialité</a>
         </div>
       </footer>
     </main>
