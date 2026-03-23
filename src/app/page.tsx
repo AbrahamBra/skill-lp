@@ -1,7 +1,7 @@
 "use client";
 
 import { ChatDemo } from "@/components/chat-demo";
-import { SiteResult } from "@/components/site-result";
+import { PipelineDemo } from "@/components/pipeline-demo";
 import { CopyButton } from "@/components/copy-button";
 
 export default function Home() {
@@ -76,122 +76,8 @@ export default function Home() {
         <ChatDemo />
       </div>
 
-      {/* Site Result — iframe to /b2b */}
-      <div className="border-t border-[var(--border)]">
-        <SiteResult />
-      </div>
-
-      {/* Step 02 — Copy & humanizer */}
-      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-xs font-mono text-emerald-400">✓</span>
-            <span className="text-xs uppercase tracking-widest text-emerald-400">Etape 02 validee</span>
-          </div>
-          <h3 className="font-[family-name:var(--font-serif)] text-xl tracking-tight">
-            Copy & humanizer.
-          </h3>
-          <p className="mt-3 text-[var(--text-muted)] text-sm max-w-[52ch] leading-relaxed">
-            Humanizer repere les tournures IA et les reecrit. Avant : formules generiques. Apres : phrases qui ressemblent a quelqu'un qui a vraiment fait le job.
-          </p>
-
-          <div className="mt-8 space-y-3">
-            {[
-              {
-                label: "Hero",
-                before: "J'aide les startups à convertir plus avec des méthodes éprouvées, renforcées par l'IA.",
-                after: "Ce qui bloque les deals, on le règle avec les bons outils IA au bon endroit.",
-              },
-              {
-                label: "Service 02",
-                before: "Tu fais plus avec les mêmes ressources.",
-                after: "Tu traites plus de leads sans grossir l'équipe.",
-              },
-              {
-                label: "Vision",
-                before: "Pas pour remplacer la relation humaine — pour lui laisser plus de place.",
-                after: "L'IA s'occupe de la qualification. Toi, tu parles aux gens qui sont prêts à signer.",
-              },
-            ].map((ex) => (
-              <div key={ex.label} className="grid grid-cols-[56px_1fr] gap-3 text-xs">
-                <span className="text-[var(--text-muted)] font-mono pt-2.5">{ex.label}</span>
-                <div className="space-y-1.5">
-                  <div className="px-3 py-2.5 rounded border border-[var(--border)] text-[var(--text-muted)] opacity-50 line-through leading-relaxed">
-                    {ex.before}
-                  </div>
-                  <div className="px-3 py-2.5 rounded border border-emerald-400/20 bg-emerald-400/[0.03] text-white leading-relaxed">
-                    {ex.after}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Site after humanizer */}
-          <div className="mt-10 max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-              </div>
-              <div className="flex-1 mx-4">
-                <div className="bg-[rgba(255,255,255,0.05)] rounded-md px-3 py-1 text-xs text-[var(--text-muted)] font-mono text-center">
-                  abrahambrakha.fr/b2b — étape 02
-                </div>
-              </div>
-            </div>
-            <iframe
-              src="/b2b-step2"
-              title="Site B2B après humanizer"
-              className="w-full h-[500px] bg-white"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Step 03 — Design-signature */}
-      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-5xl">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">✓</span>
-            <span className="text-xs font-mono text-[var(--text-muted)]">03</span>
-            <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Identite visuelle</span>
-            <span className="ml-auto text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">
-              etape 03 validee
-            </span>
-          </div>
-          <h3 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,2rem)] leading-[1.15] tracking-tight mb-3">
-            Le site prend son identite.
-          </h3>
-          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch] mb-10">
-            Design-signature entre en jeu. Nav sticky avec ombre au scroll, hover lift sur les cards, focus rings sur tous les CTAs. Chaque interaction est calibree sur la direction validee.
-          </p>
-
-          <div className="max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
-              </div>
-              <span className="text-[10px] font-mono text-[var(--text-muted)] ml-2">
-                abrahambrakha.fr/b2b — etape 03
-              </span>
-            </div>
-            <iframe
-              src="/b2b"
-              title="Site B2B version finale — design-signature"
-              className="w-full border-0"
-              style={{ height: "600px" }}
-            />
-          </div>
-          <p className="mt-4 text-xs text-[var(--text-muted)]">
-            Nav sticky, hover states, interactions calibrees sur la direction validee. Genere avec design-eye + humanizer + design-signature.
-          </p>
-        </div>
-      </section>
+      {/* Pipeline Demo — 3 étapes tabulées */}
+      <PipelineDemo />
 
       {/* Architecture */}
       <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
