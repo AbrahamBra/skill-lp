@@ -8,77 +8,52 @@ type Message = {
   delay: number;
 };
 
-// La vraie conversation — nettoyee, comme si le skill marchait deja
+// La vraie conversation — session B2B closing/IA/LinkedIn, nettoyee
 const conversation: Message[] = [
   {
     role: "user",
-    text: "Je veux creer un site pour une offre de closing dedie aux solopreneurs. Closer rapidement des deals avec une methode intensive inspiree du Challenger Sale.",
+    text: "J'ai 3 activites : closing, IA, LinkedIn setting. Je cherche des missions B2B — startups, PMEs, solopreneurs. CTA = prendre un RDV. Reference : ColdIQ. Je veux quelque chose qui respire l'IA. Epure.",
     delay: 0,
   },
   {
     role: "assistant",
-    text: "Donne-moi tout ce que t'as en tete. C'est quoi exactement ? Pour qui ? T'as des sites que t'aimes ? Des trucs que tu detestes ? Balance en vrac.",
-    delay: 1000,
+    text: "T'as d'autres references ? Un site que t'aimes, un concurrent ?",
+    delay: 1200,
   },
   {
     role: "user",
-    text: "Solopreneurs, solofounders. Le visiteur doit avoir envie de bosser avec moi pour que je l'aide a closer ses deals, challenger sa discovery, challenger ses offres. En francais. Pour le reste, je sais pas encore.",
-    delay: 2000,
+    text: "ColdIQ c'est tout. Pas d'autre inspi.",
+    delay: 2200,
   },
   {
     role: "assistant",
-    text: "T'as rien d'autre ? Un concurrent que t'aimes, un site qui te fait dire 'je veux ca' ?",
-    delay: 3000,
+    text: "Sombre et intense, ou clair et aere ?",
+    delay: 3100,
   },
   {
     role: "user",
-    text: "Comme ca, non.",
-    delay: 3800,
+    text: "Clair et aere.",
+    delay: 3900,
   },
   {
     role: "assistant",
-    text: "OK. Pas d'indication visuelle. Plutot sombre et intense, ou clair et aere ?",
-    delay: 4600,
+    text: "J'ai cherche par ambiance et par cible B2B. Trois directions :\n\nA — editorial sombre, dense, ton tres direct. Trop agressif pour du conseil.\n\nB — blanc aere, typo confiante, zero decoration. Fait 'je sais ce que je fais'.\n\nC — blanc avec gradient radial acier tres subtil en fond de section. L'IA se sent, elle ne s'affiche pas.\n\nLequel te parle ?",
+    delay: 5000,
   },
   {
     role: "user",
-    text: "Je sais pas.",
-    delay: 5200,
+    text: "Le C. stax.ai, oui j'aime bien. Expertise calme.",
+    delay: 6500,
   },
   {
     role: "assistant",
-    text: "Pas de souci. Je vais chercher ce qui marche pour ta cible.\n\nLes solopreneurs achetent une personne, pas une marque. Ils veulent comprendre la proposition en 5 secondes. Ils repondent au minimal avec un element bold, au ton direct, a la confiance par l'humain visible.\n\nJe cherche des references qui collent a ca.",
-    delay: 6000,
-  },
-  {
-    role: "assistant",
-    text: "J'ai explore plusieurs galeries par style (minimal, personal brand, editorial). Voila deux directions :\n\nA — Fond clair, ton nom en gros, serif pour les titres, beaucoup d'air. Chaque mot pese. Ca fait 'je sais ce que je fais, pas besoin d'en rajouter.'\n\nB — Fond sombre, accent chaud, plus intense. Ca fait 'urgence, survie, action.'\n\nLequel te parle ?",
-    delay: 7500,
+    text: "Direction validee :\n\n• Fond blanc #fafafa, texte #141414\n• Accent bleu acier #5b85aa\n• Gradient radial rgba(91,133,170,0.06) sur les sections cles\n• Inter + mono pour les labels techniques\n• Fade-in 600ms, rien d'autre\n\nRefs : stax.ai (AI feel) + joffreyspitzer.com (whitespace)\n\nValidee ?",
+    delay: 7800,
   },
   {
     role: "user",
-    text: "Ca me parle.",
-    delay: 8500,
-  },
-  {
-    role: "assistant",
-    text: "Le A ou le B ?",
+    text: "Oui valide.",
     delay: 9000,
-  },
-  {
-    role: "user",
-    text: "Le A. Clair et sobre.",
-    delay: 9600,
-  },
-  {
-    role: "assistant",
-    text: "Direction :\n\n• Fond off-white, serif pour les titres, ton nom en nav\n• Noir dominant, zero couleur, zero decoration\n• Hero : phrase qui parle au probleme du solopreneur\n• Section methode courte (Challenger Sale sans jargon)\n• Section 'c'est pour toi si' — liste de situations\n• CTA : reserver un appel\n• Aucun effet visuel\n\nValidee ?",
-    delay: 10500,
-  },
-  {
-    role: "user",
-    text: "Go.",
-    delay: 11500,
   },
 ];
 
@@ -122,11 +97,15 @@ export function ChatDemo() {
 
   return (
     <section className="px-6 py-20 md:px-12 lg:px-20">
-      <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight text-center">
-        Les skills en action.
+      <div className="flex items-center gap-3 mb-10">
+        <span className="text-xs font-mono text-emerald-400">01</span>
+        <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Direction visuelle</span>
+      </div>
+      <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
+        Brain dump → direction validee.
       </h2>
-      <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[55ch] mx-auto">
-        Vraie conversation. 8 skills guident le process : brain dump, calibration sur des references reelles, validation par l'humain, puis generation.
+      <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[55ch] leading-relaxed">
+        Design-eye cherche des references qui collent a ta cible, propose trois directions, tu choisis. La direction est encodee — tous les skills qui suivent la respectent.
       </p>
 
       <div className="mt-10 mx-auto max-w-2xl border border-[var(--border)] rounded-xl overflow-hidden bg-[rgba(255,255,255,0.02)]">
