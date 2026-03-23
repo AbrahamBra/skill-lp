@@ -48,7 +48,7 @@ export default function AgenceB2B() {
             Tu perds des deals pendant que tes concurrents automatisent.
           </h1>
           <p className="mt-7 text-base leading-relaxed max-w-[52ch]" style={{ color: "#555" }}>
-            Je travaille avec des startups, PMEs et solopreneurs sur leur cycle de vente. Ce qui bloque les deals, on le règle — avec les bons outils IA au bon endroit.
+            Je travaille avec des startups, PMEs et solopreneurs sur leur cycle de vente. Ce qui bloque les deals, on le règle avec les bons outils IA au bon endroit.
           </p>
           <div className="mt-10 flex gap-4 flex-wrap items-center">
             <a
