@@ -97,11 +97,15 @@ export function ChatDemo() {
 
   return (
     <section className="px-6 py-20 md:px-12 lg:px-20">
-      <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight text-center">
-        Les skills en action.
+      <div className="flex items-center gap-3 mb-10">
+        <span className="text-xs font-mono text-emerald-400">01</span>
+        <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Direction visuelle</span>
+      </div>
+      <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
+        Brain dump → direction validee.
       </h2>
-      <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[55ch] mx-auto">
-        Vraie conversation. 8 skills guident le process : brain dump, calibration sur des references reelles, validation par l'humain, puis generation.
+      <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[55ch] leading-relaxed">
+        Design-eye cherche des references qui collent a ta cible, propose trois directions, tu choisis. La direction est encodee — tous les skills qui suivent la respectent.
       </p>
 
       <div className="mt-10 mx-auto max-w-2xl border border-[var(--border)] rounded-xl overflow-hidden bg-[rgba(255,255,255,0.02)]">

@@ -82,10 +82,26 @@ export default function Home() {
         <ChatDemo />
       </div>
 
-      {/* Site Result — iframe to /closing */}
+      {/* Site Result — iframe to /b2b */}
       <div className="border-t border-[var(--border)]">
         <SiteResult />
       </div>
+
+      {/* Step 02 teaser */}
+      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-xs font-mono text-[var(--text-muted)]">02</span>
+            <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Identite visuelle</span>
+            <span className="ml-auto text-[10px] font-mono text-[var(--text-muted)] border border-[var(--border)] px-2 py-0.5 rounded">
+              a venir
+            </span>
+          </div>
+          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
+            Direction validee. On passe aux composants : nav, cards, boutons, sections. Design-signature s'occupe de l'identite. Expertise-web des patterns testes en prod. Le site prend sa forme finale.
+          </p>
+        </div>
+      </section>
 
       {/* Architecture */}
       <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">

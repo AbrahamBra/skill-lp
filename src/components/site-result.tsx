@@ -3,10 +3,14 @@
 export function SiteResult() {
   return (
     <section className="px-6 py-20 md:px-12 lg:px-20">
-      <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight text-center">
+      <div className="flex items-center gap-3 mb-10">
+        <span className="text-xs font-mono text-emerald-400">✓</span>
+        <span className="text-xs uppercase tracking-widest text-emerald-400">Etape 01 validee</span>
+      </div>
+      <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
         Le site genere.
       </h2>
-      <p className="mt-4 text-center text-[var(--text-muted)] text-sm max-w-[55ch] mx-auto">
+      <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[55ch] leading-relaxed">
         Le copy vient du brain dump. La direction vient des references. Chaque choix a ete valide par l'humain.
       </p>
 
