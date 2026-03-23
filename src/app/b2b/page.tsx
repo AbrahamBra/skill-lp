@@ -10,6 +10,15 @@ export const metadata: Metadata = {
 export default function AgenceB2B() {
   return (
     <main style={{ background: "#fafafa", color: "#141414", fontFamily: "var(--font-sans)" }} className="min-h-screen antialiased">
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(6px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+          animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+      `}</style>
       {/* Nav */}
       <nav style={{ borderBottom: "1px solid #e8e8e8" }} className="flex items-center justify-between px-6 py-5 md:px-12 lg:px-20">
         <span className="text-sm font-semibold tracking-tight" style={{ color: "#141414" }}>
@@ -32,7 +41,7 @@ export default function AgenceB2B() {
           <p className="text-xs uppercase tracking-widest mb-8" style={{ color: "#5b85aa" }}>
             Closing · IA · LinkedIn
           </p>
-          <h1 className="text-[clamp(2.4rem,5.5vw,5rem)] leading-[1.06] tracking-tight font-bold max-w-[22ch]" style={{ color: "#141414" }}>
+          <h1 className="text-[clamp(2.4rem,5.5vw,5rem)] leading-[1.06] tracking-tight font-bold max-w-[22ch] fade-in" style={{ color: "#141414" }}>
             Tu perds des deals pendant que tes concurrents automatisent.
           </h1>
           <p className="mt-7 text-base leading-relaxed max-w-[52ch]" style={{ color: "#555" }}>
@@ -128,7 +137,7 @@ export default function AgenceB2B() {
           <p className="text-xs uppercase tracking-widest mb-8" style={{ color: "#999" }}>
             Ma méthode
           </p>
-          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] font-bold tracking-tight" style={{ color: "#141414" }}>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] font-bold tracking-tight fade-in" style={{ color: "#141414" }}>
             L'IA traite le volume.<br />L'expertise humaine gère le reste.
           </h2>
           <div className="mt-8 space-y-5 text-sm leading-relaxed" style={{ color: "#666" }}>
@@ -147,7 +156,7 @@ export default function AgenceB2B() {
       {/* CTA */}
       <section className="px-6 py-24 md:px-12 lg:px-20" style={{ borderTop: "1px solid #e8e8e8" }}>
         <div className="max-w-xl">
-          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] font-bold tracking-tight" style={{ color: "#141414" }}>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] font-bold tracking-tight fade-in" style={{ color: "#141414" }}>
             30 minutes pour voir si on peut travailler ensemble.
           </h2>
           <p className="mt-5 text-sm leading-relaxed" style={{ color: "#666" }}>
