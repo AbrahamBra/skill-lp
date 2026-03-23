@@ -20,12 +20,6 @@ export default function Home() {
             Agence
           </a>
           <a
-            href="#get"
-            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-          >
-            Obtenir les skills
-          </a>
-          <a
             href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
             target="_blank"
             rel="noopener noreferrer"
