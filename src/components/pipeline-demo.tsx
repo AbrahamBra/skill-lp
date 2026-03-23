@@ -24,21 +24,12 @@ const FEATURED: Step = {
 const SIDE_STEPS: Step[] = [
   {
     num: "01",
-    label: "validé",
+    label: "1ère maquette",
     title: "Structure & copy",
     desc: "Claude part de ton expertise — pas de ses recettes génériques.",
     src: "/screenshots/step-01.png",
-    alt: "Site B2B — étape 01 — structure et copy",
-    url: "abrahambrakha.fr/b2b — étape 01",
-  },
-  {
-    num: "02",
-    label: "validé",
-    title: "Copy humanisé",
-    desc: "Humanizer retire les tournures IA. Le texte sonne comme toi.",
-    src: "/screenshots/step-02.png",
-    alt: "Site B2B — étape 02 — copy humanisé",
-    url: "abrahambrakha.fr/b2b — étape 02",
+    alt: "Site B2B — 1ère maquette — structure et copy",
+    url: "abrahambrakha.fr/b2b — 1ère maquette",
   },
 ];
 
@@ -79,7 +70,7 @@ export function PipelineDemo() {
       {/* Section intro */}
       <div className="mb-10">
         <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.6rem,2.8vw,2.2rem)] leading-[1.1] tracking-tight mb-3">
-          De zéro à un site en 3 étapes.
+          De zéro à un site en 2 étapes.
         </h2>
         <p className="text-sm text-[var(--text-muted)] max-w-[52ch] leading-relaxed">
           Tu décris ton expertise, Claude encode. Chaque étape est validée par toi avant de passer à la suivante.
