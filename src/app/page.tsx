@@ -1,7 +1,6 @@
 "use client";
 
 import { ChatDemo } from "@/components/chat-demo";
-import { HumanizerDemo } from "@/components/humanizer-demo";
 import { SiteResult } from "@/components/site-result";
 import { CopyButton } from "@/components/copy-button";
 
@@ -101,8 +100,6 @@ export default function Home() {
           <p className="mt-3 text-[var(--text-muted)] text-sm max-w-[52ch] leading-relaxed">
             Humanizer repere les tournures IA et les reecrit. Avant : formules generiques. Apres : phrases qui ressemblent a quelqu'un qui a vraiment fait le job.
           </p>
-
-          <HumanizerDemo />
 
           <div className="mt-8 space-y-3">
             {[
