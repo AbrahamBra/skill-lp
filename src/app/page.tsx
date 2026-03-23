@@ -87,18 +87,66 @@ export default function Home() {
         <SiteResult />
       </div>
 
-      {/* Step 02 teaser */}
+      {/* Step 02 — Copy & humanizer */}
       <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-xs font-mono text-[var(--text-muted)]">02</span>
+            <span className="text-xs font-mono text-emerald-400">✓</span>
+            <span className="text-xs uppercase tracking-widest text-emerald-400">Etape 02 validee</span>
+          </div>
+          <h3 className="font-[family-name:var(--font-serif)] text-xl tracking-tight">
+            Copy & humanizer.
+          </h3>
+          <p className="mt-3 text-[var(--text-muted)] text-sm max-w-[52ch] leading-relaxed">
+            Humanizer repere les tournures IA et les reecrit. Avant : formules generiques. Apres : phrases qui ressemblent a quelqu'un qui a vraiment fait le job.
+          </p>
+
+          <div className="mt-8 space-y-3">
+            {[
+              {
+                label: "Hero",
+                before: "J'aide les startups à convertir plus avec des méthodes éprouvées, renforcées par l'IA.",
+                after: "Ce qui bloque les deals, on le règle — avec les bons outils IA au bon endroit.",
+              },
+              {
+                label: "Service 02",
+                before: "Tu fais plus avec les mêmes ressources.",
+                after: "Tu traites plus de leads sans grossir l'équipe.",
+              },
+              {
+                label: "Vision",
+                before: "Pas pour remplacer la relation humaine — pour lui laisser plus de place.",
+                after: "L'IA s'occupe de la qualification. Toi, tu parles aux gens qui sont prêts à signer.",
+              },
+            ].map((ex) => (
+              <div key={ex.label} className="grid grid-cols-[56px_1fr] gap-3 text-xs">
+                <span className="text-[var(--text-muted)] font-mono pt-2.5">{ex.label}</span>
+                <div className="space-y-1.5">
+                  <div className="px-3 py-2.5 rounded border border-[var(--border)] text-[var(--text-muted)] opacity-50 line-through leading-relaxed">
+                    {ex.before}
+                  </div>
+                  <div className="px-3 py-2.5 rounded border border-emerald-400/20 bg-emerald-400/[0.03] text-white leading-relaxed">
+                    {ex.after}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Step 03 teaser */}
+      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-xs font-mono text-[var(--text-muted)]">03</span>
             <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Identite visuelle</span>
             <span className="ml-auto text-[10px] font-mono text-[var(--text-muted)] border border-[var(--border)] px-2 py-0.5 rounded">
               a venir
             </span>
           </div>
           <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
-            Direction validee. On passe aux composants : nav, cards, boutons, sections. Design-signature s'occupe de l'identite. Expertise-web des patterns testes en prod. Le site prend sa forme finale.
+            Design-signature entre en jeu. Nav sticky, hover states, effets visuels calibres sur la direction validee. Le site prend son identite finale.
           </p>
         </div>
       </section>
