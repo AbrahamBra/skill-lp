@@ -14,16 +14,18 @@ export default function Home() {
         </span>
         <div className="flex items-center gap-6">
           <a
-            href="/methode"
+            href="/agence"
             className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
-            Méthode
+            Agence
           </a>
           <a
-            href="#get"
-            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+            href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs uppercase tracking-widest bg-white text-[#0a0a0a] px-4 py-2 hover:opacity-85 transition-opacity"
           >
-            Obtenir les skills
+            Réserver un appel
           </a>
         </div>
       </nav>
@@ -79,18 +81,114 @@ export default function Home() {
         <SiteResult />
       </div>
 
-      {/* Step 02 teaser */}
+      {/* Step 02 — Copy & humanizer */}
       <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-8">
-            <span className="text-xs font-mono text-[var(--text-muted)]">02</span>
+            <span className="text-xs font-mono text-emerald-400">✓</span>
+            <span className="text-xs uppercase tracking-widest text-emerald-400">Etape 02 validee</span>
+          </div>
+          <h3 className="font-[family-name:var(--font-serif)] text-xl tracking-tight">
+            Copy & humanizer.
+          </h3>
+          <p className="mt-3 text-[var(--text-muted)] text-sm max-w-[52ch] leading-relaxed">
+            Humanizer repere les tournures IA et les reecrit. Avant : formules generiques. Apres : phrases qui ressemblent a quelqu'un qui a vraiment fait le job.
+          </p>
+
+          <div className="mt-8 space-y-3">
+            {[
+              {
+                label: "Hero",
+                before: "J'aide les startups à convertir plus avec des méthodes éprouvées, renforcées par l'IA.",
+                after: "Ce qui bloque les deals, on le règle avec les bons outils IA au bon endroit.",
+              },
+              {
+                label: "Service 02",
+                before: "Tu fais plus avec les mêmes ressources.",
+                after: "Tu traites plus de leads sans grossir l'équipe.",
+              },
+              {
+                label: "Vision",
+                before: "Pas pour remplacer la relation humaine — pour lui laisser plus de place.",
+                after: "L'IA s'occupe de la qualification. Toi, tu parles aux gens qui sont prêts à signer.",
+              },
+            ].map((ex) => (
+              <div key={ex.label} className="grid grid-cols-[56px_1fr] gap-3 text-xs">
+                <span className="text-[var(--text-muted)] font-mono pt-2.5">{ex.label}</span>
+                <div className="space-y-1.5">
+                  <div className="px-3 py-2.5 rounded border border-[var(--border)] text-[var(--text-muted)] opacity-50 line-through leading-relaxed">
+                    {ex.before}
+                  </div>
+                  <div className="px-3 py-2.5 rounded border border-emerald-400/20 bg-emerald-400/[0.03] text-white leading-relaxed">
+                    {ex.after}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Site after humanizer */}
+          <div className="mt-10 max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+              </div>
+              <div className="flex-1 mx-4">
+                <div className="bg-[rgba(255,255,255,0.05)] rounded-md px-3 py-1 text-xs text-[var(--text-muted)] font-mono text-center">
+                  abrahambrakha.fr/b2b — étape 02
+                </div>
+              </div>
+            </div>
+            <iframe
+              src="/b2b-step2"
+              title="Site B2B après humanizer"
+              className="w-full h-[500px] bg-white"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Step 03 — Design-signature */}
+      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-5xl">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">✓</span>
+            <span className="text-xs font-mono text-[var(--text-muted)]">03</span>
             <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Identite visuelle</span>
-            <span className="ml-auto text-[10px] font-mono text-[var(--text-muted)] border border-[var(--border)] px-2 py-0.5 rounded">
-              a venir
+            <span className="ml-auto text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">
+              etape 03 validee
             </span>
           </div>
-          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
-            Direction validee. On passe aux composants : nav, cards, boutons, sections. Design-signature s'occupe de l'identite. Expertise-web des patterns testes en prod. Le site prend sa forme finale.
+          <h3 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,2rem)] leading-[1.15] tracking-tight mb-3">
+            Le site prend son identite.
+          </h3>
+          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch] mb-10">
+            Design-signature entre en jeu. Nav sticky avec ombre au scroll, hover lift sur les cards, focus rings sur tous les CTAs. Chaque interaction est calibree sur la direction validee.
+          </p>
+
+          <div className="max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+              </div>
+              <span className="text-[10px] font-mono text-[var(--text-muted)] ml-2">
+                abrahambrakha.fr/b2b — etape 03
+              </span>
+            </div>
+            <iframe
+              src="/b2b"
+              title="Site B2B version finale — design-signature"
+              className="w-full border-0"
+              style={{ height: "600px" }}
+            />
+          </div>
+          <p className="mt-4 text-xs text-[var(--text-muted)]">
+            Nav sticky, hover states, interactions calibrees sur la direction validee. Genere avec design-eye + humanizer + design-signature.
           </p>
         </div>
       </section>
@@ -201,14 +299,6 @@ export default function Home() {
           <code className="font-mono text-[var(--text)]">~/.claude/skills/</code>.
           Claude Code les charge automatiquement.
         </p>
-        <p className="mt-4 text-center">
-          <a
-            href="/methode"
-            className="text-[10px] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-          >
-            Architecture complète → /methode
-          </a>
-        </p>
       </section>
 
       {/* Lead Magnet */}
@@ -259,18 +349,90 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Encode ton expertise */}
+      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
+            Encode ton expertise.
+          </h2>
+          <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[52ch] mx-auto leading-relaxed">
+            Les sites web, c'est un exemple. Les skills encodent n'importe
+            quelle expertise. Tu veux creer les tiens ? On t'accompagne.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+            {[
+              { role: "Recruteur tech", encoded: "Ses grilles d'evaluation + process de sourcing" },
+              { role: "Avocat fiscaliste", encoded: "Ses modeles de contrats + analyse de risques" },
+              { role: "Coach produit", encoded: "Son framework de diagnostic + prioritisation" },
+            ].map((ex) => (
+              <div
+                key={ex.role}
+                className="border border-[var(--border)] rounded-lg p-4 space-y-2"
+              >
+                <span className="text-xs font-medium uppercase tracking-widest text-white/80">
+                  {ex.role}
+                </span>
+                <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                  {ex.encoded}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 pt-10 border-t border-[var(--border)]">
+            <p className="text-[var(--text-muted)] text-xs uppercase tracking-widest mb-8">
+              Tu aimerais encoder ton expertise ? Reserve un appel.
+            </p>
+            <a
+              href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-[#0a0a0a] px-8 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
+            >
+              Réserver un appel →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision */}
+      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-xl mx-auto">
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-6">
+            A venir
+          </p>
+          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.15] tracking-tight">
+            Les SaaS vont vivre la meme transition.
+          </h2>
+          <div className="mt-6 space-y-4 text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
+            <p>
+              Notion, Linear, Salesforce. Leur valeur, c'est pas l'interface.
+              C'est l'intelligence metier en dessous. Les agents n'ont pas besoin
+              du tableau Kanban. Ils veulent juste appeler ce qui gere les taches.
+            </p>
+            <p>
+              Ces boites vont devoir se deshabiller. Extraire toute leur logique
+              business, la rendre structuree, appelable directement. Detruire
+              leur propre UI pour survivre.
+            </p>
+            <p>
+              C'est le meme travail que tu fais en encodant ton expertise dans
+              des skills. Meme mecanique, moins grande echelle. Pour l'instant.
+            </p>
+          </div>
+          <p className="mt-8 text-xs text-[var(--text-muted)]">
+            On travaille a rendre les skills directement appelables par les agents.
+          </p>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-20 border-t border-[var(--border)]">
         <span className="text-xs text-[var(--text-muted)]">© 2026 Abraham</span>
         <div className="flex gap-5 text-xs text-[var(--text-muted)]">
-          <a
-            href="/agence"
-            className="hover:text-[var(--text)] transition-colors"
-          >
-            Kit custom sur-mesure
-          </a>
-          <a href="#" className="hover:text-[var(--text)] transition-colors">Mentions légales</a>
-          <a href="#" className="hover:text-[var(--text)] transition-colors">Confidentialité</a>
+          <a href="#" className="hover:text-[var(--text)] transition-colors">Mentions legales</a>
+          <a href="#" className="hover:text-[var(--text)] transition-colors">Confidentialite</a>
         </div>
       </footer>
     </main>

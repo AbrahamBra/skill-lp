@@ -1,14 +1,14 @@
+// Frozen snapshot — step 1: design-eye generated, pre-humanizer
 import type { Metadata } from "next";
-import { StickyNav } from "./sticky-nav";
 
 const CALENDLY = "https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab";
 
 export const metadata: Metadata = {
   title: "Abraham Brakha — Closing · IA · LinkedIn B2B",
-  description: "Je travaille avec des startups, PMEs et solopreneurs sur leur cycle de vente — closing, IA, LinkedIn.",
+  description: "J'aide les startups, PMEs et solopreneurs à convertir plus avec des méthodes de closing et l'IA.",
 };
 
-export default function AgenceB2B() {
+export default function AgenceB2BStep1() {
   return (
     <main style={{ background: "#fafafa", color: "#141414", fontFamily: "var(--font-sans)" }} className="min-h-screen antialiased">
       <style>{`
@@ -21,7 +21,20 @@ export default function AgenceB2B() {
         }
       `}</style>
       {/* Nav */}
-      <StickyNav />
+      <nav style={{ borderBottom: "1px solid #e8e8e8" }} className="flex items-center justify-between px-6 py-5 md:px-12 lg:px-20">
+        <span className="text-sm font-semibold tracking-tight" style={{ color: "#141414" }}>
+          Abraham Brakha
+        </span>
+        <a
+          href={CALENDLY}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs font-medium uppercase tracking-widest px-5 py-2.5 transition-opacity hover:opacity-75"
+          style={{ background: "#141414", color: "#fafafa" }}
+        >
+          Prendre un appel
+        </a>
+      </nav>
 
       {/* Hero */}
       <section className="px-6 pt-28 pb-24 md:px-12 lg:px-20 lg:pt-40 lg:pb-36">
@@ -33,7 +46,7 @@ export default function AgenceB2B() {
             Tu perds des deals pendant que tes concurrents automatisent.
           </h1>
           <p className="mt-7 text-base leading-relaxed max-w-[52ch]" style={{ color: "#555" }}>
-            Je travaille avec des startups, PMEs et solopreneurs sur leur cycle de vente. Ce qui bloque les deals, on le règle avec les bons outils IA au bon endroit.
+            J&apos;aide les startups, PMEs et solopreneurs à convertir plus — avec des méthodes de closing éprouvées, renforcées par l&apos;IA.
           </p>
           <div className="mt-10 flex gap-4 flex-wrap items-center">
             <a
@@ -41,8 +54,8 @@ export default function AgenceB2B() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Prendre un appel"
-              className="text-xs font-medium uppercase tracking-widest px-7 py-3.5 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5b85aa] focus-visible:ring-offset-2"
-              style={{ background: "#141414", color: "#fafafa", boxShadow: "0 2px 8px rgba(20,20,20,0.18)" }}
+              className="text-xs font-medium uppercase tracking-widest px-7 py-3.5 transition-opacity hover:opacity-75"
+              style={{ background: "#141414", color: "#fafafa" }}
             >
               Prendre un appel →
             </a>
@@ -68,19 +81,15 @@ export default function AgenceB2B() {
             {
               title: "Intégration IA",
               label: "02",
-              body: "On intègre l'IA dans ton process commercial. Qualification, relances, suivi. Tu traites plus de leads sans grossir l'équipe.",
+              body: "On intègre l'IA dans ton process commercial. Qualification, relances, suivi. Tu fais plus avec les mêmes ressources.",
             },
             {
               title: "LinkedIn Setting",
               label: "03",
-              body: "Configuration de ton profil et de tes séquences. Tes messages arrivent à des gens qui ont une raison d'y répondre.",
+              body: "Configuration de ton profil et de tes séquences. Les bons prospects voient le bon message au bon moment.",
             },
           ].map((s) => (
-            <div key={s.label} className="p-8 lg:p-10 relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_16px_rgba(20,20,20,0.06)]" style={{ background: "#fafafa" }}>
-              <div
-                className="absolute left-0 top-0 bottom-0 w-[2px] origin-top transition-transform duration-300 scale-y-0 group-hover:scale-y-100"
-                style={{ background: "#5b85aa" }}
-              />
+            <div key={s.label} className="p-8 lg:p-10" style={{ background: "#fafafa" }}>
               <span className="text-xs font-mono" style={{ color: "#5b85aa" }}>{s.label}</span>
               <h3 className="mt-4 text-xl font-semibold tracking-tight" style={{ color: "#141414" }}>
                 {s.title}
@@ -118,7 +127,6 @@ export default function AgenceB2B() {
         className="px-6 py-20 md:px-12 lg:px-20 relative overflow-hidden"
         style={{ borderTop: "1px solid #e8e8e8" }}
       >
-        {/* subtle radial gradient — AI feel, #5b85aa at 6% opacity */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -130,14 +138,16 @@ export default function AgenceB2B() {
             Ma méthode
           </p>
           <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] font-bold tracking-tight fade-in" style={{ color: "#141414" }}>
-            L'IA traite le volume.<br />L'expertise humaine gère le reste.
+            L&apos;IA traite le volume.<br />L&apos;expertise humaine gère le reste.
           </h2>
           <div className="mt-8 space-y-5 text-sm leading-relaxed" style={{ color: "#666" }}>
             <p>
-              Les process de vente n'ont pas bougé depuis des années. Les outils IA non plus — configurés par défaut, ils envoient les mêmes messages que tout le monde.
+              La plupart des équipes commerciales utilisent encore les mêmes process qu&apos;en 2019.
+              Pendant ce temps, leurs prospects sont noyés sous des messages génériques.
             </p>
             <p>
-              L'IA s'occupe de la qualification et des relances. Toi, tu parles aux gens qui sont prêts à signer.
+              Je combine des méthodes de closing qui marchent avec des outils IA bien intégrés.
+              Pas pour remplacer la relation humaine — pour lui laisser plus de place.
             </p>
           </div>
         </div>
@@ -156,11 +166,11 @@ export default function AgenceB2B() {
             href={CALENDLY}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-block text-xs font-medium uppercase tracking-widest px-8 py-4 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-            style={{ background: "#141414", color: "#fafafa", boxShadow: "0 2px 8px rgba(20,20,20,0.18)" }}
-            aria-label="Réserver l'appel"
+            className="mt-10 inline-block text-xs font-medium uppercase tracking-widest px-8 py-4 transition-opacity hover:opacity-75"
+            style={{ background: "#141414", color: "#fafafa" }}
+            aria-label="Réserver l&apos;appel"
           >
-            Réserver l'appel →
+            Réserver l&apos;appel →
           </a>
           <p className="mt-5 text-xs" style={{ color: "#bbb" }}>
             Réponse sous 24h.
