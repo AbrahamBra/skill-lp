@@ -307,54 +307,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Pédagogie architecture */}
-      <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-10">
-            Pourquoi cette architecture
-          </p>
-          <div className="space-y-10">
-            {[
-              {
-                concept: "Lecture a la demande",
-                why: "Claude ne lit pas tout le skill d'un bloc a chaque conversation. Si tu lui demandes de travailler sur la navigation, il lit uniquement la partie navigation. Si tu demandes du SEO, il passe a cette section-la. La conversation reste precise, sans melanger les sujets.",
-                source: { label: "anthropics/skills", url: "https://github.com/anthropics/skills" },
-              },
-              {
-                concept: "Filtre avant memorisation",
-                why: "Quand tu dis 'c'est bon', Claude ne le garde pas automatiquement dans ses regles. Il verifie d'abord : est-ce que ca a fonctionne sur un vrai projet ? Est-ce que ca marche sur mobile ? Si oui, ca devient une regle permanente. Si non, c'est mis de cote. Pas de mauvaise pratique gravee par erreur.",
-                source: { label: "shanraisshan/claude-code-best-practice", url: "https://github.com/shanraisshan/claude-code-best-practice" },
-              },
-              {
-                concept: "Outils groupes par usage",
-                why: "Certains travaux necessitent toujours les memes outils. Design et recherche de references vont ensemble. SEO et contenu aussi. Ces combinaisons sont predefinies. Claude prend ce dont il a besoin sans que tu aies a lui expliquer chaque fois.",
-                source: { label: "alirezarezvani/claude-skills", url: "https://github.com/alirezarezvani/claude-skills" },
-              },
-            ].map((item) => (
-              <div key={item.concept} className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-3 md:gap-10">
-                <div className="pt-0.5">
-                  <code className="text-xs font-mono text-emerald-400">{item.concept}</code>
-                </div>
-                <div>
-                  <p className="text-sm text-[var(--text-muted)] leading-relaxed">{item.why}</p>
-                  <a
-                    href={item.source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-block text-[10px] font-mono text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-                  >
-                    ↗ {item.source.label}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-12 text-[10px] text-[var(--text-muted)]">
-            La page methode detaillera l'architecture complete →
-          </p>
-        </div>
-      </section>
-
       {/* Lead Magnet */}
       <section
         id="get"
