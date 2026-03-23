@@ -8,17 +8,27 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Nav */}
-      <nav className="flex items-center justify-between px-6 py-5 md:px-12 lg:px-20 border-b border-[var(--border)]">
-        <span className="font-[family-name:var(--font-serif)] text-lg">
-          web·kit
-        </span>
+      <nav className="grid grid-cols-3 items-center px-6 py-5 md:px-12 lg:px-20 border-b border-[var(--border)]">
         <div className="flex items-center gap-6">
+          <a
+            href="/tarifs"
+            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+          >
+            Tarifs
+          </a>
           <a
             href="/agence"
             className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
             Agence
           </a>
+        </div>
+        <div className="flex justify-center">
+          <a href="/" className="font-[family-name:var(--font-serif)] text-lg">
+            web·kit
+          </a>
+        </div>
+        <div className="flex justify-end">
           <a
             href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
             target="_blank"
@@ -43,7 +53,7 @@ export default function Home() {
           Tu décris comment tu travailles. Les skills s'en souviennent. Claude
           part de ça, pas de ses recettes. Exemple ci-dessous.
         </p>
-        <div className="mt-10 flex justify-center gap-4 flex-wrap">
+        <div className="mt-10 flex justify-center items-center gap-6 flex-wrap">
           <a
             href="#demo"
             className="bg-white text-[#0a0a0a] px-7 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
@@ -52,10 +62,18 @@ export default function Home() {
           </a>
           <a
             href="#get"
-            className="border border-[var(--border)] text-[var(--text-muted)] px-7 py-3.5 text-xs font-medium uppercase tracking-widest hover:border-white/40 hover:text-white transition-all"
+            className="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] hover:text-white transition-colors"
           >
-            Installer les skills
+            Installer les skills →
           </a>
+        </div>
+
+        {/* Trust row */}
+        <div className="mt-14 flex flex-wrap justify-center items-center gap-10 text-[var(--text-muted)]">
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Claude Code</span>
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase flex items-center gap-1.5"><span className="text-[9px]">▲</span>Vercel</span>
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Next.js</span>
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Tailwind</span>
         </div>
       </section>
 
@@ -393,37 +411,6 @@ export default function Home() {
               Réserver un appel →
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* Vision */}
-      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-xl mx-auto">
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-6">
-            A venir
-          </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.15] tracking-tight">
-            Les SaaS vont vivre la meme transition.
-          </h2>
-          <div className="mt-6 space-y-4 text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
-            <p>
-              Notion, Linear, Salesforce. Leur valeur, c'est pas l'interface.
-              C'est l'intelligence metier en dessous. Les agents n'ont pas besoin
-              du tableau Kanban. Ils veulent juste appeler ce qui gere les taches.
-            </p>
-            <p>
-              Ces boites vont devoir se deshabiller. Extraire toute leur logique
-              business, la rendre structuree, appelable directement. Detruire
-              leur propre UI pour survivre.
-            </p>
-            <p>
-              C'est le meme travail que tu fais en encodant ton expertise dans
-              des skills. Meme mecanique, moins grande echelle. Pour l'instant.
-            </p>
-          </div>
-          <p className="mt-8 text-xs text-[var(--text-muted)]">
-            On travaille a rendre les skills directement appelables par les agents.
-          </p>
         </div>
       </section>
 
