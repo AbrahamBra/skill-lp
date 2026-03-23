@@ -4,7 +4,7 @@ const CALENDLY = "https://calendly.com/a-brakha-challengerslab/echange-decouvert
 
 export const metadata: Metadata = {
   title: "Abraham Brakha — Closing · IA · LinkedIn B2B",
-  description: "J'aide les startups, PMEs et solopreneurs à convertir plus avec des méthodes de closing et l'IA.",
+  description: "Je travaille avec des startups, PMEs et solopreneurs sur leur cycle de vente — closing, IA, LinkedIn.",
 };
 
 export default function AgenceB2B() {
@@ -45,7 +45,7 @@ export default function AgenceB2B() {
             Tu perds des deals pendant que tes concurrents automatisent.
           </h1>
           <p className="mt-7 text-base leading-relaxed max-w-[52ch]" style={{ color: "#555" }}>
-            J'aide les startups, PMEs et solopreneurs à convertir plus — avec des méthodes de closing éprouvées, renforcées par l'IA.
+            Je travaille avec des startups, PMEs et solopreneurs sur leur cycle de vente. Ce qui bloque les deals, on le règle — avec les bons outils IA au bon endroit.
           </p>
           <div className="mt-10 flex gap-4 flex-wrap items-center">
             <a
@@ -80,12 +80,12 @@ export default function AgenceB2B() {
             {
               title: "Intégration IA",
               label: "02",
-              body: "On intègre l'IA dans ton process commercial. Qualification, relances, suivi. Tu fais plus avec les mêmes ressources.",
+              body: "On intègre l'IA dans ton process commercial. Qualification, relances, suivi. Tu traites plus de leads sans grossir l'équipe.",
             },
             {
               title: "LinkedIn Setting",
               label: "03",
-              body: "Configuration de ton profil et de tes séquences. Les bons prospects voient le bon message au bon moment.",
+              body: "Configuration de ton profil et de tes séquences. Tes messages arrivent à des gens qui ont une raison d'y répondre.",
             },
           ].map((s) => (
             <div key={s.label} className="p-8 lg:p-10" style={{ background: "#fafafa" }}>
@@ -142,12 +142,10 @@ export default function AgenceB2B() {
           </h2>
           <div className="mt-8 space-y-5 text-sm leading-relaxed" style={{ color: "#666" }}>
             <p>
-              La plupart des équipes commerciales utilisent encore les mêmes process qu'en 2019.
-              Pendant ce temps, leurs prospects sont noyés sous des messages génériques.
+              Les process de vente n'ont pas bougé depuis des années. Les outils IA non plus — configurés par défaut, ils envoient les mêmes messages que tout le monde.
             </p>
             <p>
-              Je combine des méthodes de closing qui marchent avec des outils IA bien intégrés.
-              Pas pour remplacer la relation humaine — pour lui laisser plus de place.
+              L'IA s'occupe de la qualification et des relances. Toi, tu parles aux gens qui sont prêts à signer.
             </p>
           </div>
         </div>
