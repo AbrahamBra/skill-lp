@@ -111,6 +111,79 @@ export default function AgenceB2B() {
           ))}
         </div>
       </section>
+
+      {/* Vision */}
+      <section
+        className="px-6 py-20 md:px-12 lg:px-20 relative overflow-hidden"
+        style={{ borderTop: "1px solid #e8e8e8" }}
+      >
+        {/* subtle radial gradient — AI feel, #5b85aa at 6% opacity */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 60% 50% at 80% 50%, rgba(91,133,170,0.06) 0%, transparent 70%)",
+          }}
+        />
+        <div className="relative max-w-2xl">
+          <p className="text-xs uppercase tracking-widest mb-8" style={{ color: "#999" }}>
+            Ma méthode
+          </p>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] font-bold tracking-tight" style={{ color: "#141414" }}>
+            L'IA traite le volume.<br />L'expertise humaine gère le reste.
+          </h2>
+          <div className="mt-8 space-y-5 text-sm leading-relaxed" style={{ color: "#666" }}>
+            <p>
+              La plupart des équipes commerciales utilisent encore les mêmes process qu'en 2019.
+              Pendant ce temps, leurs prospects sont noyés sous des messages génériques.
+            </p>
+            <p>
+              Je combine des méthodes de closing qui marchent avec des outils IA bien intégrés.
+              Pas pour remplacer la relation humaine — pour lui laisser plus de place.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-24 md:px-12 lg:px-20" style={{ borderTop: "1px solid #e8e8e8" }}>
+        <div className="max-w-xl">
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] font-bold tracking-tight" style={{ color: "#141414" }}>
+            30 minutes pour voir si on peut travailler ensemble.
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed" style={{ color: "#666" }}>
+            Un appel de découverte, sans pitch. Je regarde ton process actuel et je te dis ce que je ferais en premier.
+          </p>
+          <a
+            href={CALENDLY}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-block text-xs font-medium uppercase tracking-widest px-8 py-4 transition-opacity hover:opacity-75"
+            style={{ background: "#141414", color: "#fafafa" }}
+            aria-label="Réserver l'appel"
+          >
+            Réserver l'appel →
+          </a>
+          <p className="mt-5 text-xs" style={{ color: "#bbb" }}>
+            Réponse sous 24h.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer
+        className="flex flex-col gap-3 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-20"
+        style={{ borderTop: "1px solid #e8e8e8", color: "#aaa" }}
+      >
+        <span className="text-xs">© 2026 Abraham Brakha</span>
+        <div className="flex gap-5 text-xs">
+          <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className="hover:text-[#141414] transition-colors">
+            Prendre un appel
+          </a>
+          <a href="https://www.linkedin.com/in/abrahambrakha/" target="_blank" rel="noopener noreferrer" className="hover:text-[#141414] transition-colors">
+            LinkedIn
+          </a>
+        </div>
+      </footer>
     </main>
   );
 }
