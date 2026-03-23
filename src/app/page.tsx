@@ -135,6 +135,28 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          {/* Site after humanizer */}
+          <div className="mt-10 max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+              </div>
+              <div className="flex-1 mx-4">
+                <div className="bg-[rgba(255,255,255,0.05)] rounded-md px-3 py-1 text-xs text-[var(--text-muted)] font-mono text-center">
+                  abrahambrakha.fr/b2b — étape 02
+                </div>
+              </div>
+            </div>
+            <iframe
+              src="/b2b-step2"
+              title="Site B2B après humanizer"
+              className="w-full h-[500px] bg-white"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 

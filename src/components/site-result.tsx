@@ -23,12 +23,12 @@ export function SiteResult() {
           </div>
           <div className="flex-1 mx-4">
             <div className="bg-[rgba(255,255,255,0.05)] rounded-md px-3 py-1 text-xs text-[var(--text-muted)] font-mono text-center">
-              abrahambrakha.fr/b2b
+              abrahambrakha.fr/b2b — étape 01
             </div>
           </div>
         </div>
         <iframe
-          src="/b2b"
+          src="/b2b-step1"
           title="Site B2B genere par design-eye"
           className="w-full h-[600px] md:h-[700px] bg-white"
           loading="lazy"
