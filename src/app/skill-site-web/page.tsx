@@ -1,6 +1,7 @@
 "use client";
 
 import { ChatDemo } from "@/components/chat-demo";
+import { PipelineDemo } from "@/components/pipeline-demo";
 import { CopyButton } from "@/components/copy-button";
 
 const INSTALL_CMD = "npx web-kit-mcp"; // à mettre à jour quand le MCP est publié
@@ -83,16 +84,16 @@ export default function SkillSiteWebPage() {
       {/* Hero */}
       <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28 text-center">
         <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-6">
-          Bibliothèque de skills
+          Skill site web — offert
         </p>
         <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[1.08] tracking-tight max-w-[20ch] mx-auto">
-          51 skills Claude.
+          Génère ton site pro
           <br />
-          <span className="text-[var(--text-muted)]">Un seul package.</span>
+          <span className="text-[var(--text-muted)]">avec Claude.</span>
         </h1>
         <p className="mt-6 text-[var(--text-muted)] text-base max-w-[50ch] mx-auto leading-relaxed">
-          Installe-les en une commande. Claude les charge automatiquement
-          selon ce que tu fais — sans configuration.
+          Tu décris ton activité en 3 questions. Claude génère le site complet —
+          structure, copy, identité visuelle. Et 50 autres skills avec.
         </p>
 
         {/* Install box */}
@@ -174,6 +175,7 @@ export default function SkillSiteWebPage() {
         <div id="demo">
           <ChatDemo />
         </div>
+        <PipelineDemo />
       </section>
 
       {/* Bibliothèque — catégories */}
