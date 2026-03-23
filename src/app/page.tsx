@@ -157,18 +157,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Step 03 teaser */}
+      {/* Step 03 — Design-signature */}
       <section className="px-6 py-16 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-2xl">
+        <div className="max-w-5xl">
           <div className="flex items-center gap-3 mb-8">
+            <span className="text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">✓</span>
             <span className="text-xs font-mono text-[var(--text-muted)]">03</span>
             <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">Identite visuelle</span>
-            <span className="ml-auto text-[10px] font-mono text-[var(--text-muted)] border border-[var(--border)] px-2 py-0.5 rounded">
-              a venir
+            <span className="ml-auto text-[10px] font-mono text-emerald-400 border border-emerald-400/30 px-2 py-0.5 rounded">
+              etape 03 validee
             </span>
           </div>
-          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch]">
-            Design-signature entre en jeu. Nav sticky, hover states, effets visuels calibres sur la direction validee. Le site prend son identite finale.
+          <h3 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,2rem)] leading-[1.15] tracking-tight mb-3">
+            Le site prend son identite.
+          </h3>
+          <p className="text-sm text-[var(--text-muted)] leading-relaxed max-w-[52ch] mb-10">
+            Design-signature entre en jeu. Nav sticky avec ombre au scroll, hover lift sur les cards, focus rings sur tous les CTAs. Chaque interaction est calibree sur la direction validee.
+          </p>
+
+          <div className="max-w-5xl border border-[var(--border)] rounded-xl overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[var(--border)] bg-[rgba(255,255,255,0.03)]">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
+              </div>
+              <span className="text-[10px] font-mono text-[var(--text-muted)] ml-2">
+                abrahambrakha.fr/b2b — etape 03
+              </span>
+            </div>
+            <iframe
+              src="/b2b"
+              title="Site B2B version finale — design-signature"
+              className="w-full border-0"
+              style={{ height: "600px" }}
+            />
+          </div>
+          <p className="mt-4 text-xs text-[var(--text-muted)]">
+            Nav sticky, hover states, interactions calibrees sur la direction validee. Genere avec design-eye + humanizer + design-signature.
           </p>
         </div>
       </section>
