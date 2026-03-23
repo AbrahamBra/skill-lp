@@ -26,18 +26,8 @@ const conversation: Message[] = [
   },
   {
     role: "assistant",
-    text: "Humanizer appliqué. 6 phrases réécrites.\n\nHero : « méthodes éprouvées, renforcées par l'IA » → « Ce qui bloque les deals, on le règle — avec les bons outils IA »\n\nService : « Tu fais plus avec les mêmes ressources » → « Tu traites plus de leads sans grossir l'équipe »\n\nVision : « Pas pour remplacer la relation humaine » → « L'IA s'occupe de la qualification. Toi, tu parles aux gens qui sont prêts à signer. »",
+    text: "Humanizer appliqué. 6 phrases réécrites.\n\nHero : « méthodes éprouvées, renforcées par l'IA » → « Ce qui bloque les deals, on le règle avec les bons outils IA »\n\nService : « Tu fais plus avec les mêmes ressources » → « Tu traites plus de leads sans grossir l'équipe »\n\nVision : « Pas pour remplacer la relation humaine » → « L'IA s'occupe de la qualification. Toi, tu parles aux gens qui sont prêts à signer. »",
     delay: 3400,
-  },
-  {
-    role: "user",
-    text: "Le hero a encore un « — ». C'est un tic IA non ?",
-    delay: 5200,
-  },
-  {
-    role: "assistant",
-    text: "Exact. « Ce qui bloque les deals, on le règle — avec les bons outils IA » → « Ce qui bloque les deals, on le règle avec les bons outils IA »\n\nCorrigé.",
-    delay: 6400,
   },
 ];
 
@@ -89,7 +79,7 @@ export function HumanizerDemo() {
       </div>
       <div
         ref={containerRef}
-        className="flex flex-col gap-3 p-5 h-[380px] overflow-y-auto scroll-smooth"
+        className="flex flex-col gap-3 p-5 h-[300px] overflow-y-auto scroll-smooth"
       >
         {conversation.map((msg, i) => (
           <ChatBubble key={i} msg={msg} visible={i < visibleCount} />
