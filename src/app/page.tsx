@@ -31,17 +31,39 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28">
-        <div className="max-w-4xl">
-          <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mb-6">
-            Accompagnement
-          </p>
-          <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[1.06] tracking-tight max-w-[22ch]">
-            On crée ton kit complet sur-mesure.
-          </h1>
-          <p className="mt-8 text-[var(--text-muted)] text-base max-w-[52ch] leading-relaxed">
-            Je construis une série de skills 100&nbsp;% custom à partir de ton expertise réelle.
-          </p>
+      <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28 text-center">
+        <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[1.08] tracking-tight max-w-[20ch] mx-auto">
+          Tu as des méthodes qui marchent.
+          <br />
+          <span className="text-[var(--text-muted)]">
+            Les skills encodent ton expertise.
+          </span>
+        </h1>
+        <p className="mt-6 text-[var(--text-muted)] text-base max-w-[52ch] mx-auto leading-relaxed">
+          Tu décris comment tu travailles. Les skills s&apos;en souviennent. Claude
+          part de ça, pas de ses recettes. Exemple ci-dessous.
+        </p>
+        <div className="mt-10 flex justify-center items-center gap-6 flex-wrap">
+          <a
+            href="#demo"
+            className="bg-white text-[#0a0a0a] px-7 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
+          >
+            Voir la demo
+          </a>
+          <a
+            href="#get"
+            className="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] hover:text-white transition-colors"
+          >
+            Installer les skills →
+          </a>
+        </div>
+
+        {/* Trust row */}
+        <div className="mt-14 flex flex-wrap justify-center items-center gap-10 text-[var(--text-muted)]">
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Claude Code</span>
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase flex items-center gap-1.5"><span className="text-[9px]">▲</span>Vercel</span>
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Next.js</span>
+          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Tailwind</span>
         </div>
       </section>
 
