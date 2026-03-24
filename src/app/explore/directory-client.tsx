@@ -99,8 +99,8 @@ export function DirectoryClient({ projects }: Props) {
           type="text"
           value={query}
           onChange={(e) => handleSearch(e.target.value)}
-          placeholder="Rechercher un projet, un métier..."
-          aria-label="Rechercher un projet ou un métier"
+          placeholder="Ex : closing B2B, marketing, comptabilité..."
+          aria-label="Rechercher par métier ou par outil"
           className="w-full max-w-lg bg-transparent border border-[var(--border)] px-5 py-3.5 text-sm text-[var(--text)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-white/30 transition-colors"
         />
       </div>
@@ -192,18 +192,17 @@ export function DirectoryClient({ projects }: Props) {
       ) : (
         <div className="mt-12 max-w-lg">
           <p className="text-sm leading-relaxed">
-            On a analysé les 100 meilleurs projets Claude sur GitHub.
+            On a passé en revue 100 projets Claude sur GitHub.
             {query && (
               <>
-                {" "}Aucun ne couvre encore{" "}
+                {" "}Rien sur{" "}
                 <strong className="text-[var(--text)]">{query}</strong>.
               </>
             )}
           </p>
           <p className="mt-3 text-sm text-[var(--text-muted)] leading-relaxed">
-            C&apos;est souvent le cas — la plupart des skills sont concentrés sur le dev
-            et le marketing. On peut creuser ensemble ce qui existe pour ton métier
-            et construire les skills qui manquent.
+            Normal. La majorité des projets tournent autour du dev et du marketing.
+            On peut regarder ensemble ce qui manque pour ton métier et le construire.
           </p>
           <a
             href={CALENDLY_URL}

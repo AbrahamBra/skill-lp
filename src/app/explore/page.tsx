@@ -8,7 +8,7 @@ import type { DirectoryProject } from "@/types/skills-directory";
 export const metadata: Metadata = {
   title: "Top 100 projets Claude — Annuaire par métier | Web Kit",
   description:
-    "Explore les 100 meilleurs projets Claude sur GitHub, classés par métier : marketing, ventes, finance, RH, dev et plus. Trouve les outils qui existent — ou découvre ce qu'il reste à construire.",
+    "100 projets Claude sur GitHub, classés par métier : marketing, ventes, finance, RH, dev et plus. Tape ton domaine, regarde ce qui existe.",
   openGraph: {
     title: "Top 100 projets Claude — Annuaire par métier",
     description: "Les meilleurs projets Claude sur GitHub, classés par métier.",
@@ -84,8 +84,8 @@ export default function ExplorePage() {
           Top 100 projets Claude
         </h1>
         <p className="mt-4 text-[var(--text-muted)] text-base max-w-[55ch] leading-relaxed">
-          Les meilleurs projets open source pour Claude, classés par métier.
-          Trouve ce qui existe — ou découvre ce qu&apos;il reste à construire.
+          100 projets open source pour Claude, classés par métier.
+          Tape ton domaine, regarde ce qui existe.
         </p>
 
         <Suspense fallback={null}>
