@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const CALENDLY_URL =
-  "https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab";
+import { CALENDLY_URL } from "@/lib/constants";
 
 export function AgenceForm() {
   const [email, setEmail] = useState("");

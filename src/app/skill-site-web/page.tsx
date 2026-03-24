@@ -4,6 +4,7 @@ import { ChatDemo } from "@/components/chat-demo";
 import { PipelineDemo } from "@/components/pipeline-demo";
 import { CopyButton } from "@/components/copy-button";
 import { SkillLibrary } from "@/components/skill-library";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const INSTALL_CMD = "npx web-kit-mcp"; // à mettre à jour quand le MCP est publié
 
@@ -20,6 +21,12 @@ export default function SkillSiteWebPage() {
           >
             Skill site web
           </a>
+          <a
+            href="/explore"
+            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+          >
+            Explorer
+          </a>
         </div>
         <div className="flex justify-center">
           <a href="/" className="font-[family-name:var(--font-serif)] text-lg">
@@ -28,7 +35,7 @@ export default function SkillSiteWebPage() {
         </div>
         <div className="flex justify-end">
           <a
-            href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs uppercase tracking-widest bg-white text-[#0a0a0a] px-4 py-2 hover:opacity-85 transition-opacity"

@@ -1,7 +1,6 @@
 import { AgenceForm } from "@/components/agence-form";
 import { SkillDiscovery } from "@/components/skill-discovery";
-
-const CALENDLY = "https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab";
+import { CALENDLY_URL } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -15,6 +14,12 @@ export default function Home() {
           >
             Skills gratuits
           </a>
+          <a
+            href="/explore"
+            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+          >
+            Explorer
+          </a>
         </div>
         <div className="flex justify-center">
           <a href="/" className="font-[family-name:var(--font-serif)] text-lg">
@@ -23,7 +28,7 @@ export default function Home() {
         </div>
         <div className="flex justify-end">
           <a
-            href={CALENDLY}
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs uppercase tracking-widest bg-white text-[#0a0a0a] px-4 py-2 hover:opacity-85 transition-opacity"
@@ -49,7 +54,7 @@ export default function Home() {
           </p>
           <div className="mt-10 flex items-center gap-6 flex-wrap">
             <a
-              href={CALENDLY}
+              href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-[#0a0a0a] px-7 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
