@@ -1,4 +1,7 @@
 import { AgenceForm } from "@/components/agence-form";
+import { SkillDiscovery } from "@/components/skill-discovery";
+
+const CALENDLY = "https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab";
 
 export default function Home() {
   return (
@@ -10,7 +13,7 @@ export default function Home() {
             href="/skill-site-web"
             className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
-            Skill site web
+            Skills gratuits
           </a>
         </div>
         <div className="flex justify-center">
@@ -20,7 +23,7 @@ export default function Home() {
         </div>
         <div className="flex justify-end">
           <a
-            href="https://calendly.com/a-brakha-challengerslab/echange-decouverte-challengerslab"
+            href={CALENDLY}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs uppercase tracking-widest bg-white text-[#0a0a0a] px-4 py-2 hover:opacity-85 transition-opacity"
@@ -31,39 +34,35 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28 text-center">
-        <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[1.08] tracking-tight max-w-[20ch] mx-auto">
-          Tu as des méthodes qui marchent.
-          <br />
-          <span className="text-[var(--text-muted)]">
-            Les skills encodent ton expertise.
-          </span>
-        </h1>
-        <p className="mt-6 text-[var(--text-muted)] text-base max-w-[52ch] mx-auto leading-relaxed">
-          Tu décris comment tu travailles. Les skills s&apos;en souviennent. Claude
-          part de ça, pas de ses recettes. Exemple ci-dessous.
-        </p>
-        <div className="mt-10 flex justify-center items-center gap-6 flex-wrap">
-          <a
-            href="#demo"
-            className="bg-white text-[#0a0a0a] px-7 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
-          >
-            Voir la demo
-          </a>
-          <a
-            href="#get"
-            className="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] hover:text-white transition-colors"
-          >
-            Installer les skills →
-          </a>
-        </div>
-
-        {/* Trust row */}
-        <div className="mt-14 flex flex-wrap justify-center items-center gap-10 text-[var(--text-muted)]">
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Claude Code</span>
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase flex items-center gap-1.5"><span className="text-[9px]">▲</span>Vercel</span>
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Next.js</span>
-          <span className="text-[11px] font-medium tracking-[0.12em] uppercase">Tailwind</span>
+      <section className="px-6 pt-24 pb-20 md:px-12 lg:px-20 lg:pt-36 lg:pb-28">
+        <div className="max-w-4xl">
+          <p className="text-xs uppercase tracking-widest text-[var(--text-muted)] mb-6">
+            Skills Claude sur-mesure
+          </p>
+          <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[1.06] tracking-tight max-w-[22ch]">
+            Claude connaît tout.
+            <br />
+            <span className="text-[var(--text-muted)]">Sauf ton métier.</span>
+          </h1>
+          <p className="mt-8 text-[var(--text-muted)] text-base max-w-[52ch] leading-relaxed">
+            Je construis des skills à partir de tes process réels. Ton vocabulaire, tes cas types, ta façon de closer. Claude arrête de deviner et commence à bosser comme toi.
+          </p>
+          <div className="mt-10 flex items-center gap-6 flex-wrap">
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-[#0a0a0a] px-7 py-3.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity"
+            >
+              Réserver un appel
+            </a>
+            <a
+              href="#process"
+              className="text-xs font-medium uppercase tracking-widest text-[var(--text-muted)] hover:text-white transition-colors"
+            >
+              Comment ça marche →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -74,18 +73,18 @@ export default function Home() {
             {[
               {
                 n: "01",
-                title: "Base de connaissance",
-                text: "Tes données métiers encodées. Tes process, ton vocabulaire, tes cas types. Pas une template générique.",
+                title: "Ton expertise encodée",
+                text: "Tes scripts de closing, tes grilles d'analyse, tes templates. Quand Claude rédige un email de relance, il utilise tes formulations. Pas les siennes.",
               },
               {
                 n: "02",
-                title: "Segmentation",
-                text: "Par typologies de clients, cas d'usage, scénarios. Le système sait à qui il parle et comment répondre.",
+                title: "Le contexte qui manque",
+                text: "Un prospect grand compte ne reçoit pas le même message qu'un solopreneur. Claude sait à qui il parle et adapte le ton, le niveau de détail, les arguments.",
               },
               {
                 n: "03",
-                title: "Meilleures skills du marché",
-                text: "Combiné aux skills les plus puissantes et à jour. Ton expertise + les meilleurs outils disponibles.",
+                title: "Les bons outils par-dessus",
+                text: "Tes méthodes ne vivent pas en isolation. On y branche les skills open-source qui marchent le mieux aujourd'hui. Design, SEO, copywriting, debug.",
               },
             ].map((item) => (
               <div key={item.n} className="bg-[var(--bg)] px-6 py-8 space-y-4">
@@ -100,87 +99,16 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-8 text-[var(--text-muted)] text-sm max-w-[58ch] leading-relaxed">
-            Résultat&nbsp;: un vrai système intelligent qui te ressemble à 100&nbsp;%, pas un simple remix.
+            Au final, Claude bosse comme quelqu'un qui a lu tout ce que tu sais faire.
           </p>
         </div>
       </section>
 
-      {/* Offers */}
-      <section id="tarifs" className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-4xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+      {/* Skill Discovery */}
+      <SkillDiscovery />
 
-            {/* Offer 1 */}
-            <div className="border border-[var(--border)] p-8 space-y-8">
-              <div className="space-y-3">
-                <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,1.9rem)] leading-tight tracking-tight">
-                  Kit Complet Custom
-                </h2>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-[2.4rem] font-light tracking-tight">2 490&nbsp;€</span>
-                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
-                </div>
-                <p className="text-xs text-[var(--text-muted)]">
-                  Idéal pour un seul métier : closing, coaching, recrutement, fiscalité…
-                </p>
-              </div>
-
-              <ul className="space-y-3">
-                {[
-                  "15 à 25 skills interconnectées",
-                  "Base de connaissance sur tes données + segmentation",
-                  "Intégration des meilleures skills du marché",
-                  "Installation prête pour Claude",
-                  "2 mois d'ajustements gratuits",
-                ].map((item) => (
-                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Offer 2 — featured */}
-            <div className="border border-white/20 p-8 space-y-8 relative">
-              <div className="absolute top-0 right-0 px-3 py-1.5 bg-white">
-                <span className="text-[10px] font-medium uppercase tracking-widest text-[#0a0a0a]">
-                  Le plus choisi
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,1.9rem)] leading-tight tracking-tight">
-                  Kit&nbsp;+ 2 expertises
-                </h2>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-[2.4rem] font-light tracking-tight">4 290&nbsp;€</span>
-                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
-                </div>
-                <p className="text-xs text-[var(--text-muted)]">
-                  Deux domaines reliés : closing&nbsp;+ prospection, coaching&nbsp;+ marketing, juridique&nbsp;+ conformité…
-                </p>
-              </div>
-
-              <ul className="space-y-3">
-                {[
-                  "Tout le processus custom ×2",
-                  "Base de connaissance + segmentation sur les deux domaines",
-                  "Skills interconnectées entre les deux expertises",
-                  "Installation prête pour Claude",
-                  "3 mois d'ajustements gratuits",
-                ].map((item) => (
-                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
+      {/* How it works — before tarifs */}
+      <section id="process" className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
         <div className="max-w-4xl">
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight mb-14">
             Comment ça marche&nbsp;?
@@ -196,7 +124,7 @@ export default function Home() {
               {
                 step: "02",
                 title: "On vide ton cerveau",
-                detail: "Tes process, tes données, tes cas réels. Tout ce qui fait ton expertise. Pas la version LinkedIn.",
+                detail: "Tu me montres comment tu bosses vraiment. Pas la version LinkedIn. Les vrais emails, les vrais appels, ce qui fait que toi tu signes et que les autres galèrent.",
               },
               {
                 step: "03",
@@ -206,7 +134,7 @@ export default function Home() {
               {
                 step: "04",
                 title: "Tu repars avec un système",
-                detail: "Installé, configuré, qui tourne tout seul. Pas besoin de comprendre comment ça marche en dessous.",
+                detail: "Skills installés, configurés. Tu ouvres Claude et tu bosses. Pas besoin de comprendre ce qui tourne en dessous.",
               },
             ].map((item, i) => (
               <div key={item.step} className="relative">
@@ -230,14 +158,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Tarifs — after process */}
+      <section id="tarifs" className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
+        <div className="max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+            {/* Offer 1 */}
+            <div className="border border-[var(--border)] p-8 space-y-8">
+              <div className="space-y-3">
+                <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,1.9rem)] leading-tight tracking-tight">
+                  Une expertise
+                </h2>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-[2.4rem] font-light tracking-tight">2 490&nbsp;€</span>
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
+                </div>
+                <p className="text-xs text-[var(--text-muted)]">
+                  Idéal pour un seul métier : closing, coaching, recrutement, fiscalité…
+                </p>
+              </div>
+
+              <ul className="space-y-3">
+                {[
+                  "15 à 25 skills interconnectées",
+                  "Construits sur tes données, ton vocabulaire, tes cas",
+                  "Skills open-source du marché intégrées",
+                  "Installé et prêt à tourner dans Claude Code",
+                  "2 mois d'ajustements après livraison",
+                ].map((item) => (
+                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Offer 2 — featured */}
+            <div className="border border-white/20 p-8 space-y-8 relative">
+              <div className="absolute top-0 right-0 px-3 py-1.5 bg-white">
+                <span className="text-[10px] font-medium uppercase tracking-widest text-[#0a0a0a]">
+                  Le plus choisi
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.4rem,2.5vw,1.9rem)] leading-tight tracking-tight">
+                  Deux expertises
+                </h2>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-[2.4rem] font-light tracking-tight">4 290&nbsp;€</span>
+                  <span className="text-xs text-[var(--text-muted)] uppercase tracking-widest">tout compris</span>
+                </div>
+                <p className="text-xs text-[var(--text-muted)]">
+                  Deux domaines reliés : closing&nbsp;+ prospection, coaching&nbsp;+ marketing, juridique&nbsp;+ conformité…
+                </p>
+              </div>
+
+              <ul className="space-y-3">
+                {[
+                  "Tout le processus ×2",
+                  "Tes deux domaines encodés, reliés entre eux",
+                  "Les skills se parlent d'une expertise à l'autre",
+                  "Installé et prêt à tourner dans Claude Code",
+                  "3 mois d'ajustements après livraison",
+                ].map((item) => (
+                  <li key={item} className="text-sm text-[var(--text-muted)] pl-3 border-l border-[var(--border)]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA + Form */}
       <section className="px-6 py-24 md:px-12 lg:px-20 border-t border-[var(--border)]">
         <div className="max-w-4xl">
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(2rem,4vw,3.5rem)] leading-[1.08] tracking-tight max-w-[18ch]">
-            Réserve ton appel gratuit de 15-20 min.
+            Montre-moi comment tu travailles.
           </h2>
           <p className="mt-5 text-[var(--text-muted)] text-sm max-w-[46ch] leading-relaxed">
-            On regarde ensemble si le projet fait sens. Pas de pitch, pas de vente forcée.
+            15-20 min. Pas de pitch. Je regarde ton process et je te dis ce qu'on pourrait encoder.
           </p>
           <div className="mt-10">
             <AgenceForm />

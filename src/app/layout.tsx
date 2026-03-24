@@ -6,13 +6,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 
 export const metadata: Metadata = {
-  title: "Web Kit — Ton site pro en 3 questions",
+  title: "web·kit — Skills Claude construits sur ton expertise",
   description:
-    "Installe les skills Claude Code et génère un site professionnel en répondant à 3 questions. Sans coder.",
+    "Je construis un kit de 15 à 25 skills Claude à partir de tes process réels. Claude travaille comme toi, pas comme tout le monde.",
   openGraph: {
-    title: "Web Kit — Ton site pro en 3 questions",
+    title: "web·kit — Skills Claude construits sur ton expertise",
     description:
-      "Installe les skills Claude Code et génère un site professionnel en répondant à 3 questions. Sans coder.",
+      "Je construis un kit de 15 à 25 skills Claude à partir de tes process réels. Claude travaille comme toi, pas comme tout le monde.",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
