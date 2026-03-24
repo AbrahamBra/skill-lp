@@ -50,7 +50,7 @@ export default function SkillSiteWebPage() {
         </h1>
         <p className="mt-6 text-[var(--text-muted)] text-base max-w-[50ch] mx-auto leading-relaxed">
           Tu décris ton activité en 3 questions. Claude génère le site complet —
-          structure, copy, identité visuelle. Et 50 autres skills avec.
+          structure, copy, identité visuelle. Et 67 autres skills avec.
         </p>
 
         {/* Install box */}
@@ -142,7 +142,7 @@ export default function SkillSiteWebPage() {
       <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight">
-            Installe les 51 skills.
+            Installe les 67 skills.
           </h2>
           <p className="mt-4 text-[var(--text-muted)] text-sm max-w-[44ch] mx-auto leading-relaxed">
             Un package npm. Claude les charge selon le contexte — tu ne penses pas à les activer.
