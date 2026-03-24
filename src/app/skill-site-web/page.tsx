@@ -3,53 +3,10 @@
 import { ChatDemo } from "@/components/chat-demo";
 import { PipelineDemo } from "@/components/pipeline-demo";
 import { CopyButton } from "@/components/copy-button";
+import { SkillLibrary } from "@/components/skill-library";
 
 const INSTALL_CMD = "npx web-kit-mcp"; // à mettre à jour quand le MCP est publié
 
-const categories = [
-  {
-    name: "Design & Frontend",
-    count: 14,
-    color: "text-violet-400",
-    skills: ["design-eye", "design-signature", "frontend-design"],
-    description: "Direction visuelle, identité, composants, animations, typographie.",
-  },
-  {
-    name: "Copy & Contenu",
-    count: 6,
-    color: "text-sky-400",
-    skills: ["humanizer", "copywriting", "content-strategy"],
-    description: "Texte qui sonne humain, copy marketing, stratégie de contenu.",
-  },
-  {
-    name: "SEO & GEO",
-    count: 15,
-    color: "text-emerald-400",
-    skills: ["geo", "geo-audit", "geo-citability"],
-    description: "Visibilité Google + IA (ChatGPT, Perplexity, Gemini). Audit, schema, crawlers.",
-  },
-  {
-    name: "Méthode & Process",
-    count: 10,
-    color: "text-amber-400",
-    skills: ["superpowers:brainstorming", "superpowers:systematic-debugging", "superpowers:writing-plans"],
-    description: "Brainstorming structuré, plans d'implémentation, debug, reviews.",
-  },
-  {
-    name: "Dev",
-    count: 4,
-    color: "text-rose-400",
-    skills: ["svelte-code-writer", "supabase-postgres", "claude-api"],
-    description: "Svelte 5, Postgres best practices, Anthropic SDK.",
-  },
-  {
-    name: "Productivité",
-    count: 6,
-    color: "text-orange-400",
-    skills: ["xlsx", "pptx", "pdf"],
-    description: "Excel, PowerPoint, PDF, Word, canvas design — directement depuis Claude.",
-  },
-];
 
 export default function SkillSiteWebPage() {
   return (
@@ -178,49 +135,8 @@ export default function SkillSiteWebPage() {
         <PipelineDemo />
       </section>
 
-      {/* Bibliothèque — catégories */}
-      <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mb-6">
-            51 skills
-          </p>
-          <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.1] tracking-tight mb-14">
-            La bibliothèque complète.
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {categories.map((cat) => (
-              <div
-                key={cat.name}
-                className="border border-[var(--border)] rounded-lg p-6 space-y-4 hover:bg-[rgba(255,255,255,0.02)] transition-colors"
-              >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-medium">{cat.name}</h3>
-                  <span className={`text-xs font-mono ${cat.color}`}>
-                    {cat.count} skills
-                  </span>
-                </div>
-                <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-                  {cat.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((s) => (
-                    <code
-                      key={s}
-                      className="text-[10px] font-mono text-[var(--text-muted)] border border-[var(--border)] px-2 py-0.5 rounded"
-                    >
-                      {s}
-                    </code>
-                  ))}
-                  <span className="text-[10px] text-[var(--text-muted)] px-1 py-0.5">
-                    +{cat.count - 3} autres
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Bibliothèque complète — click-to-reveal */}
+      <SkillLibrary />
 
       {/* CTA install */}
       <section className="px-6 py-20 md:px-12 lg:px-20 border-t border-[var(--border)]">
