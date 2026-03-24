@@ -23,7 +23,7 @@ Montrer concrètement le concept "encoder l'intelligence d'un métier" sans jarg
 2. Submit → bulle user apparaît
 3. Indicateur "typing..." (1 500ms)
 4. Extraction de mots-clés : suppression stop words FR/EN, conservation des 3–5 termes les plus significatifs
-5. Appel GitHub Search API : `GET /search/repositories?q={keywords}+claude+skill&sort=stars&per_page=5`
+5. Appel GitHub Search API : `GET /search/code?q={keywords}+filename:SKILL.md&per_page=5`
 6. Réponse assistant : texte intro + skill cards + message pitch + CTA
 7. Input verrouillé — échange unique
 
@@ -51,7 +51,8 @@ Montrer concrètement le concept "encoder l'intelligence d'un métier" sans jarg
 #### `SkillCard`
 - Props : `name`, `description`, `stars`, `url`
 - Style : `border border-[var(--border)] px-4 py-3 rounded` — cohérent avec les cards offres
-- Layout : nom en `font-mono text-xs`, description en `text-muted text-xs`, étoiles en `text-muted text-xs`
+- Layout : nom en `font-mono text-xs`, description en `text-[var(--text-muted)] text-xs`, étoiles en `text-[var(--text-muted)] text-xs`
+- **Note** : `ChatBubble` dans ce composant est une variante locale qui accepte `children` (pour embedder les cards). Ne pas importer depuis `chat-demo.tsx`.
 
 ---
 
@@ -68,7 +69,8 @@ Insertion de `<SkillDiscovery />` dans `src/app/page.tsx` juste avant la section
 border border-[var(--border)] rounded-xl bg-[rgba(255,255,255,0.02)]
 ```
 Header : dot vert + label `skill-discovery` en font-mono (identique à `chat-demo.tsx`)
-Hauteur : auto (grandit avec le contenu)
+Hauteur : auto (grandit avec le contenu), `min-h-[120px]` pendant le loading pour éviter le layout jump
+Timeout fetch : 8 secondes via `AbortController` — expiry mappe sur le message d'erreur rate-limit
 
 ### Skill cards (dans la bulle assistant)
 ```
@@ -113,6 +115,8 @@ Algorithme simple côté client :
 4. Filtrer mots < 3 caractères
 5. Conserver les 4 premiers termes significatifs
 6. Joindre avec `+` pour la query GitHub
+
+Stop words FR (liste complète) : `je, tu, il, elle, on, nous, vous, ils, elles, un, une, le, la, les, des, du, de, en, par, sur, avec, pour, ce, ma, mon, mes, nos, vos, leur, leurs, et, ou, à, au, aux, my, the, a, an, is, are, i, and, or, in, on, at, for, with, this, that, it, of`
 
 ---
 
