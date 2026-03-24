@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <a href="/" className="font-[family-name:var(--font-serif)] text-lg">
-            web·kit
+            accueil
           </a>
         </div>
         <div className="flex justify-end">
@@ -118,23 +118,23 @@ export default function Home() {
             {[
               {
                 step: "01",
-                title: "Appel découverte gratuit",
-                detail: "15-20 min. On cadre ton projet, tes besoins, ton contexte.",
+                title: "Discovery : je comprends comment tu bosses",
+                detail: "On passe 2 à 3 heures ensemble. Je te pose des questions sur tes vrais cas clients, tes étapes, ton vocabulaire. Pas ce que tu mets sur LinkedIn. Ce que tu fais vraiment quand tu es face à un prospect ou un livrable.",
               },
               {
                 step: "02",
-                title: "On vide ton cerveau",
-                detail: "Tu me montres comment tu bosses vraiment. Pas la version LinkedIn. Les vrais emails, les vrais appels, ce qui fait que toi tu signes et que les autres galèrent.",
+                title: "Je structure ta connaissance",
+                detail: "Une IA sans données structurées, c'est un stagiaire qui improvise. Je prends tout ce qu'on a extrait et je l'organise : tes typologies clients, tes arbres de décision, tes templates de réponse. Plus c'est structuré et plus il y a de volume, plus l'IA devient précise.",
               },
               {
                 step: "03",
-                title: "Je construis le kit",
-                detail: "4 à 6 semaines. Chaque skill est testé sur des cas réels avant livraison.",
+                title: "J'ajoute les meilleures skills open-source",
+                detail: "Sur GitHub, il existe des centaines de skills publiques : design, SEO, copywriting, debug. Je sélectionne celles qui complètent tes skills custom et je les branche ensemble.",
               },
               {
                 step: "04",
-                title: "Tu repars avec un système",
-                detail: "Skills installés, configurés. Tu ouvres Claude et tu bosses. Pas besoin de comprendre ce qui tourne en dessous.",
+                title: "Tu récupères un système qui tourne",
+                detail: "Installé dans ton Claude, testé sur tes vrais cas. C'est pas un prompt magique, c'est 15 à 25 skills qui coopèrent. Tu parles normalement, le système sait quoi faire.",
               },
             ].map((item, i) => (
               <div key={item.step} className="relative">

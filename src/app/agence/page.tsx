@@ -9,7 +9,7 @@ export default function AgencePage() {
           href="/"
           className="font-[family-name:var(--font-serif)] text-lg"
         >
-          web·kit
+          accueil
         </a>
         <a
           href="https://cal.com"

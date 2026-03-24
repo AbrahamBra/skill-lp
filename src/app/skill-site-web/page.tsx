@@ -23,7 +23,7 @@ export default function SkillSiteWebPage() {
         </div>
         <div className="flex justify-center">
           <a href="/" className="font-[family-name:var(--font-serif)] text-lg">
-            web·kit
+            accueil
           </a>
         </div>
         <div className="flex justify-end">
