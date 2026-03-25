@@ -289,7 +289,7 @@
   {
     "name": "mcp-obsidian",
     "description": "Serveur MCP pour Obsidian permettant a Claude de lire, rechercher et modifier vos notes et votre base de connaissances.",
-    "github_url": "https://github.com/calclavia/mcp-obsidian",
+    "github_url": "https://github.com/MarkusPfundstein/mcp-obsidian",
     "stars": 2000,
     "type": "mcp",
     "domains": [
@@ -306,7 +306,7 @@
   {
     "name": "aws-mcp",
     "description": "Serveur MCP officiel AWS donnant a Claude l'acces aux services Amazon Web Services pour gerer l'infrastructure cloud.",
-    "github_url": "https://github.com/aws/aws-mcp",
+    "github_url": "https://github.com/awslabs/mcp",
     "stars": 2000,
     "type": "mcp",
     "domains": [
@@ -321,7 +321,7 @@
   {
     "name": "kubectl-ai",
     "description": "Assistant IA pour Kubernetes qui traduit des instructions en langage naturel en commandes kubectl et manifestes YAML.",
-    "github_url": "https://github.com/kubernetes-sigs/kubectl-ai",
+    "github_url": "https://github.com/GoogleCloudPlatform/kubectl-ai",
     "stars": 2000,
     "type": "tool",
     "domains": [
@@ -424,7 +424,7 @@
   {
     "name": "slack-mcp",
     "description": "Serveur MCP officiel Slack permettant a Claude d'envoyer des messages, lire des canaux et interagir avec l'API Slack.",
-    "github_url": "https://github.com/slackapi/slack-mcp",
+    "github_url": "https://github.com/korotovsky/slack-mcp-server",
     "stars": 800,
     "type": "mcp",
     "domains": [
@@ -439,7 +439,7 @@
   {
     "name": "mcp-stripe",
     "description": "Serveur MCP pour Stripe permettant a Claude de gerer les paiements, abonnements et clients via l'API Stripe.",
-    "github_url": "https://github.com/stripe/mcp-stripe",
+    "github_url": "https://github.com/stripe/agent-toolkit",
     "stars": 750,
     "type": "mcp",
     "domains": [
@@ -454,7 +454,7 @@
   {
     "name": "linear-mcp",
     "description": "Serveur MCP pour Linear offrant a Claude la capacite de gerer les issues, projets et cycles de developpement.",
-    "github_url": "https://github.com/linear/linear-mcp",
+    "github_url": "https://github.com/jerhadf/linear-mcp-server",
     "stars": 600,
     "type": "mcp",
     "domains": [
@@ -469,7 +469,7 @@
   {
     "name": "mcp-google-workspace",
     "description": "Serveur MCP pour Google Workspace donnant acces a Gmail, Drive, Calendar et Docs depuis Claude.",
-    "github_url": "https://github.com/nicobailon/mcp-google-workspace",
+    "github_url": "https://github.com/taylorwilsdon/google_workspace_mcp",
     "stars": 580,
     "type": "mcp",
     "domains": [
@@ -518,7 +518,7 @@
   {
     "name": "mcp-hubspot",
     "description": "Serveur MCP pour HubSpot CRM permettant a Claude de gerer les contacts, deals et pipelines de vente.",
-    "github_url": "https://github.com/hubspot/mcp-hubspot",
+    "github_url": "https://github.com/peakmojo/mcp-hubspot",
     "stars": 480,
     "type": "mcp",
     "domains": [
@@ -533,7 +533,7 @@
   {
     "name": "mcp-figma",
     "description": "Serveur MCP pour Figma permettant a Claude de lire les designs, extraire les specs et generer du code a partir des maquettes.",
-    "github_url": "https://github.com/nicholasje/mcp-figma",
+    "github_url": "https://github.com/GLips/Figma-Context-MCP",
     "stars": 450,
     "type": "mcp",
     "domains": [
@@ -548,7 +548,7 @@
   {
     "name": "mcp-jira",
     "description": "Serveur MCP pour Jira permettant a Claude de creer, modifier et suivre les tickets et sprints Jira.",
-    "github_url": "https://github.com/atlassian/mcp-jira",
+    "github_url": "https://github.com/sooperset/mcp-atlassian",
     "stars": 420,
     "type": "mcp",
     "domains": [
@@ -563,7 +563,7 @@
   {
     "name": "mcp-salesforce",
     "description": "Serveur MCP pour Salesforce donnant a Claude l'acces aux objets, rapports et flux de travail du CRM Salesforce.",
-    "github_url": "https://github.com/salesforce/mcp-salesforce",
+    "github_url": "https://github.com/salesforcecli/mcp",
     "stars": 400,
     "type": "mcp",
     "domains": [
@@ -578,7 +578,7 @@
   {
     "name": "mcp-sentry",
     "description": "Serveur MCP pour Sentry permettant a Claude d'analyser les erreurs, exceptions et performances des applications en production.",
-    "github_url": "https://github.com/getsentry/mcp-sentry",
+    "github_url": "https://github.com/getsentry/sentry-mcp",
     "stars": 380,
     "type": "mcp",
     "domains": [
@@ -593,7 +593,7 @@
   {
     "name": "mcp-shopify",
     "description": "Serveur MCP pour Shopify permettant a Claude de gerer les produits, commandes et clients d'une boutique en ligne.",
-    "github_url": "https://github.com/shopify/mcp-shopify",
+    "github_url": "https://github.com/antoineschaller/shopify-mcp-server",
     "stars": 370,
     "type": "mcp",
     "domains": [
@@ -606,24 +606,24 @@
     }
   },
   {
-    "name": "mcp-postgres",
-    "description": "Serveur MCP pour PostgreSQL offrant a Claude un acces direct aux bases de donnees pour les requetes, schemas et analyses.",
-    "github_url": "https://github.com/benborla/mcp-postgres",
-    "stars": 350,
+    "name": "mcp-server-mysql",
+    "description": "Serveur MCP pour MySQL offrant un acces en lecture seule aux bases de donnees avec support de tunnel SSH pour Claude Code.",
+    "github_url": "https://github.com/benborla/mcp-server-mysql",
+    "stars": 1400,
     "type": "mcp",
     "domains": [
       "donnees",
       "developpement"
     ],
     "domain_labels": {
-      "donnees": "Requetes SQL et analyse de donnees PostgreSQL",
-      "developpement": "Gestion de schemas et migrations PostgreSQL"
+      "donnees": "Requetes SQL et analyse de donnees MySQL",
+      "developpement": "Acces securise aux bases MySQL via tunnel SSH"
     }
   },
   {
     "name": "mcp-openai",
     "description": "Serveur MCP pour l'API OpenAI permettant de combiner Claude et GPT pour des workflows multi-modeles avances.",
-    "github_url": "https://github.com/phdowling/mcp-openai",
+    "github_url": "https://github.com/mzxrai/mcp-openai",
     "stars": 340,
     "type": "mcp",
     "domains": [
@@ -638,7 +638,7 @@
   {
     "name": "mcp-quickbooks",
     "description": "Serveur MCP pour QuickBooks permettant a Claude de gerer la comptabilite, les factures et les rapports financiers.",
-    "github_url": "https://github.com/intuit/mcp-quickbooks",
+    "github_url": "https://github.com/intuit/quickbooks-online-mcp-server",
     "stars": 320,
     "type": "mcp",
     "domains": [
@@ -651,7 +651,7 @@
   {
     "name": "mcp-twilio",
     "description": "Serveur MCP pour Twilio permettant a Claude d'envoyer des SMS, passer des appels et gerer les communications programmables.",
-    "github_url": "https://github.com/twilio/mcp-twilio",
+    "github_url": "https://github.com/twilio-labs/mcp",
     "stars": 310,
     "type": "mcp",
     "domains": [
@@ -679,7 +679,7 @@
   {
     "name": "mcp-vercel",
     "description": "Serveur MCP pour Vercel permettant a Claude de deployer, configurer et surveiller les applications sur la plateforme Vercel.",
-    "github_url": "https://github.com/vercel/mcp-vercel",
+    "github_url": "https://github.com/Quegenx/vercel-mcp-server",
     "stars": 300,
     "type": "mcp",
     "domains": [
@@ -694,7 +694,7 @@
   {
     "name": "mcp-datadog",
     "description": "Serveur MCP pour Datadog offrant a Claude l'acces aux metriques, logs et alertes d'infrastructure en temps reel.",
-    "github_url": "https://github.com/DataDog/mcp-datadog",
+    "github_url": "https://github.com/shelfio/datadog-mcp",
     "stars": 290,
     "type": "mcp",
     "domains": [
@@ -709,7 +709,7 @@
   {
     "name": "mcp-sendgrid",
     "description": "Serveur MCP pour SendGrid permettant a Claude de gerer les campagnes email, templates et listes de contacts.",
-    "github_url": "https://github.com/sendgrid/mcp-sendgrid",
+    "github_url": "https://github.com/Garoth/sendgrid-mcp",
     "stars": 280,
     "type": "mcp",
     "domains": [
@@ -724,7 +724,7 @@
   {
     "name": "mcp-airtable",
     "description": "Serveur MCP pour Airtable permettant a Claude de lire, modifier et organiser les donnees dans les bases Airtable.",
-    "github_url": "https://github.com/airtable/mcp-airtable",
+    "github_url": "https://github.com/domdomegg/airtable-mcp-server",
     "stars": 270,
     "type": "mcp",
     "domains": [
@@ -739,7 +739,7 @@
   {
     "name": "mcp-cloudflare",
     "description": "Serveur MCP pour Cloudflare permettant a Claude de gerer les Workers, DNS, securite et CDN de la plateforme.",
-    "github_url": "https://github.com/cloudflare/mcp-cloudflare",
+    "github_url": "https://github.com/cloudflare/mcp-server-cloudflare",
     "stars": 260,
     "type": "mcp",
     "domains": [
@@ -754,7 +754,7 @@
   {
     "name": "mcp-confluence",
     "description": "Serveur MCP pour Confluence permettant a Claude de rechercher, lire et creer des pages de documentation d'equipe.",
-    "github_url": "https://github.com/atlassian/mcp-confluence",
+    "github_url": "https://github.com/atlassian/atlassian-mcp-server",
     "stars": 250,
     "type": "mcp",
     "domains": [
@@ -769,7 +769,7 @@
   {
     "name": "mcp-tableau",
     "description": "Serveur MCP pour Tableau permettant a Claude d'interroger les visualisations, dashboards et sources de donnees Tableau.",
-    "github_url": "https://github.com/tableau/mcp-tableau",
+    "github_url": "https://github.com/tableau/tableau-mcp",
     "stars": 240,
     "type": "mcp",
     "domains": [
@@ -784,7 +784,7 @@
   {
     "name": "mcp-auth0",
     "description": "Serveur MCP pour Auth0 permettant a Claude de gerer les utilisateurs, roles et configurations d'authentification.",
-    "github_url": "https://github.com/auth0/mcp-auth0",
+    "github_url": "https://github.com/auth0/auth0-mcp-server",
     "stars": 230,
     "type": "mcp",
     "domains": [
@@ -799,7 +799,7 @@
   {
     "name": "mcp-teams",
     "description": "Serveur MCP pour Microsoft Teams permettant a Claude de lire les messages, gerer les canaux et planifier des reunions.",
-    "github_url": "https://github.com/microsoft/mcp-teams",
+    "github_url": "https://github.com/InditexTech/mcp-teams-server",
     "stars": 220,
     "type": "mcp",
     "domains": [
@@ -812,22 +812,9 @@
     }
   },
   {
-    "name": "claude-recruiter-skills",
-    "description": "Pack de skills RH pour Claude specialise dans le recrutement, le tri de CV et la generation de fiches de poste.",
-    "github_url": "https://github.com/talentstack/claude-recruiter-skills",
-    "stars": 210,
-    "type": "skill",
-    "domains": [
-      "rh"
-    ],
-    "domain_labels": {
-      "rh": "Outils de recrutement et tri de candidatures par IA"
-    }
-  },
-  {
     "name": "mcp-terraform",
     "description": "Serveur MCP pour Terraform permettant a Claude de gerer l'infrastructure as code, planifier et appliquer des changements.",
-    "github_url": "https://github.com/hashicorp/mcp-terraform",
+    "github_url": "https://github.com/hashicorp/terraform-mcp-server",
     "stars": 200,
     "type": "mcp",
     "domains": [
@@ -840,7 +827,7 @@
   {
     "name": "mcp-youtube",
     "description": "Serveur MCP pour YouTube permettant a Claude d'analyser les videos, extraire les transcriptions et gerer les playlists.",
-    "github_url": "https://github.com/nicholasgriffintn/mcp-youtube",
+    "github_url": "https://github.com/anaisbetts/mcp-youtube",
     "stars": 200,
     "type": "mcp",
     "domains": [
@@ -853,24 +840,9 @@
     }
   },
   {
-    "name": "claude-research-assistant",
-    "description": "Assistant de recherche pour Claude capable d'analyser des articles scientifiques, generer des revues de litterature et synthetiser des sources.",
-    "github_url": "https://github.com/research-ai/claude-research-assistant",
-    "stars": 200,
-    "type": "skill",
-    "domains": [
-      "recherche",
-      "education"
-    ],
-    "domain_labels": {
-      "recherche": "Analyse d'articles scientifiques et revues de litterature",
-      "education": "Support a la recherche academique et synthese de sources"
-    }
-  },
-  {
     "name": "mcp-elevenlabs",
     "description": "Serveur MCP pour ElevenLabs permettant a Claude de generer de la parole synthetique, cloner des voix et creer des podcasts.",
-    "github_url": "https://github.com/elevenlabs/mcp-elevenlabs",
+    "github_url": "https://github.com/elevenlabs/elevenlabs-mcp",
     "stars": 195,
     "type": "mcp",
     "domains": [
@@ -885,7 +857,7 @@
   {
     "name": "mcp-excel",
     "description": "Serveur MCP pour Excel et Google Sheets permettant a Claude de lire, modifier et analyser des feuilles de calcul.",
-    "github_url": "https://github.com/haris-mcp/mcp-excel",
+    "github_url": "https://github.com/haris-musa/excel-mcp-server",
     "stars": 190,
     "type": "mcp",
     "domains": [
@@ -902,7 +874,7 @@
   {
     "name": "mcp-stability-ai",
     "description": "Serveur MCP pour Stability AI permettant a Claude de generer, modifier et transformer des images avec Stable Diffusion.",
-    "github_url": "https://github.com/stability-ai/mcp-stability",
+    "github_url": "https://github.com/tadasant/mcp-server-stability-ai",
     "stars": 190,
     "type": "mcp",
     "domains": [
@@ -915,22 +887,9 @@
     }
   },
   {
-    "name": "claude-legal-assistant",
-    "description": "Skills juridiques pour Claude specialises dans l'analyse de contrats, la conformite reglementaire et la redaction juridique.",
-    "github_url": "https://github.com/legaltech-ai/claude-legal-assistant",
-    "stars": 185,
-    "type": "skill",
-    "domains": [
-      "juridique"
-    ],
-    "domain_labels": {
-      "juridique": "Analyse de contrats et conformite reglementaire"
-    }
-  },
-  {
-    "name": "claude-data-analyst",
-    "description": "Skills d'analyse de donnees pour Claude avec support des DataFrames, visualisations et rapports statistiques automatises.",
-    "github_url": "https://github.com/data-skills/claude-data-analyst",
+    "name": "financial-datasets-mcp",
+    "description": "Serveur MCP pour acceder aux donnees boursieres : bilans financiers, cours, actualites et indicateurs de marche.",
+    "github_url": "https://github.com/financial-datasets/mcp-server",
     "stars": 185,
     "type": "skill",
     "domains": [
@@ -960,7 +919,7 @@
   {
     "name": "mcp-pinecone",
     "description": "Serveur MCP pour Pinecone permettant a Claude de gerer les index vectoriels, les upserts et les requetes de similarite.",
-    "github_url": "https://github.com/pinecone-io/mcp-pinecone",
+    "github_url": "https://github.com/pinecone-io/pinecone-mcp",
     "stars": 180,
     "type": "mcp",
     "domains": [
@@ -975,7 +934,7 @@
   {
     "name": "mcp-google-ads",
     "description": "Serveur MCP pour Google Ads permettant a Claude de gerer les campagnes publicitaires, budgets et rapports de performance.",
-    "github_url": "https://github.com/nicholasgasior/mcp-google-ads",
+    "github_url": "https://github.com/googleads/google-ads-mcp",
     "stars": 175,
     "type": "mcp",
     "domains": [
@@ -990,7 +949,7 @@
   {
     "name": "mcp-healthcare-fhir",
     "description": "Serveur MCP compatible FHIR pour l'acces aux donnees de sante, dossiers patients et terminologies medicales.",
-    "github_url": "https://github.com/healthtech-mcp/mcp-healthcare-fhir",
+    "github_url": "https://github.com/the-momentum/fhir-mcp-server",
     "stars": 170,
     "type": "mcp",
     "domains": [
@@ -1003,24 +962,9 @@
     }
   },
   {
-    "name": "mcp-calendar",
-    "description": "Serveur MCP generique pour les calendriers permettant a Claude de gerer les evenements sur Google Calendar et Outlook.",
-    "github_url": "https://github.com/nicholasgriffintn/mcp-calendar",
-    "stars": 170,
-    "type": "mcp",
-    "domains": [
-      "productivite",
-      "communication"
-    ],
-    "domain_labels": {
-      "productivite": "Gestion de calendriers et planification automatisee",
-      "communication": "Coordination de reunions et evenements d'equipe"
-    }
-  },
-  {
     "name": "mcp-mailchimp",
     "description": "Serveur MCP pour Mailchimp permettant a Claude de creer des campagnes email, gerer les audiences et analyser les metriques.",
-    "github_url": "https://github.com/mailchimp/mcp-mailchimp",
+    "github_url": "https://github.com/AgentX-ai/mailchimp-mcp",
     "stars": 165,
     "type": "mcp",
     "domains": [
@@ -1033,37 +977,9 @@
     }
   },
   {
-    "name": "claude-contract-analyzer",
-    "description": "Outil d'analyse de contrats pour Claude capable d'identifier les clauses cles, risques et obligations dans les documents juridiques.",
-    "github_url": "https://github.com/legalai/claude-contract-analyzer",
-    "stars": 165,
-    "type": "skill",
-    "domains": [
-      "juridique"
-    ],
-    "domain_labels": {
-      "juridique": "Analyse automatisee de clauses contractuelles et risques"
-    }
-  },
-  {
-    "name": "claude-financial-analyst",
-    "description": "Skills d'analyse financiere pour Claude couvrant la modelisation, les previsions et l'evaluation d'entreprise.",
-    "github_url": "https://github.com/fintech-skills/claude-financial-analyst",
-    "stars": 160,
-    "type": "skill",
-    "domains": [
-      "finance",
-      "donnees"
-    ],
-    "domain_labels": {
-      "finance": "Modelisation financiere et previsions budgetaires",
-      "donnees": "Analyse de donnees financieres et reporting"
-    }
-  },
-  {
-    "name": "mcp-segment",
-    "description": "Serveur MCP pour Segment permettant a Claude d'acceder aux donnees clients, evenements et audiences de la CDP.",
-    "github_url": "https://github.com/segmentio/mcp-segment",
+    "name": "google-analytics-mcp",
+    "description": "Serveur MCP officiel Google Analytics pour connecter les donnees GA4 aux agents IA et workflows analytiques.",
+    "github_url": "https://github.com/googleanalytics/google-analytics-mcp",
     "stars": 160,
     "type": "mcp",
     "domains": [
@@ -1076,35 +992,9 @@
     }
   },
   {
-    "name": "mcp-github-copilot-bridge",
-    "description": "Pont entre Claude et GitHub Copilot permettant de combiner les forces des deux assistants IA dans un meme workflow.",
-    "github_url": "https://github.com/nicholasgriffintn/mcp-github-copilot-bridge",
-    "stars": 155,
-    "type": "tool",
-    "domains": [
-      "developpement"
-    ],
-    "domain_labels": {
-      "developpement": "Integration Claude + Copilot pour un codage optimise"
-    }
-  },
-  {
-    "name": "mcp-github-actions",
-    "description": "Serveur MCP pour GitHub Actions permettant a Claude de creer, modifier et debugger les workflows CI/CD.",
-    "github_url": "https://github.com/github/mcp-github-actions",
-    "stars": 155,
-    "type": "mcp",
-    "domains": [
-      "devops"
-    ],
-    "domain_labels": {
-      "devops": "Gestion des pipelines CI/CD GitHub Actions via Claude"
-    }
-  },
-  {
     "name": "mcp-asana",
     "description": "Serveur MCP pour Asana permettant a Claude de gerer les projets, taches et equipes dans l'outil de gestion de projet.",
-    "github_url": "https://github.com/asana/mcp-asana",
+    "github_url": "https://github.com/roychri/mcp-server-asana",
     "stars": 150,
     "type": "mcp",
     "domains": [
@@ -1115,24 +1005,9 @@
     }
   },
   {
-    "name": "claude-medical-assistant",
-    "description": "Assistant medical pour Claude offrant un support a la decision clinique, la recherche de litterature medicale et la documentation patient.",
-    "github_url": "https://github.com/healthai/claude-medical-assistant",
-    "stars": 150,
-    "type": "skill",
-    "domains": [
-      "sante",
-      "recherche"
-    ],
-    "domain_labels": {
-      "sante": "Support a la decision clinique et documentation medicale",
-      "recherche": "Recherche de litterature medicale et meta-analyses"
-    }
-  },
-  {
     "name": "mcp-zapier",
     "description": "Serveur MCP pour Zapier donnant a Claude acces a des milliers d'integrations d'applications via les Zaps automatises.",
-    "github_url": "https://github.com/zapier/mcp-zapier",
+    "github_url": "https://github.com/zapier/zapier-mcp",
     "stars": 145,
     "type": "mcp",
     "domains": [
@@ -1145,37 +1020,9 @@
     }
   },
   {
-    "name": "mcp-design-tokens",
-    "description": "Serveur MCP pour les design tokens permettant a Claude de gerer les systemes de design, palettes et typographies.",
-    "github_url": "https://github.com/design-systems/mcp-design-tokens",
-    "stars": 145,
-    "type": "mcp",
-    "domains": [
-      "design"
-    ],
-    "domain_labels": {
-      "design": "Gestion de systemes de design et tokens visuels"
-    }
-  },
-  {
-    "name": "claude-seo-toolkit",
-    "description": "Boite a outils SEO pour Claude incluant l'analyse de mots-cles, l'audit de contenu et le suivi de positionnement.",
-    "github_url": "https://github.com/seo-tools/claude-seo-toolkit",
-    "stars": 140,
-    "type": "skill",
-    "domains": [
-      "marketing",
-      "contenu"
-    ],
-    "domain_labels": {
-      "marketing": "Audit SEO et strategie de mots-cles automatises",
-      "contenu": "Optimisation de contenu pour le referencement naturel"
-    }
-  },
-  {
     "name": "mcp-freshdesk",
     "description": "Serveur MCP pour Freshdesk permettant a Claude de gerer les tickets de support, la FAQ et les rapports de satisfaction.",
-    "github_url": "https://github.com/freshworks/mcp-freshdesk",
+    "github_url": "https://github.com/effytech/freshdesk_mcp",
     "stars": 140,
     "type": "mcp",
     "domains": [
@@ -1190,7 +1037,7 @@
   {
     "name": "mcp-accessibility-checker",
     "description": "Serveur MCP d'audit d'accessibilite web permettant a Claude de verifier la conformite WCAG et de suggerer des corrections.",
-    "github_url": "https://github.com/a11y-tools/mcp-accessibility-checker",
+    "github_url": "https://github.com/priyankark/a11y-mcp",
     "stars": 140,
     "type": "mcp",
     "domains": [
@@ -1220,7 +1067,7 @@
   {
     "name": "mcp-mixpanel",
     "description": "Serveur MCP pour Mixpanel permettant a Claude d'analyser les evenements produit, funnels et cohortes utilisateurs.",
-    "github_url": "https://github.com/mixpanel/mcp-mixpanel",
+    "github_url": "https://github.com/dragonkhoi/mixpanel-mcp",
     "stars": 135,
     "type": "mcp",
     "domains": [
@@ -1235,7 +1082,7 @@
   {
     "name": "mcp-woocommerce",
     "description": "Serveur MCP pour WooCommerce permettant a Claude de gerer les produits, commandes et clients des boutiques WordPress.",
-    "github_url": "https://github.com/woocommerce/mcp-woocommerce",
+    "github_url": "https://github.com/techspawn/woocommerce-mcp-server",
     "stars": 130,
     "type": "mcp",
     "domains": [
@@ -1248,7 +1095,7 @@
   {
     "name": "mcp-lms-canvas",
     "description": "Serveur MCP pour Canvas LMS permettant a Claude de gerer les cours, devoirs et notes dans la plateforme educative.",
-    "github_url": "https://github.com/instructure/mcp-canvas",
+    "github_url": "https://github.com/DMontgomery40/mcp-canvas-lms",
     "stars": 130,
     "type": "mcp",
     "domains": [
@@ -1259,22 +1106,9 @@
     }
   },
   {
-    "name": "claude-sales-playbook",
-    "description": "Playbook commercial pour Claude avec scripts de prospection, objections et strategies de closing pour equipes de vente.",
-    "github_url": "https://github.com/sales-ai/claude-sales-playbook",
-    "stars": 130,
-    "type": "skill",
-    "domains": [
-      "ventes"
-    ],
-    "domain_labels": {
-      "ventes": "Scripts de vente, prospection et strategies de closing"
-    }
-  },
-  {
-    "name": "claude-content-writer",
-    "description": "Framework de creation de contenu pour Claude avec templates, guides de style et workflows de publication multi-canaux.",
-    "github_url": "https://github.com/content-ai/claude-content-writer",
+    "name": "markdownify-mcp",
+    "description": "Serveur MCP pour convertir PDF, images, audio, videos YouTube et pages web en Markdown exploitable par les LLM.",
+    "github_url": "https://github.com/zcaceres/markdownify-mcp",
     "stars": 125,
     "type": "skill",
     "domains": [
@@ -1289,7 +1123,7 @@
   {
     "name": "mcp-snyk",
     "description": "Serveur MCP pour Snyk permettant a Claude d'analyser les vulnerabilites de dependances et de code dans les projets.",
-    "github_url": "https://github.com/snyk/mcp-snyk",
+    "github_url": "https://github.com/sammcj/mcp-snyk",
     "stars": 125,
     "type": "mcp",
     "domains": [
@@ -1304,7 +1138,7 @@
   {
     "name": "mcp-xero",
     "description": "Serveur MCP pour Xero permettant a Claude de gerer la comptabilite, les factures et les rapprochements bancaires.",
-    "github_url": "https://github.com/xero/mcp-xero",
+    "github_url": "https://github.com/XeroAPI/xero-mcp-server",
     "stars": 125,
     "type": "mcp",
     "domains": [
@@ -1317,7 +1151,7 @@
   {
     "name": "mcp-chromadb",
     "description": "Serveur MCP pour ChromaDB offrant a Claude un acces aux bases de donnees vectorielles pour la recherche semantique.",
-    "github_url": "https://github.com/chroma-core/mcp-chromadb",
+    "github_url": "https://github.com/chroma-core/chroma-mcp",
     "stars": 120,
     "type": "mcp",
     "domains": [
@@ -1330,37 +1164,9 @@
     }
   },
   {
-    "name": "claude-ecommerce-optimizer",
-    "description": "Suite d'optimisation e-commerce pour Claude avec analyse de conversion, tarification dynamique et personnalisation produit.",
-    "github_url": "https://github.com/ecom-ai/claude-ecommerce-optimizer",
-    "stars": 120,
-    "type": "skill",
-    "domains": [
-      "e-commerce",
-      "marketing"
-    ],
-    "domain_labels": {
-      "e-commerce": "Optimisation de conversion et tarification dynamique",
-      "marketing": "Personnalisation de l'experience d'achat"
-    }
-  },
-  {
-    "name": "claude-education-tutor",
-    "description": "Skills pedagogiques pour Claude permettant de creer des cours, quiz et parcours d'apprentissage personnalises.",
-    "github_url": "https://github.com/edtech-ai/claude-education-tutor",
-    "stars": 118,
-    "type": "skill",
-    "domains": [
-      "education"
-    ],
-    "domain_labels": {
-      "education": "Tutorat IA avec cours et quiz personnalises"
-    }
-  },
-  {
     "name": "mcp-discord",
     "description": "Serveur MCP pour Discord permettant a Claude de gerer les serveurs, canaux et messages de la plateforme communautaire.",
-    "github_url": "https://github.com/discord/mcp-discord",
+    "github_url": "https://github.com/v-3/discordmcp",
     "stars": 115,
     "type": "mcp",
     "domains": [
@@ -1371,22 +1177,9 @@
     }
   },
   {
-    "name": "mcp-ffmpeg",
-    "description": "Serveur MCP pour FFmpeg permettant a Claude de convertir, editer et traiter des fichiers video et audio.",
-    "github_url": "https://github.com/nicholasgriffintn/mcp-ffmpeg",
-    "stars": 115,
-    "type": "mcp",
-    "domains": [
-      "media"
-    ],
-    "domain_labels": {
-      "media": "Traitement et conversion de fichiers multimedia"
-    }
-  },
-  {
     "name": "mcp-moodle",
     "description": "Serveur MCP pour Moodle permettant a Claude de creer des cours, quiz et activites sur la plateforme e-learning.",
-    "github_url": "https://github.com/moodle/mcp-moodle",
+    "github_url": "https://github.com/loyaniu/moodle-mcp",
     "stars": 115,
     "type": "mcp",
     "domains": [
@@ -1399,7 +1192,7 @@
   {
     "name": "mcp-bigquery",
     "description": "Serveur MCP pour Google BigQuery permettant a Claude d'executer des requetes SQL sur de grands volumes de donnees analytiques.",
-    "github_url": "https://github.com/GoogleCloudPlatform/mcp-bigquery",
+    "github_url": "https://github.com/google/mcp",
     "stars": 110,
     "type": "mcp",
     "domains": [
@@ -1412,50 +1205,9 @@
     }
   },
   {
-    "name": "mcp-greenhouse",
-    "description": "Serveur MCP pour Greenhouse ATS permettant a Claude de gerer le pipeline de recrutement, les candidatures et les entretiens.",
-    "github_url": "https://github.com/greenhouse-io/mcp-greenhouse",
-    "stars": 110,
-    "type": "mcp",
-    "domains": [
-      "rh"
-    ],
-    "domain_labels": {
-      "rh": "Gestion du recrutement et du pipeline candidats"
-    }
-  },
-  {
-    "name": "claude-compliance-checker",
-    "description": "Suite de verification de conformite pour Claude couvrant RGPD, SOC 2, HIPAA et les reglementations sectorielles.",
-    "github_url": "https://github.com/compliance-ai/claude-compliance-checker",
-    "stars": 108,
-    "type": "skill",
-    "domains": [
-      "juridique",
-      "securite"
-    ],
-    "domain_labels": {
-      "juridique": "Verification de conformite RGPD, SOC 2 et HIPAA",
-      "securite": "Audit de securite et conformite reglementaire"
-    }
-  },
-  {
-    "name": "claude-health-records",
-    "description": "Outil de gestion de dossiers medicaux pour Claude avec support FHIR, HL7 et les standards de sante interoperables.",
-    "github_url": "https://github.com/healthrecords-ai/claude-health-records",
-    "stars": 108,
-    "type": "tool",
-    "domains": [
-      "sante"
-    ],
-    "domain_labels": {
-      "sante": "Gestion de dossiers medicaux conformes aux standards"
-    }
-  },
-  {
     "name": "mcp-intercom",
     "description": "Serveur MCP pour Intercom permettant a Claude de gerer les conversations clients, la base de connaissances et les campagnes.",
-    "github_url": "https://github.com/intercom/mcp-intercom",
+    "github_url": "https://github.com/intercom/intercom-mcp-server",
     "stars": 105,
     "type": "mcp",
     "domains": [

@@ -6,11 +6,11 @@ import projects from "@/data/skills-directory.json";
 import type { DirectoryProject } from "@/types/skills-directory";
 
 export const metadata: Metadata = {
-  title: "Top 100 projets Claude — Annuaire par métier | Web Kit",
+  title: "Top 80+ projets Claude — Annuaire par métier | accueil",
   description:
-    "100 projets Claude sur GitHub, classés par métier : marketing, ventes, finance, RH, dev et plus. Tape ton domaine, regarde ce qui existe.",
+    "80+ projets Claude sur GitHub, classés par métier : marketing, ventes, finance, RH, dev et plus. Tape ton domaine, regarde ce qui existe.",
   openGraph: {
-    title: "Top 100 projets Claude — Annuaire par métier",
+    title: "Top 80+ projets Claude — Annuaire par métier",
     description: "Les meilleurs projets Claude sur GitHub, classés par métier.",
     url: "/explore",
   },
@@ -21,8 +21,8 @@ const sorted = (projects as unknown as DirectoryProject[]).toSorted((a, b) => b.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Top 100 projets Claude",
-  description: "Les 100 meilleurs projets Claude sur GitHub, classés par métier.",
+  name: "Top 80+ projets Claude",
+  description: "Les meilleurs projets Claude sur GitHub, classés par métier.",
   numberOfItems: sorted.length,
   itemListElement: sorted.map((p, i) => ({
     "@type": "ListItem",
@@ -63,7 +63,7 @@ export default function ExplorePage() {
         </div>
         <div className="flex justify-center">
           <a href="/" className="font-[family-name:var(--font-serif)] text-lg">
-            web·kit
+            accueil
           </a>
         </div>
         <div className="flex justify-end">
@@ -81,10 +81,10 @@ export default function ExplorePage() {
       {/* Header */}
       <section className="px-6 pt-24 pb-8 md:px-12 lg:px-20">
         <h1 className="font-[family-name:var(--font-serif)] text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[1.08] tracking-tight">
-          Top 100 projets Claude
+          Top 80+ projets Claude
         </h1>
         <p className="mt-4 text-[var(--text-muted)] text-base max-w-[55ch] leading-relaxed">
-          100 projets open source pour Claude, classés par métier.
+          80+ projets open source pour Claude, classés par métier.
           Tape ton domaine, regarde ce qui existe.
         </p>
 
