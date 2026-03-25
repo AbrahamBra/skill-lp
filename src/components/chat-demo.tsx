@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 type Message = {
   role: "user" | "assistant";
@@ -57,10 +57,10 @@ const conversation: Message[] = [
   },
 ];
 
-function ChatBubble({ msg, visible }: { msg: Message; visible: boolean }) {
+function ChatBubble({ msg }: { msg: Message }) {
   return (
     <div
-      className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} transition-all duration-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+      className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
     >
       <div
         className={`max-w-[85%] md:max-w-[70%] rounded-2xl px-5 py-3.5 text-sm leading-relaxed whitespace-pre-line ${
@@ -76,24 +76,13 @@ function ChatBubble({ msg, visible }: { msg: Message; visible: boolean }) {
 }
 
 export function ChatDemo() {
-  const [visibleCount, setVisibleCount] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const timers: NodeJS.Timeout[] = [];
-    conversation.forEach((_, i) => {
-      timers.push(
-        setTimeout(() => setVisibleCount(i + 1), conversation[i].delay)
-      );
-    });
-    return () => timers.forEach(clearTimeout);
-  }, []);
 
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
     }
-  }, [visibleCount]);
+  }, []);
 
   return (
     <section className="px-6 py-20 md:px-12 lg:px-20">
@@ -120,11 +109,7 @@ export function ChatDemo() {
           className="flex flex-col gap-3 p-5 h-[480px] overflow-y-auto scroll-smooth"
         >
           {conversation.map((msg, i) => (
-            <ChatBubble
-              key={i}
-              msg={msg}
-              visible={i < visibleCount}
-            />
+            <ChatBubble key={i} msg={msg} />
           ))}
         </div>
       </div>
