@@ -1,25 +1,10 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import projects from "@/data/skills-directory.json";
 
-// Stop words FR + EN
-const STOP_WORDS = new Set([
-  "je", "tu", "il", "elle", "on", "nous", "vous", "ils", "elles",
-  "un", "une", "le", "la", "les", "des", "du", "de", "en", "par",
-  "sur", "avec", "pour", "ce", "ma", "mon", "mes", "nos", "vos",
-  "leur", "leurs", "et", "ou", "à", "au", "aux", "qui", "que",
-  "quoi", "dont", "est", "suis", "fait", "faire", "dans", "son",
-  "ses", "pas", "plus", "très", "bien", "aussi", "comme", "mais",
-  "the", "a", "an", "is", "are", "i", "my", "and", "or", "in",
-  "on", "at", "for", "with", "this", "that", "it", "of", "to",
-]);
-
-function extractKeywords(input: string): string[] {
-  return input
-    .toLowerCase()
-    .split(/[\s,;.!?:()]+/)
-    .filter((w) => w.length >= 3 && !STOP_WORDS.has(w))
-    .slice(0, 4);
+function normalize(s: string): string {
+  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
 type SkillResult = {
@@ -34,6 +19,7 @@ type Message = {
   text?: string;
   skills?: SkillResult[];
   pitch?: boolean;
+  exploreQuery?: string;
 };
 
 function ChatBubble({
@@ -73,15 +59,38 @@ function SkillCard({ skill }: { skill: SkillResult }) {
       <div className="text-xs text-[var(--text-muted)] leading-relaxed mt-1">
         {skill.description}
       </div>
-      <div className="text-xs text-[var(--text-muted)] mt-1">★ {skill.stars}</div>
+      <div className="text-xs text-[var(--text-muted)] mt-1">
+        ★ {skill.stars >= 1000 ? (skill.stars / 1000).toFixed(skill.stars >= 10000 ? 0 : 1) + "k" : skill.stars}
+      </div>
     </a>
   );
+}
+
+function searchProjects(query: string): SkillResult[] {
+  const q = normalize(query);
+  if (!q) return [];
+
+  return projects
+    .filter((p) => {
+      const haystack = normalize(
+        [p.name, p.description, ...p.domains, ...Object.values(p.domain_labels)].join(" ")
+      );
+      return haystack.includes(q);
+    })
+    .sort((a, b) => b.stars - a.stars)
+    .slice(0, 5)
+    .map((p) => ({
+      name: p.name,
+      description: p.description,
+      stars: p.stars,
+      url: p.github_url,
+    }));
 }
 
 export function SkillDiscovery() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
+  const [status, setStatus] = useState<"idle" | "done">("idle");
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -90,71 +99,36 @@ export function SkillDiscovery() {
     }
   }, [messages]);
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const value = inputValue.trim();
     if (!value || status !== "idle") return;
 
-    // Add user message
-    setMessages([{ role: "user", text: value }]);
-    setStatus("loading");
+    const results = searchProjects(value);
 
-    const keywords = extractKeywords(value);
-
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 8000);
-
-      const query = keywords.join("+") + "+claude+skill";
-      const res = await fetch(
-        `https://api.github.com/search/repositories?q=${encodeURIComponent(query)}&sort=stars&per_page=5`,
-        { signal: controller.signal }
-      );
-      clearTimeout(timeout);
-
-      if (!res.ok) throw new Error("GitHub API error");
-
-      const data = await res.json();
-      const items: SkillResult[] = (data.items || [])
-        .slice(0, 5)
-        .map((item: { full_name: string; description: string; stargazers_count: number; html_url: string }) => ({
-          name: item.full_name,
-          description: item.description || "Skill Claude Code",
-          stars: item.stargazers_count,
-          url: item.html_url,
-        }));
-
-      if (items.length > 0) {
-        setMessages([
-          { role: "user", text: value },
-          {
-            role: "assistant",
-            text: `J'ai trouvé ${items.length} skills publics liés à ton domaine :`,
-            skills: items,
-          },
-          {
-            role: "assistant",
-            pitch: true,
-            text: "Ces skills encodent l'intelligence générique de quelqu'un dans ton domaine. Mais aucune n'a été entraînée sur tes données, ton vocabulaire, tes cas réels.\n\nC'est exactement ce qu'on construit ensemble.",
-          },
-        ]);
-      } else {
-        setMessages([
-          { role: "user", text: value },
-          {
-            role: "assistant",
-            pitch: true,
-            text: "Aucun skill public trouvé pour ce domaine — c'est souvent le signe que personne n'a encore encodé cette expertise. C'est une opportunité.\n\nC'est exactement ce qu'on construit ensemble.",
-          },
-        ]);
-      }
-    } catch {
+    if (results.length > 0) {
+      setMessages([
+        { role: "user", text: value },
+        {
+          role: "assistant",
+          text: `${results.length} projets trouvés dans notre annuaire :`,
+          skills: results,
+          exploreQuery: value,
+        },
+        {
+          role: "assistant",
+          pitch: true,
+          text: "Ces projets encodent des process génériques. Pas les tiens, pas ton vocabulaire, pas tes cas réels.\n\nC'est ce qu'on construit ensemble.",
+        },
+      ]);
+    } else {
       setMessages([
         { role: "user", text: value },
         {
           role: "assistant",
           pitch: true,
-          text: "GitHub est temporairement indisponible. Mais le principe reste le même : des skills publics encodent des expertises génériques. Les tiens seraient 100 % construits sur tes données réelles.\n\nC'est exactement ce qu'on construit ensemble.",
+          exploreQuery: value,
+          text: `On a passé en revue 100 projets Claude sur GitHub. Rien sur "${value}".\n\nNormal. La majorité tournent autour du dev et du marketing. On peut regarder ensemble ce qui manque pour ton métier et le construire.`,
         },
       ]);
     }
@@ -185,7 +159,7 @@ export function SkillDiscovery() {
           >
             {messages.length === 0 && status === "idle" && (
               <p className="text-xs text-[var(--text-muted)] text-center py-6">
-                Tape ton métier. On va chercher ce qui existe déjà sur GitHub — et tu vas voir ce qui manque.
+                Tape ton métier. On cherche dans les 100 projets Claude les plus utilisés.
               </p>
             )}
 
@@ -198,30 +172,36 @@ export function SkillDiscovery() {
                     ))}
                   </div>
                 )}
+                {msg.exploreQuery && msg.skills && (
+                  <div className="mt-3">
+                    <a
+                      href={`/explore?q=${encodeURIComponent(msg.exploreQuery)}`}
+                      className="text-xs text-[var(--text-muted)] hover:text-[var(--text)] transition-colors underline underline-offset-2"
+                    >
+                      Voir tous les résultats →
+                    </a>
+                  </div>
+                )}
                 {msg.pitch && (
-                  <div className="mt-4">
+                  <div className="mt-4 flex flex-wrap gap-3">
                     <a
                       href="#tarifs"
                       className="inline-block bg-white text-[#0a0a0a] px-5 py-2.5 text-xs font-medium uppercase tracking-widest hover:opacity-85 transition-opacity rounded"
                     >
                       Encoder mon expertise
                     </a>
+                    {msg.exploreQuery && (
+                      <a
+                        href={`/explore?q=${encodeURIComponent(msg.exploreQuery)}`}
+                        className="inline-block border border-[var(--border)] text-[var(--text-muted)] px-5 py-2.5 text-xs font-medium uppercase tracking-widest hover:text-[var(--text)] hover:border-white/30 transition-colors rounded"
+                      >
+                        Explorer l&apos;annuaire
+                      </a>
+                    )}
                   </div>
                 )}
               </ChatBubble>
             ))}
-
-            {status === "loading" && (
-              <div className="flex justify-start">
-                <div className="bg-[rgba(255,255,255,0.06)] border border-[#222] rounded-2xl rounded-bl-sm px-5 py-3.5 text-sm text-[var(--text-muted)]">
-                  <span className="inline-flex gap-1">
-                    <span className="animate-bounce" style={{ animationDelay: "0ms" }}>.</span>
-                    <span className="animate-bounce" style={{ animationDelay: "150ms" }}>.</span>
-                    <span className="animate-bounce" style={{ animationDelay: "300ms" }}>.</span>
-                  </span>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Input */}
