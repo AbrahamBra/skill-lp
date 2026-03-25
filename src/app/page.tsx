@@ -20,12 +20,6 @@ export default function Home() {
           >
             Explorer
           </a>
-          <a
-            href="/explore"
-            className="text-xs uppercase tracking-widest text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
-          >
-            Explorer
-          </a>
         </div>
         <div className="flex justify-center">
           <a href="/" className="font-[family-name:var(--font-serif)] text-lg">
